@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DC237E319195C7F00444ACC /* home_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DC237E119195C7F00444ACC /* home_filled-25.png */; };
-		7DC237E419195C7F00444ACC /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DC237E219195C7F00444ACC /* settings-25.png */; };
-		7DC237E619195D5D00444ACC /* swiff_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7DC237E519195D5D00444ACC /* swiff_logo.gif */; };
+		7D944EEA192D071100A560CC /* home_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE7192D071100A560CC /* home_filled-25.png */; };
+		7D944EEB192D071100A560CC /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE8192D071100A560CC /* settings-25.png */; };
+		7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE9192D071100A560CC /* swiff_logo.gif */; };
 		CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */; };
 		CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D8B5E1915542E00AF6E03 /* LocationService.m */; };
 		CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F3205190D363B00D66E1C /* JsonSerializer.m */; };
@@ -32,9 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7DC237E119195C7F00444ACC /* home_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_filled-25.png"; path = "../../Swiff images/home_filled-25.png"; sourceTree = "<group>"; };
-		7DC237E219195C7F00444ACC /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-25.png"; path = "../../Swiff images/settings-25.png"; sourceTree = "<group>"; };
-		7DC237E519195D5D00444ACC /* swiff_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = swiff_logo.gif; path = "../../Swiff images/swiff_logo.gif"; sourceTree = "<group>"; };
+		7D944EE7192D071100A560CC /* home_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_filled-25.png"; path = "Swiff images/home_filled-25.png"; sourceTree = SOURCE_ROOT; };
+		7D944EE8192D071100A560CC /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-25.png"; path = "Swiff images/settings-25.png"; sourceTree = SOURCE_ROOT; };
+		7D944EE9192D071100A560CC /* swiff_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = swiff_logo.gif; path = "Swiff images/swiff_logo.gif"; sourceTree = SOURCE_ROOT; };
 		CE6D8B5919151FD500AF6E03 /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
 		CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		CE6D8B5D1915542E00AF6E03 /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
@@ -182,9 +182,9 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7DC237E519195D5D00444ACC /* swiff_logo.gif */,
-				7DC237E119195C7F00444ACC /* home_filled-25.png */,
-				7DC237E219195C7F00444ACC /* settings-25.png */,
+				7D944EE7192D071100A560CC /* home_filled-25.png */,
+				7D944EE8192D071100A560CC /* settings-25.png */,
+				7D944EE9192D071100A560CC /* swiff_logo.gif */,
 				CEF97D23190CD3B9006C5881 /* Swiff-Info.plist */,
 				CEF97D24190CD3B9006C5881 /* InfoPlist.strings */,
 				CEF97D27190CD3B9006C5881 /* main.m */,
@@ -253,11 +253,11 @@
 				CEF97D2E190CD3B9006C5881 /* Default.png in Resources */,
 				CEF97D30190CD3B9006C5881 /* Default@2x.png in Resources */,
 				CEF97D32190CD3B9006C5881 /* Default-568h@2x.png in Resources */,
-				7DC237E619195D5D00444ACC /* swiff_logo.gif in Resources */,
+				7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */,
 				CE767EAF1916015A00629F65 /* MainStoryboard.storyboard in Resources */,
-				7DC237E319195C7F00444ACC /* home_filled-25.png in Resources */,
+				7D944EEA192D071100A560CC /* home_filled-25.png in Resources */,
 				CE7310861916AF0F003C6CE1 /* UserSettings.plist in Resources */,
-				7DC237E419195C7F00444ACC /* settings-25.png in Resources */,
+				7D944EEB192D071100A560CC /* settings-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

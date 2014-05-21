@@ -160,7 +160,7 @@
     
     //submit btn
     self.submitBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    self.submitBtn.backgroundColor = [UIColor l];
+    //self.submitBtn.backgroundColor = [UIColor l];
     self.submitBtn.frame = CGRectMake(100, 370, 100, 30);
     [self.submitBtn setTitle:@"SUBMIT" forState:UIControlStateNormal];
     self.submitBtn.enabled = NO;
