@@ -20,40 +20,6 @@
             </objects>
             <point key="canvasLocation" x="-1064" y="-557"/>
         </scene>
-        <!--View Controller - Settings-->
-        <scene sceneID="YW4-Al-ZeD">
-            <objects>
-                <viewController id="nvd-xI-gzX" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NJM-vs-Ir8"/>
-                        <viewControllerLayoutGuide type="bottom" id="03l-di-dfw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="frx-d9-Q9c">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgC-2O-gT6">
-                                <rect key="frame" x="139" y="274" width="78" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="LRU-4a-CwR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="FgC-2O-gT6" firstAttribute="leading" secondItem="frx-d9-Q9c" secondAttribute="leading" constant="139" id="LXj-E6-nTJ"/>
-                            <constraint firstItem="FgC-2O-gT6" firstAttribute="centerY" secondItem="frx-d9-Q9c" secondAttribute="centerY" id="bAc-iy-HXC"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-25.png" id="ojC-Pa-bJC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hJn-iM-HpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1150" y="912"/>
-        </scene>
         <!--View Controller - Home-->
         <scene sceneID="V3U-7h-BdK">
             <objects>
@@ -100,12 +66,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="Eky-Xb-peJ" kind="relationship" relationship="viewControllers" id="v1X-1A-J2G"/>
-                        <segue destination="nvd-xI-gzX" kind="relationship" relationship="viewControllers" id="fUl-bH-8es"/>
+                        <segue destination="fcY-JR-9IV" kind="relationship" relationship="viewControllers" id="q0b-qI-QsM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLU-E1-EUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1686" y="592"/>
+            <point key="canvasLocation" x="-1692" y="572"/>
+        </scene>
+        <!--Settings Controller Table View Controller - Settings-->
+        <scene sceneID="6gv-AB-4np">
+            <objects>
+                <tableViewController id="fcY-JR-9IV" customClass="SWSettingsControllerTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oXD-Fz-g0S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="fcY-JR-9IV" id="clX-ZT-xUT"/>
+                            <outlet property="delegate" destination="fcY-JR-9IV" id="oDP-xw-fUY"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-25.png" id="a3x-TV-Zen"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XhU-ul-qn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1124" y="965"/>
         </scene>
         <!--Start Up Controller View Controller-->
         <scene sceneID="R9D-q6-ubZ">

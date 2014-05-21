@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>accessLocation</key>
-	<dict/>
-</dict>
+<array>
+	<dict>
+		<key>key</key>
+		<string>access_location</string>
+		<key>category</key>
+		<string>location</string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>location_update_interval</string>
+		<key>category</key>
+		<string>location</string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>enter_merchant</string>
+		<key>category</key>
+		<string>merchant</string>
+	</dict>
+</array>
 </plist>

@@ -134,9 +134,9 @@
     //date of birth label
     
     //date of birth button
-    self.datePickerBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.datePickerBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     self.datePickerBtn.frame = CGRectMake(100, 220, 180, 30);
-    self.datePickerBtn.backgroundColor = [UIColor whiteColor];
+    self.datePickerBtn.backgroundColor = [UIColor lightGrayColor];
     [self.datePickerBtn setTitle:@"Pick a date" forState:UIControlStateNormal];
     [self.datePickerBtn addTarget:self action:@selector(datePickerBtnClicked:) forControlEvents:UIControlEventTouchDown];
     [self.contentView addSubview:self.datePickerBtn];
@@ -160,7 +160,7 @@
     
     //submit btn
     self.submitBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    //self.submitBtn.backgroundColor = [UIColor l];
+    self.submitBtn.backgroundColor = [UIColor lightGrayColor];
     self.submitBtn.frame = CGRectMake(100, 370, 100, 30);
     [self.submitBtn setTitle:@"SUBMIT" forState:UIControlStateNormal];
     self.submitBtn.enabled = NO;
@@ -172,6 +172,8 @@
 -(void)datePickerBtnClicked:(id)sender{
     if(self.datePicker == nil){
     self.datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 100, 320, 216)];
+    self.datePicker.datePickerMode = UIDatePickerModeDate;
+    self.datePicker.backgroundColor = [UIColor lightGrayColor];
     [self.datePicker addTarget:self action:@selector(datePickerClicked:) forControlEvents:UIControlEventValueChanged];
     }
     self.datePicker.hidden = NO;
@@ -180,8 +182,8 @@
 
 -(void)datePickerClicked:(id)sender{
     NSDateFormatter* dateformatter = [[NSDateFormatter alloc]init];
-    [dateformatter setDateFormat:@"dd-mm-yyyy"];
-    NSString* dateString = [dateformatter stringFromDate:[sender date]];
+    [dateformatter setDateFormat:@"dd/MM/yyyy"];
+    NSString* dateString = [dateformatter stringFromDate:self.datePicker.date];
     [self.datePickerBtn setTitle:dateString forState:UIControlStateNormal];
     self.isDateSelected = YES;
     self.datePicker.hidden = YES;

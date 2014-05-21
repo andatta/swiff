@@ -10,6 +10,8 @@
 		7D944EEA192D071100A560CC /* home_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE7192D071100A560CC /* home_filled-25.png */; };
 		7D944EEB192D071100A560CC /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE8192D071100A560CC /* settings-25.png */; };
 		7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE9192D071100A560CC /* swiff_logo.gif */; };
+		7D944EEE192D23E200A560CC /* SettingsCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EED192D23E200A560CC /* SettingsCategory.plist */; };
+		7D944EF1192D251400A560CC /* SWSettingsControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D944EF0192D251400A560CC /* SWSettingsControllerTableViewController.m */; };
 		CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */; };
 		CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D8B5E1915542E00AF6E03 /* LocationService.m */; };
 		CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F3205190D363B00D66E1C /* JsonSerializer.m */; };
@@ -35,6 +37,9 @@
 		7D944EE7192D071100A560CC /* home_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_filled-25.png"; path = "Swiff images/home_filled-25.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE8192D071100A560CC /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-25.png"; path = "Swiff images/settings-25.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE9192D071100A560CC /* swiff_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = swiff_logo.gif; path = "Swiff images/swiff_logo.gif"; sourceTree = SOURCE_ROOT; };
+		7D944EED192D23E200A560CC /* SettingsCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingsCategory.plist; sourceTree = "<group>"; };
+		7D944EEF192D251400A560CC /* SWSettingsControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSettingsControllerTableViewController.h; sourceTree = "<group>"; };
+		7D944EF0192D251400A560CC /* SWSettingsControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingsControllerTableViewController.m; sourceTree = "<group>"; };
 		CE6D8B5919151FD500AF6E03 /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
 		CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		CE6D8B5D1915542E00AF6E03 /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
@@ -131,6 +136,8 @@
 				CE767EB4191606B300629F65 /* SWStartUpControllerViewController.m */,
 				CE767EB91916177A00629F65 /* SWRegistrationViewController.h */,
 				CE767EBA1916177A00629F65 /* SWRegistrationViewController.m */,
+				7D944EEF192D251400A560CC /* SWSettingsControllerTableViewController.h */,
+				7D944EF0192D251400A560CC /* SWSettingsControllerTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 				CEF97D2F190CD3B9006C5881 /* Default@2x.png */,
 				CEF97D31190CD3B9006C5881 /* Default-568h@2x.png */,
 				CE7310851916AF0F003C6CE1 /* UserSettings.plist */,
+				7D944EED192D23E200A560CC /* SettingsCategory.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */,
 				CE767EAF1916015A00629F65 /* MainStoryboard.storyboard in Resources */,
 				7D944EEA192D071100A560CC /* home_filled-25.png in Resources */,
+				7D944EEE192D23E200A560CC /* SettingsCategory.plist in Resources */,
 				CE7310861916AF0F003C6CE1 /* UserSettings.plist in Resources */,
 				7D944EEB192D071100A560CC /* settings-25.png in Resources */,
 			);
@@ -270,6 +279,7 @@
 			files = (
 				CEF97D28190CD3B9006C5881 /* main.m in Sources */,
 				CEF97D2C190CD3B9006C5881 /* SWAppDelegate.m in Sources */,
+				7D944EF1192D251400A560CC /* SWSettingsControllerTableViewController.m in Sources */,
 				CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */,
 				CE6F320C190D51D900D66E1C /* TestObject.m in Sources */,
 				CE6F320F190D5E3600D66E1C /* RelatedObject.m in Sources */,
