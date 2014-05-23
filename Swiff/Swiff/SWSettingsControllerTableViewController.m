@@ -62,6 +62,17 @@
                                 errorDescription:&errorDesc];
 }
 
+-(void)addSettingsHeader{
+    CGRect titleRect = CGRectMake(0, 0, 300, 40);
+    UILabel *tableTitle = [[UILabel alloc] initWithFrame:titleRect];
+    tableTitle.textColor = [UIColor blueColor];
+    tableTitle.backgroundColor = [self.tableView backgroundColor];
+    tableTitle.opaque = YES;
+    tableTitle.font = [UIFont boldSystemFontOfSize:18];
+    tableTitle.text = @"SETTINGS";
+    self.tableView.tableHeaderView = tableTitle;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -83,16 +94,19 @@
     return rowCount;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSString* cellIdentifier = @"reuseIdentifier";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    // Configure the cell...
-    
+    if(cell == nil){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    cell.textLabel.text = @"Test cell";
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
