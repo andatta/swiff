@@ -30,6 +30,7 @@
     self.tableView.dataSource = self;
     
     [self initializeSettingsData];
+    [self addSettingsHeader];
     [self.tableView reloadData];
 }
 
