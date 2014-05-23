@@ -30,6 +30,7 @@
     self.tableView.dataSource = self;
     
     [self initializeSettingsData];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,7 +76,7 @@
     int rowCount = 0;
     NSString* sectionName = self.settingsCategories[section];
     for(NSDictionary* dict in self.settings){
-        if([dict valueForKey:@"category"] == sectionName){
+        if([sectionName isEqual:[dict valueForKey:@"category"]]){
             rowCount++;
         }
     }
