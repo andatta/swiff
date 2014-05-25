@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>location</string>
+		<key>options</key>
+		<array>
+			<dict>
+				<key>item</key>
+				<string>access_location</string>
+				<key>subtitle_off</key>
+				<string>Swiff will not update your location at regular intervals</string>
+				<key>title</key>
+				<string>Update Location</string>
+				<key>subtitle</key>
+				<string>Swiff will update your location at regular intervals</string>
+			</dict>
+			<dict>
+				<key>item</key>
+				<string>location_update_interval</string>
+				<key>title</key>
+				<string>Update Location Interval</string>
+				<key>subtitle</key>
+				<string>Swiff will update your location in interval of X minutes</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>merchant</string>
+		<key>options</key>
+		<array>
+			<dict>
+				<key>item</key>
+				<string>update_merchant</string>
+				<key>title</key>
+				<string>Enter Merchant Information</string>
+				<key>subtitle</key>
+				<string>Enter merchant outlet</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     self.appdelegate = [[UIApplication sharedApplication]delegate];
+    [[SettingsManager instance]setIsRegistered:YES];
 	if([[SettingsManager instance]isRegistered]){
         self.activityIndicator.hidden = NO;
         self.registerButton.hidden = YES;

@@ -14,6 +14,8 @@ static SettingsManager* instance = nil;
 
 NSString* KEY_TEST_VALUE = @"testKey";
 NSString* KEY_IS_REGISTERED = @"isRegistered";
+NSString* KEY_LOCATION_UPDATE = @"locationUpdate";
+NSString* KEY_LOCATION_UPDATE_INTERVAL = @"locationUpdateInterval";
 
 +(id)instance{
     if(instance == nil){
@@ -91,6 +93,24 @@ NSString* KEY_IS_REGISTERED = @"isRegistered";
 -(BOOL)isRegistered{
     NSNumber* value = [self valueForKey:KEY_IS_REGISTERED withDefault:[NSNumber numberWithBool:NO]];
     return [value boolValue];
+}
+
+-(void)setLocationUpdate:(BOOL)val{
+    [self setValue:[NSNumber numberWithBool:val] forKey:KEY_LOCATION_UPDATE];
+}
+
+-(BOOL)locationUpdate{
+    NSNumber* value = [self valueForKey:KEY_LOCATION_UPDATE withDefault:[NSNumber numberWithBool:YES]];
+    return [value boolValue];
+}
+
+-(void)setLocationUpdateInterval:(int)val{
+    [self setValue:[NSNumber numberWithInt:val] forKey:KEY_LOCATION_UPDATE_INTERVAL];
+}
+
+-(int)locationUpdateInterval{
+    NSNumber* value = [self valueForKey:KEY_LOCATION_UPDATE_INTERVAL withDefault:[NSNumber numberWithInt:10]];
+    return [value intValue];
 }
 
 

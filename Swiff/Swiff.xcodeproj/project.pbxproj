@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */; };
+		7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8531931061E0078EFB2 /* Checkbox_Full.png */; };
+		7D344C941931AD91008A071B /* empty_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D344C931931AD91008A071B /* empty_checkbox.png */; };
+		7D344C971931AEE0008A071B /* radio-button-off-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D344C951931AEE0008A071B /* radio-button-off-icon.png */; };
+		7D344C981931AEE0008A071B /* radio-button-on-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D344C961931AEE0008A071B /* radio-button-on-icon.png */; };
+		7D37B9F11930717A00B2AC73 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D37B9F01930717A00B2AC73 /* QuartzCore.framework */; };
+		7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D37B9F219308F6200B2AC73 /* Settings.plist */; };
+		7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */; };
 		7D944EEA192D071100A560CC /* home_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE7192D071100A560CC /* home_filled-25.png */; };
 		7D944EEB192D071100A560CC /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE8192D071100A560CC /* settings-25.png */; };
 		7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE9192D071100A560CC /* swiff_logo.gif */; };
-		7D944EEE192D23E200A560CC /* SettingsCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EED192D23E200A560CC /* SettingsCategory.plist */; };
-		7D944EF1192D251400A560CC /* SWSettingsControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D944EF0192D251400A560CC /* SWSettingsControllerTableViewController.m */; };
 		CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */; };
 		CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D8B5E1915542E00AF6E03 /* LocationService.m */; };
 		CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F3205190D363B00D66E1C /* JsonSerializer.m */; };
 		CE6F320C190D51D900D66E1C /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F320B190D51D900D66E1C /* TestObject.m */; };
 		CE6F320F190D5E3600D66E1C /* RelatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F320E190D5E3600D66E1C /* RelatedObject.m */; };
-		CE7310861916AF0F003C6CE1 /* UserSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE7310851916AF0F003C6CE1 /* UserSettings.plist */; };
 		CE767EAF1916015A00629F65 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE767EAE1916015A00629F65 /* MainStoryboard.storyboard */; };
 		CE767EB5191606B300629F65 /* SWStartUpControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE767EB4191606B300629F65 /* SWStartUpControllerViewController.m */; };
 		CE767EBB1916177A00629F65 /* SWRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE767EBA1916177A00629F65 /* SWRegistrationViewController.m */; };
@@ -34,12 +39,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkbox_ Empty.png"; path = "Swiff images/Checkbox_ Empty.png"; sourceTree = SOURCE_ROOT; };
+		7D32C8531931061E0078EFB2 /* Checkbox_Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Checkbox_Full.png; path = "Swiff images/Checkbox_Full.png"; sourceTree = SOURCE_ROOT; };
+		7D344C931931AD91008A071B /* empty_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty_checkbox.png; path = "Swiff images/empty_checkbox.png"; sourceTree = SOURCE_ROOT; };
+		7D344C951931AEE0008A071B /* radio-button-off-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "radio-button-off-icon.png"; path = "Swiff images/radio-button-off-icon.png"; sourceTree = SOURCE_ROOT; };
+		7D344C961931AEE0008A071B /* radio-button-on-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "radio-button-on-icon.png"; path = "Swiff images/radio-button-on-icon.png"; sourceTree = SOURCE_ROOT; };
+		7D37B9F01930717A00B2AC73 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7D37B9F219308F6200B2AC73 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		7D37B9F41930A2B300B2AC73 /* SWSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSettingsController.h; sourceTree = "<group>"; };
+		7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingsController.m; sourceTree = "<group>"; };
 		7D944EE7192D071100A560CC /* home_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_filled-25.png"; path = "Swiff images/home_filled-25.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE8192D071100A560CC /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-25.png"; path = "Swiff images/settings-25.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE9192D071100A560CC /* swiff_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = swiff_logo.gif; path = "Swiff images/swiff_logo.gif"; sourceTree = SOURCE_ROOT; };
-		7D944EED192D23E200A560CC /* SettingsCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingsCategory.plist; sourceTree = "<group>"; };
-		7D944EEF192D251400A560CC /* SWSettingsControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSettingsControllerTableViewController.h; sourceTree = "<group>"; };
-		7D944EF0192D251400A560CC /* SWSettingsControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingsControllerTableViewController.m; sourceTree = "<group>"; };
 		CE6D8B5919151FD500AF6E03 /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
 		CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		CE6D8B5D1915542E00AF6E03 /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
@@ -52,7 +63,6 @@
 		CE6F320D190D5E3600D66E1C /* RelatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelatedObject.h; sourceTree = "<group>"; };
 		CE6F320E190D5E3600D66E1C /* RelatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelatedObject.m; sourceTree = "<group>"; };
 		CE6FB58D190EC6340034A827 /* SerializableFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerializableFactory.h; sourceTree = "<group>"; };
-		CE7310851916AF0F003C6CE1 /* UserSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserSettings.plist; sourceTree = "<group>"; };
 		CE767EAE1916015A00629F65 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CE767EB3191606B300629F65 /* SWStartUpControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStartUpControllerViewController.h; sourceTree = "<group>"; };
 		CE767EB4191606B300629F65 /* SWStartUpControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStartUpControllerViewController.m; sourceTree = "<group>"; };
@@ -79,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D37B9F11930717A00B2AC73 /* QuartzCore.framework in Frameworks */,
 				CEF97D39190CD3EF006C5881 /* CoreLocation.framework in Frameworks */,
 				CEF97D1C190CD3B9006C5881 /* UIKit.framework in Frameworks */,
 				CEF97D1E190CD3B9006C5881 /* Foundation.framework in Frameworks */,
@@ -136,8 +147,8 @@
 				CE767EB4191606B300629F65 /* SWStartUpControllerViewController.m */,
 				CE767EB91916177A00629F65 /* SWRegistrationViewController.h */,
 				CE767EBA1916177A00629F65 /* SWRegistrationViewController.m */,
-				7D944EEF192D251400A560CC /* SWSettingsControllerTableViewController.h */,
-				7D944EF0192D251400A560CC /* SWSettingsControllerTableViewController.m */,
+				7D37B9F41930A2B300B2AC73 /* SWSettingsController.h */,
+				7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +173,7 @@
 		CEF97D1A190CD3B9006C5881 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D37B9F01930717A00B2AC73 /* QuartzCore.framework */,
 				CEF97D38190CD3EF006C5881 /* CoreLocation.framework */,
 				CEF97D1B190CD3B9006C5881 /* UIKit.framework */,
 				CEF97D1D190CD3B9006C5881 /* Foundation.framework */,
@@ -189,6 +201,11 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D344C951931AEE0008A071B /* radio-button-off-icon.png */,
+				7D344C961931AEE0008A071B /* radio-button-on-icon.png */,
+				7D344C931931AD91008A071B /* empty_checkbox.png */,
+				7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */,
+				7D32C8531931061E0078EFB2 /* Checkbox_Full.png */,
 				7D944EE7192D071100A560CC /* home_filled-25.png */,
 				7D944EE8192D071100A560CC /* settings-25.png */,
 				7D944EE9192D071100A560CC /* swiff_logo.gif */,
@@ -199,8 +216,7 @@
 				CEF97D2D190CD3B9006C5881 /* Default.png */,
 				CEF97D2F190CD3B9006C5881 /* Default@2x.png */,
 				CEF97D31190CD3B9006C5881 /* Default-568h@2x.png */,
-				CE7310851916AF0F003C6CE1 /* UserSettings.plist */,
-				7D944EED192D23E200A560CC /* SettingsCategory.plist */,
+				7D37B9F219308F6200B2AC73 /* Settings.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -258,14 +274,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF97D26190CD3B9006C5881 /* InfoPlist.strings in Resources */,
+				7D344C981931AEE0008A071B /* radio-button-on-icon.png in Resources */,
 				CEF97D2E190CD3B9006C5881 /* Default.png in Resources */,
+				7D344C941931AD91008A071B /* empty_checkbox.png in Resources */,
 				CEF97D30190CD3B9006C5881 /* Default@2x.png in Resources */,
+				7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */,
 				CEF97D32190CD3B9006C5881 /* Default-568h@2x.png in Resources */,
+				7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */,
 				7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */,
+				7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */,
+				7D344C971931AEE0008A071B /* radio-button-off-icon.png in Resources */,
 				CE767EAF1916015A00629F65 /* MainStoryboard.storyboard in Resources */,
 				7D944EEA192D071100A560CC /* home_filled-25.png in Resources */,
-				7D944EEE192D23E200A560CC /* SettingsCategory.plist in Resources */,
-				CE7310861916AF0F003C6CE1 /* UserSettings.plist in Resources */,
 				7D944EEB192D071100A560CC /* settings-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,12 +299,12 @@
 			files = (
 				CEF97D28190CD3B9006C5881 /* main.m in Sources */,
 				CEF97D2C190CD3B9006C5881 /* SWAppDelegate.m in Sources */,
-				7D944EF1192D251400A560CC /* SWSettingsControllerTableViewController.m in Sources */,
 				CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */,
 				CE6F320C190D51D900D66E1C /* TestObject.m in Sources */,
 				CE6F320F190D5E3600D66E1C /* RelatedObject.m in Sources */,
 				CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */,
 				CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */,
+				7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */,
 				CE767EB5191606B300629F65 /* SWStartUpControllerViewController.m in Sources */,
 				CE767EBB1916177A00629F65 /* SWRegistrationViewController.m in Sources */,
 			);

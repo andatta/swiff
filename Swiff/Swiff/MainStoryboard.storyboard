@@ -54,6 +54,25 @@
             </objects>
             <point key="canvasLocation" x="-1150" y="264"/>
         </scene>
+        <!--Settings Controller - Settings-->
+        <scene sceneID="Acl-zr-3Cz">
+            <objects>
+                <viewController id="hFV-Rn-fRh" customClass="SWSettingsController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cVY-3K-gOb"/>
+                        <viewControllerLayoutGuide type="bottom" id="MRO-Xw-8pX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qyA-Ts-0Bv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-25.png" id="BTF-Ym-A0M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nD-qp-89M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1150" y="970"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gv9-Rj-Vzs">
             <objects>
@@ -66,31 +85,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="Eky-Xb-peJ" kind="relationship" relationship="viewControllers" id="v1X-1A-J2G"/>
-                        <segue destination="fcY-JR-9IV" kind="relationship" relationship="viewControllers" id="q0b-qI-QsM"/>
+                        <segue destination="hFV-Rn-fRh" kind="relationship" relationship="viewControllers" id="06a-ph-0TL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLU-E1-EUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1692" y="572"/>
-        </scene>
-        <!--Settings Controller Table View Controller - Settings-->
-        <scene sceneID="6gv-AB-4np">
-            <objects>
-                <tableViewController id="fcY-JR-9IV" customClass="SWSettingsControllerTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oXD-Fz-g0S">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="fcY-JR-9IV" id="clX-ZT-xUT"/>
-                            <outlet property="delegate" destination="fcY-JR-9IV" id="oDP-xw-fUY"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-25.png" id="a3x-TV-Zen"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XhU-ul-qn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1124" y="965"/>
         </scene>
         <!--Start Up Controller View Controller-->
         <scene sceneID="R9D-q6-ubZ">

@@ -19,4 +19,8 @@
 -(NSString*)testKey;
 -(void)setIsRegistered:(BOOL)val;
 -(BOOL)isRegistered;
+-(void)setLocationUpdate:(BOOL)val;
+-(BOOL)locationUpdate;
+-(void)setLocationUpdateInterval:(int)val;
+-(int)locationUpdateInterval;
 @end
