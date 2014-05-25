@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SWAppDelegate.h"
+#import "LocationService.h"
 
 @interface SWStartUpControllerViewController : UIViewController
 @property IBOutlet UIActivityIndicatorView* activityIndicator;
-@property IBOutlet UIButton* registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
 @property SWAppDelegate* appdelegate;
 @end

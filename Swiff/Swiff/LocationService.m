@@ -32,7 +32,7 @@ NSString* currentLongitude;
         locationManager.distanceFilter = 200;
         locationManager.pausesLocationUpdatesAutomatically = YES;
         locationManager.activityType = CLActivityTypeAutomotiveNavigation;
-        
+        NSLog(@"start updating locations");
         [locationManager startUpdatingLocation];
     }
     return self;

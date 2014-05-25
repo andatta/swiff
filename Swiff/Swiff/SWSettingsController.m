@@ -92,6 +92,16 @@
     [self.settingsView reloadData];
 }
 
+-(void)presentMerchantForm{
+    self.merchantController = [self.storyboard instantiateViewControllerWithIdentifier:@"enterMerchant"];
+    self.merchantController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:self.merchantController animated:YES completion:nil];
+}
+
+-(void)dismissMerchantForm{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -225,6 +235,8 @@
             self.locationIntervalsView.hidden = NO;
             [self.view addSubview:self.locationIntervalsView];
             [self.locationIntervalsView reloadData];
+        }else if([@"update_merchant" isEqual:[option valueForKey:@"item"]]){
+            [self presentMerchantForm];
         }
     }else{
         self.locationIntervalsView.hidden = YES;

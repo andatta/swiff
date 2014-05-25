@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */; };
 		7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */; };
 		7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8531931061E0078EFB2 /* Checkbox_Full.png */; };
 		7D344C941931AD91008A071B /* empty_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D344C931931AD91008A071B /* empty_checkbox.png */; };
@@ -39,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D2EE8B21932212C00D5FE79 /* SWEnterMerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWEnterMerchantController.h; sourceTree = "<group>"; };
+		7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWEnterMerchantController.m; sourceTree = "<group>"; };
 		7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkbox_ Empty.png"; path = "Swiff images/Checkbox_ Empty.png"; sourceTree = SOURCE_ROOT; };
 		7D32C8531931061E0078EFB2 /* Checkbox_Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Checkbox_Full.png; path = "Swiff images/Checkbox_Full.png"; sourceTree = SOURCE_ROOT; };
 		7D344C931931AD91008A071B /* empty_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty_checkbox.png; path = "Swiff images/empty_checkbox.png"; sourceTree = SOURCE_ROOT; };
@@ -149,6 +152,8 @@
 				CE767EBA1916177A00629F65 /* SWRegistrationViewController.m */,
 				7D37B9F41930A2B300B2AC73 /* SWSettingsController.h */,
 				7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */,
+				7D2EE8B21932212C00D5FE79 /* SWEnterMerchantController.h */,
+				7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF97D28190CD3B9006C5881 /* main.m in Sources */,
+				7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */,
 				CEF97D2C190CD3B9006C5881 /* SWAppDelegate.m in Sources */,
 				CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */,
 				CE6F320C190D51D900D66E1C /* TestObject.m in Sources */,

@@ -10,10 +10,14 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "SettingsManager.h"
+#import "SWEnterMerchantController.h"
 @interface SWSettingsController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate>
 
 @property UITableView* settingsView;
 @property NSArray* settings;
 @property UITableView* locationIntervalsView;
 @property NSArray* locationUpdateIntervals;
+@property SWEnterMerchantController* merchantController;
+
+-(void)dismissMerchantForm;
 @end

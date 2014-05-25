@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
     self.appdelegate = [[UIApplication sharedApplication]delegate];
+    //init location service
+    [LocationService instance];
     [[SettingsManager instance]setIsRegistered:YES];
 	if([[SettingsManager instance]isRegistered]){
         self.activityIndicator.hidden = NO;
