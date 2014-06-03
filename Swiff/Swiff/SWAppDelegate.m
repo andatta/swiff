@@ -17,6 +17,11 @@
     [SettingsManager instance];
     //initialize location service
     [LocationService instance];
+    //register for remote push notifications
+    [[UIApplication sharedApplication]registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound)];
+    //check for remote notifications
+    NSDictionary* notificationData = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    [self handleRemoteNotification:notificationData];
     return YES;
 }
 
@@ -49,6 +54,23 @@
     [[SettingsManager instance] saveData];
     //stop location updates
     [[LocationService instance]stopLocationService];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSLog(@"Push token: %@", deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"Error in registration. Error: %@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"Received remote notification");
+    [self handleRemoteNotification:userInfo];
+}
+
+-(void)handleRemoteNotification:(NSDictionary*)notificationData{
+    //handle notification
 }
 
 -(void)changeRootController:(UIViewController *)rootController{
