@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "SWAppDelegate.h"
+#import "SWCustomer.h"
+#import "SWNetworkCommunicator.h"
+#import "SWNetworkException.h"
 @interface SWRegistrationViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property UIView* contentView;
@@ -18,6 +22,6 @@
 @property UISegmentedControl* radioBtn;
 @property UIButton* submitBtn;
 @property UIDatePicker* datePicker;
-
+@property UIView* progressIndicator;
 @property SWAppDelegate* appDelegate;
 @end

@@ -200,18 +200,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" image="swiff_logo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="m2J-8R-FHc">
-                                <rect key="frame" x="93" y="103" width="135" height="92"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="jBm-YR-vgY"/>
-                                    <constraint firstAttribute="height" constant="100" id="pXH-tU-jJv"/>
-                                </constraints>
-                            </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0dg-vX-VqD">
                                 <rect key="frame" x="142" y="332" width="37" height="37"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKq-dS-phC">
-                                <rect key="frame" x="118" y="482" width="85" height="30"/>
+                                <rect key="frame" x="37" y="494" width="249" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="REGISTER">
@@ -221,10 +214,20 @@
                                     <segue destination="FNx-5B-vXf" kind="push" id="6hN-Vn-xKz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cawver" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-yC-2pl">
+                                <rect key="frame" x="86" y="63" width="149" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cawver-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="QEr-Fn-0ov">
+                                <rect key="frame" x="64" y="121" width="195" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.43036235793041666" green="0.28157430617796297" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="m2J-8R-FHc" firstAttribute="top" secondItem="S8a-Os-3qn" secondAttribute="top" constant="105" id="Dzl-6Z-8U2"/>
                             <constraint firstAttribute="bottom" secondItem="0dg-vX-VqD" secondAttribute="bottom" constant="199" id="FcK-cH-Hgl"/>
                             <constraint firstItem="0dg-vX-VqD" firstAttribute="centerX" secondItem="S8a-Os-3qn" secondAttribute="centerX" id="w9p-8s-NtU"/>
                         </constraints>
@@ -274,9 +277,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cawver-logo.png" width="350" height="308"/>
         <image name="home_filled-25.png" width="25" height="25"/>
         <image name="settings-25.png" width="25" height="25"/>
-        <image name="swiff_logo.gif" width="150" height="61"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -16,6 +16,7 @@ NSString* KEY_TEST_VALUE = @"testKey";
 NSString* KEY_IS_REGISTERED = @"isRegistered";
 NSString* KEY_LOCATION_UPDATE = @"locationUpdate";
 NSString* KEY_LOCATION_UPDATE_INTERVAL = @"locationUpdateInterval";
+NSString* KEY_DEVICE_TOKEN = @"deviceToken";
 
 +(id)instance{
     if(instance == nil){
@@ -111,6 +112,15 @@ NSString* KEY_LOCATION_UPDATE_INTERVAL = @"locationUpdateInterval";
 -(int)locationUpdateInterval{
     NSNumber* value = [self valueForKey:KEY_LOCATION_UPDATE_INTERVAL withDefault:[NSNumber numberWithInt:10]];
     return [value intValue];
+}
+
+-(void)setDeviceToken:(NSString *)val{
+    [self setValue:val forKey:KEY_DEVICE_TOKEN];
+}
+
+-(NSString*)deviceToken{
+    NSString* val = [self valueForKey:KEY_DEVICE_TOKEN withDefault:@""];
+    return val;
 }
 
 

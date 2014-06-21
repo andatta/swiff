@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:44/255.f green:196/255.f blue:192/255.f alpha:1.0];
     self.appdelegate = [[UIApplication sharedApplication]delegate];
     //init location service
     [LocationService instance];

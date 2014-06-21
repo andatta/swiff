@@ -23,4 +23,6 @@
 -(BOOL)locationUpdate;
 -(void)setLocationUpdateInterval:(int)val;
 -(int)locationUpdateInterval;
+-(NSString*)deviceToken;
+-(void)setDeviceToken:(NSString*)val;
 @end

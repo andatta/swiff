@@ -39,10 +39,8 @@
 }
 
 - (void)submitBtnClicked:(id)sender {
-    [[SettingsManager instance]setIsRegistered:YES];
-    UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
-    [self.appDelegate changeRootController:tabBarController];
-    
+    [self showProgressIndicator];
+    [self registerCustomer];
 }
 
 
@@ -202,6 +200,58 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [self enableSubmitBtnIfNeeded];
 }
+
+-(void)registerCustomer{
+    SWCustomer* customer = [[SWCustomer alloc]init];
+    customer.customerId = @"123456789";//[[[UIDevice currentDevice]identifierForVendor]UUIDString];
+    customer.first_name = self.firstNameTextField.text;
+    customer.last_name = self.lastNameTextField.text;
+    customer.dob = @"1990-01-01";//self.datePickerBtn.titleLabel.text;
+    customer.email = self.emailTextField.text;
+    customer.gender = self.radioBtn.selectedSegmentIndex == 0 ? @"Male" : @"Female";
+    customer.mobile = @"7200490071"; //To do: need to get mobile number
+    customer.deviceOsName = @"IOS";
+    SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
+    if([comm registerCustomer:customer]){
+        [comm registerForPush:customer.customerId withToken:[[SettingsManager instance]deviceToken]];
+        [self removeProgressIndicator];
+        [[SettingsManager instance]setIsRegistered:YES];
+        UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+        [self.appDelegate changeRootController:tabBarController];
+    }
+
+}
+
+-(void)showProgressIndicator{
+    if(self.progressIndicator == nil){
+        self.progressIndicator = [[UIView alloc]initWithFrame:CGRectMake(20, 200, 280, 80)];
+        self.progressIndicator.backgroundColor = [UIColor lightGrayColor];
+        UIView* contentView = [[UIView alloc]initWithFrame:CGRectMake(1, 1, 278, 78)];
+        contentView.backgroundColor = [UIColor whiteColor];
+        [self.progressIndicator addSubview:contentView];
+        UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(10, 20, 50, 50)];
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+        [indicator startAnimating];
+        [contentView addSubview:indicator];
+        UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(50, 10, 200, 50)];
+        label.text = @"Please wait while you are being registered";
+        label.font = [UIFont systemFontOfSize:13.0f];
+        label.numberOfLines =0;
+        label.lineBreakMode = NSLineBreakByWordWrapping;
+        [contentView addSubview:label];
+    }
+    [self.progressIndicator setHidden:NO];
+    [self.view addSubview:self.progressIndicator];
+}
+
+-(void)removeProgressIndicator{
+    if(self.progressIndicator != nil){
+        [self.progressIndicator setHidden:YES];
+        [self.progressIndicator removeFromSuperview];
+    }
+}
+
+
 
 
 @end
