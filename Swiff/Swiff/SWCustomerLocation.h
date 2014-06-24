@@ -11,5 +11,7 @@
 #import "SerializableFactory.h"
 
 @interface SWCustomerLocation : NSObject<Serializable, SerializableFactory>
-
+@property float latitude;
+@property float longitude;
+@property NSString* device_id;
 @end

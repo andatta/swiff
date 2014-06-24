@@ -8,7 +8,7 @@
 
 #import "LocationService.h"
 #import "SettingsManager.h"
-
+#import "SWCustomerLocation.h"
 @implementation LocationService
 
 static LocationService* _instance = nil;
@@ -16,6 +16,9 @@ static LocationService* _instance = nil;
 CLLocationManager* locationManager;
 NSString* currentLatitide;
 NSString* currentLongitude;
+
+float latitudeInFloat;
+float longitudeInFloat;
 
 +(id)instance{
     if(_instance == nil){
@@ -44,6 +47,8 @@ didUpdateLocations:(NSArray *)locations{
     
     CLLocation* location = [locations lastObject];
     NSLog(@"latitude %+.6f, longitude %+.6f\n", location.coordinate.latitude, location.coordinate.longitude);
+    latitudeInFloat = location.coordinate.latitude;
+    longitudeInFloat = location.coordinate.longitude;
     currentLatitide = [[NSNumber numberWithFloat:location.coordinate.latitude]stringValue];
     currentLongitude = [[NSNumber numberWithFloat:location.coordinate.longitude]stringValue];
 }
@@ -73,7 +78,12 @@ didUpdateLocations:(NSArray *)locations{
 }
 
 -(void)updateLocation{
-    //update location
+    SWCustomerLocation* location = [[SWCustomerLocation alloc]init];
+    location.latitude = latitudeInFloat;
+    location.longitude = longitudeInFloat;
+    location.device_id = @"123456789";// to do: get device identifier
+    SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
+    [comm updateLocation:location];
 }
 
 -(void)locationUpdateIntervalChanged{
@@ -82,4 +92,20 @@ didUpdateLocations:(NSArray *)locations{
     }
     [self startUpdatingLocation];
 }
+
+-(void)requestComletedWithData:(NSData*)data{
+    NSLog(@"location updated: %@", data);
+}
+-(void)requestFailedWithError:(NSError*)error{
+    NSLog(@"location update falied with error: %@", error.description);
+}
+
+-(float)latitude{
+    return latitudeInFloat;
+}
+
+-(float)longitude{
+    return longitudeInFloat;
+}
+
 @end

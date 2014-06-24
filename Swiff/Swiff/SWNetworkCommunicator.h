@@ -13,6 +13,8 @@
 #import "SWNetworkException.h"
 #import "SWNetwork.h"
 #import "SWNetworkDelegate.h"
+#import "SWCustomerLocation.h"
+#import "SWMerchantOutlet.h"
 
 @interface SWNetworkCommunicator : NSObject<NSURLConnectionDelegate>
 @property NSDictionary* endpointProperties;
@@ -21,4 +23,6 @@
 @property id<SWNetworkDelegate>delegate;
 -(BOOL)registerCustomer:(SWCustomer*)customer;
 -(BOOL)registerForPush:(NSString*)customerId withToken:(NSString*)deviceToken;
+-(void)updateLocation:(SWCustomerLocation*)location;
+-(BOOL)saveMercahntOutlet:(SWMerchantOutlet*)outlet;
 @end

@@ -100,4 +100,35 @@
     }
     return YES;
 }
+
+-(void)updateLocation:(SWCustomerLocation *)location{
+    SWNetwork* network = [[SWNetwork alloc]init];
+    NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"update_location"]];
+    NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
+    [urlString appendString:@"?customerId="];
+    [urlString appendString:location.device_id];
+    NSLog(@"request url: %@", urlString);
+    [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
+    NSString* requestBody = nil;
+    [JsonSerializer objectToJson:location String:&requestBody];
+    [network asyncPostWithBody:requestBody delegate:self];
+
+}
+
+-(BOOL)saveMercahntOutlet:(SWMerchantOutlet *)outlet{
+    SWNetwork* network = [[SWNetwork alloc]init];
+    NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"save_merchant_outlet"]];
+    NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
+    NSLog(@"request url: %@", urlString);
+    [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
+    NSString* requestBody = nil;
+    [JsonSerializer objectToJson:outlet String:&requestBody];
+    NSHTTPURLResponse* response = nil;
+    NSData* data = [network postWithBody:requestBody returningResponse:&response];
+    NSLog(@"response data: %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    if([response statusCode] != 200 && [response statusCode] != 201){
+        return NO;
+    }
+    return YES;
+}
 @end

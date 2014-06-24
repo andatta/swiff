@@ -19,5 +19,8 @@
 -(void)startUpdatingLocation;
 -(void)locationUpdateIntervalChanged;
 
+-(float)latitude;
+-(float)longitude;
+
 @property NSTimer* locationUpdateTimer;
 @end

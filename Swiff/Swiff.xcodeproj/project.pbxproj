@@ -23,6 +23,7 @@
 		7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D37B9F219308F6200B2AC73 /* Settings.plist */; };
 		7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */; };
 		7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D420A37195736C5009AE282 /* SWCustomerLocation.m */; };
+		7D537C77195A010A00EF69EE /* SWMerchantOutlet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D537C76195A010A00EF69EE /* SWMerchantOutlet.m */; };
 		7D862E1C194C1AA6001C7DCE /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D862E1B194C1AA6001C7DCE /* ic_launcher.png */; };
 		7D944EEA192D071100A560CC /* home_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE7192D071100A560CC /* home_filled-25.png */; };
 		7D944EEB192D071100A560CC /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE8192D071100A560CC /* settings-25.png */; };
@@ -74,6 +75,8 @@
 		7D420A3519572E97009AE282 /* SWNetworkDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWNetworkDelegate.h; sourceTree = "<group>"; };
 		7D420A36195736C5009AE282 /* SWCustomerLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCustomerLocation.h; sourceTree = "<group>"; };
 		7D420A37195736C5009AE282 /* SWCustomerLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCustomerLocation.m; sourceTree = "<group>"; };
+		7D537C75195A010A00EF69EE /* SWMerchantOutlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMerchantOutlet.h; sourceTree = "<group>"; };
+		7D537C76195A010A00EF69EE /* SWMerchantOutlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMerchantOutlet.m; sourceTree = "<group>"; };
 		7D862E1B194C1AA6001C7DCE /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_launcher.png; path = "Swiff images/ic_launcher.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE7192D071100A560CC /* home_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_filled-25.png"; path = "Swiff images/home_filled-25.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE8192D071100A560CC /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-25.png"; path = "Swiff images/settings-25.png"; sourceTree = SOURCE_ROOT; };
@@ -138,6 +141,8 @@
 				7D1A37D0194D6434002D40DB /* SWCustomer.m */,
 				7D420A36195736C5009AE282 /* SWCustomerLocation.h */,
 				7D420A37195736C5009AE282 /* SWCustomerLocation.m */,
+				7D537C75195A010A00EF69EE /* SWMerchantOutlet.h */,
+				7D537C76195A010A00EF69EE /* SWMerchantOutlet.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 			files = (
 				CEF97D28190CD3B9006C5881 /* main.m in Sources */,
 				7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */,
+				7D537C77195A010A00EF69EE /* SWMerchantOutlet.m in Sources */,
 				CEF97D2C190CD3B9006C5881 /* SWAppDelegate.m in Sources */,
 				7D1A37D1194D6434002D40DB /* SWCustomer.m in Sources */,
 				CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */,
