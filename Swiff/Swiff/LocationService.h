@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface LocationService : NSObject<CLLocationManagerDelegate>
+#import "SWNetworkCommunicator.h"
+
+@interface LocationService : NSObject<CLLocationManagerDelegate, SWNetworkDelegate>
 +(id)instance;
 -(void)getCurrentLatitude:(NSString**)latitude andLongitude:(NSString**)longitude;
 -(void)stopLocationService;
+
+-(void)startUpdatingLocation;
+-(void)locationUpdateIntervalChanged;
+
+@property NSTimer* locationUpdateTimer;
 @end

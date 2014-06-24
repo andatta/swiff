@@ -37,6 +37,25 @@
     return url;
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    NSLog(@"response received");
+    self.response = response;
+    self.responseData = [[NSMutableData alloc]init];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    NSLog(@"request failed with error :%@", error.description);
+    [self.delegate requestFailedWithError:error];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    [self.responseData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    [self.delegate requestComletedWithData:self.responseData];
+}
+
 -(BOOL)registerCustomer:(SWCustomer *)customer{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"register_customer"]];
@@ -56,7 +75,7 @@
     return YES;
 }
 
--(void)registerForPush:(NSString *)customerId withToken:(NSString *)deviceToken{
+-(BOOL)registerForPush:(NSString *)customerId withToken:(NSString *)deviceToken{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"register_push"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
@@ -64,14 +83,21 @@
     [urlString appendString:customerId];
     NSLog(@"request url: %@", urlString);
     [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
-    NSMutableString* requestBody = [[NSMutableString alloc]init];
+    NSString* requestBody;
     NSLog(@"device token: %@", deviceToken);
-    [requestBody appendString:@"{\"push_id\":"];
-    [requestBody appendString:deviceToken];
-    [requestBody appendString:@"}"];
+    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:deviceToken, @"push_id", nil];
+    NSError* error = nil;
+    if([NSJSONSerialization isValidJSONObject:data]){
+        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:data options:NSJSONWritingPrettyPrinted error:&error];
+        requestBody = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
     NSLog(@"request body: %@", requestBody);
     NSHTTPURLResponse* response = nil;
-    NSData* data = [network postWithBody:requestBody returningResponse:&response];
-    NSLog(@"response data: %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    NSData* responseData = [network postWithBody:requestBody returningResponse:&response];
+    NSLog(@"response data: %@", [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding]);
+    if([response statusCode] != 200 && [response statusCode] != 201){
+        return NO;
+    }
+    return YES;
 }
 @end

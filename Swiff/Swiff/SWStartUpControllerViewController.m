@@ -51,6 +51,7 @@
 -(void)showUserTabs{
     UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
     [self.appdelegate changeRootController:tabBarController];
+    [[LocationService instance]startUpdatingLocation];
 }
 
 @end

@@ -12,9 +12,13 @@
 #import "JsonSerializer.h"
 #import "SWNetworkException.h"
 #import "SWNetwork.h"
-@interface SWNetworkCommunicator : NSObject
-@property NSDictionary* endpointProperties;
+#import "SWNetworkDelegate.h"
 
+@interface SWNetworkCommunicator : NSObject<NSURLConnectionDelegate>
+@property NSDictionary* endpointProperties;
+@property NSMutableData* responseData;
+@property NSURLResponse* response;
+@property id<SWNetworkDelegate>delegate;
 -(BOOL)registerCustomer:(SWCustomer*)customer;
--(void)registerForPush:(NSString*)customerId withToken:(NSString*)deviceToken;
+-(BOOL)registerForPush:(NSString*)customerId withToken:(NSString*)deviceToken;
 @end

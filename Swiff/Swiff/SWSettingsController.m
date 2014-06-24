@@ -7,7 +7,7 @@
 //
 
 #import "SWSettingsController.h"
-
+#import "LocationService.h"
 @interface SWSettingsController ()
 
 @end
@@ -90,6 +90,7 @@
     self.locationIntervalsView.hidden = YES;
     [self.locationIntervalsView removeFromSuperview];
     [self.settingsView reloadData];
+    [[LocationService instance]locationUpdateIntervalChanged];
 }
 
 -(void)presentMerchantForm{

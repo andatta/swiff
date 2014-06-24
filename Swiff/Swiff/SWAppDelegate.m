@@ -58,7 +58,10 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"Push token: %@", deviceToken);
-    [[SettingsManager instance]setDeviceToken:deviceToken];
+    NSString* deviceTokenString = [[[NSString stringWithFormat:@"%@",deviceToken]
+                           stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"Push token string: %@", deviceTokenString);
+    [[SettingsManager instance]setDeviceToken:deviceTokenString];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{

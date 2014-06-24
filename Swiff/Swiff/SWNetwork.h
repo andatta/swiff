@@ -15,4 +15,8 @@
 -(NSData*)getReturningResponse:(NSHTTPURLResponse**)response;
 -(NSData*)postWithBody:(NSString*)body returningResponse:(NSHTTPURLResponse**)response;
 -(NSData*)putWithBody:(NSString*)body returningResponse:(NSHTTPURLResponse**)response;
+
+-(void)asyncgetWithDelegate:(id)delegate;
+-(void)asyncPostWithBody:(NSString*)body delegate:(id)delegate;
+-(void)asyncPutWithBody:(NSString*)body delegate:(id)delegate;
 @end

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D167223194C3F650005FC96 /* cawver-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D167222194C3F650005FC96 /* cawver-logo.png */; };
+		7D1A37D1194D6434002D40DB /* SWCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A37D0194D6434002D40DB /* SWCustomer.m */; };
+		7D1A37D5194D745D002D40DB /* SWNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A37D4194D745D002D40DB /* SWNetwork.m */; };
+		7D1A37D9194D7FC6002D40DB /* SWNetworkException.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A37D8194D7FC6002D40DB /* SWNetworkException.m */; };
+		7D1A37DC194D7FF9002D40DB /* SWNetworkCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A37DB194D7FF9002D40DB /* SWNetworkCommunicator.m */; };
+		7D1A37E0194D8084002D40DB /* endpointProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D1A37DF194D8084002D40DB /* endpointProperties.plist */; };
 		7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */; };
 		7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */; };
 		7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8531931061E0078EFB2 /* Checkbox_Full.png */; };
@@ -16,9 +22,13 @@
 		7D37B9F11930717A00B2AC73 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D37B9F01930717A00B2AC73 /* QuartzCore.framework */; };
 		7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D37B9F219308F6200B2AC73 /* Settings.plist */; };
 		7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */; };
+		7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D420A37195736C5009AE282 /* SWCustomerLocation.m */; };
+		7D862E1C194C1AA6001C7DCE /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D862E1B194C1AA6001C7DCE /* ic_launcher.png */; };
 		7D944EEA192D071100A560CC /* home_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE7192D071100A560CC /* home_filled-25.png */; };
 		7D944EEB192D071100A560CC /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE8192D071100A560CC /* settings-25.png */; };
 		7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7D944EE9192D071100A560CC /* swiff_logo.gif */; };
+		7DCDAFA41956AB080064F6A0 /* SWProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDAFA31956AB080064F6A0 /* SWProgressIndicator.m */; };
+		7DCDAFA71956B1800064F6A0 /* SWGeneralStateDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDAFA61956B1800064F6A0 /* SWGeneralStateDialog.m */; };
 		CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */; };
 		CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D8B5E1915542E00AF6E03 /* LocationService.m */; };
 		CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F3205190D363B00D66E1C /* JsonSerializer.m */; };
@@ -40,6 +50,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D167222194C3F650005FC96 /* cawver-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cawver-logo.png"; path = "Swiff images/cawver-logo.png"; sourceTree = SOURCE_ROOT; };
+		7D1A37CF194D6434002D40DB /* SWCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCustomer.h; sourceTree = "<group>"; };
+		7D1A37D0194D6434002D40DB /* SWCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCustomer.m; sourceTree = "<group>"; };
+		7D1A37D3194D745D002D40DB /* SWNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNetwork.h; sourceTree = "<group>"; };
+		7D1A37D4194D745D002D40DB /* SWNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNetwork.m; sourceTree = "<group>"; };
+		7D1A37D7194D7FC6002D40DB /* SWNetworkException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNetworkException.h; sourceTree = "<group>"; };
+		7D1A37D8194D7FC6002D40DB /* SWNetworkException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNetworkException.m; sourceTree = "<group>"; };
+		7D1A37DA194D7FF9002D40DB /* SWNetworkCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNetworkCommunicator.h; sourceTree = "<group>"; };
+		7D1A37DB194D7FF9002D40DB /* SWNetworkCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNetworkCommunicator.m; sourceTree = "<group>"; };
+		7D1A37DF194D8084002D40DB /* endpointProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = endpointProperties.plist; sourceTree = "<group>"; };
 		7D2EE8B21932212C00D5FE79 /* SWEnterMerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWEnterMerchantController.h; sourceTree = "<group>"; };
 		7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWEnterMerchantController.m; sourceTree = "<group>"; };
 		7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkbox_ Empty.png"; path = "Swiff images/Checkbox_ Empty.png"; sourceTree = SOURCE_ROOT; };
@@ -51,9 +71,17 @@
 		7D37B9F219308F6200B2AC73 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7D37B9F41930A2B300B2AC73 /* SWSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSettingsController.h; sourceTree = "<group>"; };
 		7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingsController.m; sourceTree = "<group>"; };
+		7D420A3519572E97009AE282 /* SWNetworkDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWNetworkDelegate.h; sourceTree = "<group>"; };
+		7D420A36195736C5009AE282 /* SWCustomerLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCustomerLocation.h; sourceTree = "<group>"; };
+		7D420A37195736C5009AE282 /* SWCustomerLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCustomerLocation.m; sourceTree = "<group>"; };
+		7D862E1B194C1AA6001C7DCE /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_launcher.png; path = "Swiff images/ic_launcher.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE7192D071100A560CC /* home_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_filled-25.png"; path = "Swiff images/home_filled-25.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE8192D071100A560CC /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-25.png"; path = "Swiff images/settings-25.png"; sourceTree = SOURCE_ROOT; };
 		7D944EE9192D071100A560CC /* swiff_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = swiff_logo.gif; path = "Swiff images/swiff_logo.gif"; sourceTree = SOURCE_ROOT; };
+		7DCDAFA21956AB080064F6A0 /* SWProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWProgressIndicator.h; sourceTree = "<group>"; };
+		7DCDAFA31956AB080064F6A0 /* SWProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWProgressIndicator.m; sourceTree = "<group>"; };
+		7DCDAFA51956B1800064F6A0 /* SWGeneralStateDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGeneralStateDialog.h; sourceTree = "<group>"; };
+		7DCDAFA61956B1800064F6A0 /* SWGeneralStateDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGeneralStateDialog.m; sourceTree = "<group>"; };
 		CE6D8B5919151FD500AF6E03 /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
 		CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		CE6D8B5D1915542E00AF6E03 /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
@@ -103,6 +131,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1A37CE194D6404002D40DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D1A37CF194D6434002D40DB /* SWCustomer.h */,
+				7D1A37D0194D6434002D40DB /* SWCustomer.m */,
+				7D420A36195736C5009AE282 /* SWCustomerLocation.h */,
+				7D420A37195736C5009AE282 /* SWCustomerLocation.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7D1A37D2194D744C002D40DB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D1A37D3194D745D002D40DB /* SWNetwork.h */,
+				7D1A37D4194D745D002D40DB /* SWNetwork.m */,
+				7D1A37DA194D7FF9002D40DB /* SWNetworkCommunicator.h */,
+				7D1A37DB194D7FF9002D40DB /* SWNetworkCommunicator.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		7D1A37D6194D7FA8002D40DB /* Exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				7D1A37D7194D7FC6002D40DB /* SWNetworkException.h */,
+				7D1A37D8194D7FC6002D40DB /* SWNetworkException.m */,
+			);
+			name = Exceptions;
+			sourceTree = "<group>";
+		};
+		7DCDAFA11956AAE50064F6A0 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7DCDAFA21956AB080064F6A0 /* SWProgressIndicator.h */,
+				7DCDAFA31956AB080064F6A0 /* SWProgressIndicator.m */,
+				7DCDAFA51956B1800064F6A0 /* SWGeneralStateDialog.h */,
+				7DCDAFA61956B1800064F6A0 /* SWGeneralStateDialog.m */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
 		CE6D8B5C191553B800AF6E03 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +198,7 @@
 			children = (
 				CE6F3208190D369F00D66E1C /* Serializable.h */,
 				CE6FB58D190EC6340034A827 /* SerializableFactory.h */,
+				7D420A3519572E97009AE282 /* SWNetworkDelegate.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -190,6 +261,10 @@
 		CEF97D21190CD3B9006C5881 /* Swiff */ = {
 			isa = PBXGroup;
 			children = (
+				7DCDAFA11956AAE50064F6A0 /* CustomViews */,
+				7D1A37D6194D7FA8002D40DB /* Exceptions */,
+				7D1A37D2194D744C002D40DB /* Network */,
+				7D1A37CE194D6404002D40DB /* Model */,
 				CE767EB21916067800629F65 /* Controllers */,
 				CE6D8B5C191553B800AF6E03 /* Location */,
 				CE6F3209190D51A400D66E1C /* Test */,
@@ -206,6 +281,8 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D167222194C3F650005FC96 /* cawver-logo.png */,
+				7D862E1B194C1AA6001C7DCE /* ic_launcher.png */,
 				7D344C951931AEE0008A071B /* radio-button-off-icon.png */,
 				7D344C961931AEE0008A071B /* radio-button-on-icon.png */,
 				7D344C931931AD91008A071B /* empty_checkbox.png */,
@@ -222,6 +299,7 @@
 				CEF97D2F190CD3B9006C5881 /* Default@2x.png */,
 				CEF97D31190CD3B9006C5881 /* Default-568h@2x.png */,
 				7D37B9F219308F6200B2AC73 /* Settings.plist */,
+				7D1A37DF194D8084002D40DB /* endpointProperties.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -282,9 +360,11 @@
 				7D344C981931AEE0008A071B /* radio-button-on-icon.png in Resources */,
 				CEF97D2E190CD3B9006C5881 /* Default.png in Resources */,
 				7D344C941931AD91008A071B /* empty_checkbox.png in Resources */,
+				7D862E1C194C1AA6001C7DCE /* ic_launcher.png in Resources */,
 				CEF97D30190CD3B9006C5881 /* Default@2x.png in Resources */,
 				7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */,
 				CEF97D32190CD3B9006C5881 /* Default-568h@2x.png in Resources */,
+				7D167223194C3F650005FC96 /* cawver-logo.png in Resources */,
 				7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */,
 				7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */,
 				7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */,
@@ -292,6 +372,7 @@
 				CE767EAF1916015A00629F65 /* MainStoryboard.storyboard in Resources */,
 				7D944EEA192D071100A560CC /* home_filled-25.png in Resources */,
 				7D944EEB192D071100A560CC /* settings-25.png in Resources */,
+				7D1A37E0194D8084002D40DB /* endpointProperties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,14 +386,21 @@
 				CEF97D28190CD3B9006C5881 /* main.m in Sources */,
 				7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */,
 				CEF97D2C190CD3B9006C5881 /* SWAppDelegate.m in Sources */,
+				7D1A37D1194D6434002D40DB /* SWCustomer.m in Sources */,
 				CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */,
 				CE6F320C190D51D900D66E1C /* TestObject.m in Sources */,
+				7DCDAFA71956B1800064F6A0 /* SWGeneralStateDialog.m in Sources */,
 				CE6F320F190D5E3600D66E1C /* RelatedObject.m in Sources */,
+				7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */,
 				CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */,
 				CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */,
 				7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */,
+				7D1A37D9194D7FC6002D40DB /* SWNetworkException.m in Sources */,
 				CE767EB5191606B300629F65 /* SWStartUpControllerViewController.m in Sources */,
+				7DCDAFA41956AB080064F6A0 /* SWProgressIndicator.m in Sources */,
 				CE767EBB1916177A00629F65 /* SWRegistrationViewController.m in Sources */,
+				7D1A37D5194D745D002D40DB /* SWNetwork.m in Sources */,
+				7D1A37DC194D7FF9002D40DB /* SWNetworkCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

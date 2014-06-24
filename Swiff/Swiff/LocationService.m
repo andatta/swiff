@@ -7,6 +7,7 @@
 //
 
 #import "LocationService.h"
+#import "SettingsManager.h"
 
 @implementation LocationService
 
@@ -63,5 +64,22 @@ didUpdateLocations:(NSArray *)locations{
 
 -(void)stopLocationService{
     [locationManager stopUpdatingLocation];
+}
+
+-(void)startUpdatingLocation{
+    [self updateLocation];
+    int duration = [[SettingsManager instance]locationUpdateInterval]*1000;
+    self.locationUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:duration target:self selector:@selector(updateLocation) userInfo:nil repeats:YES];
+}
+
+-(void)updateLocation{
+    //update location
+}
+
+-(void)locationUpdateIntervalChanged{
+    if(self.locationUpdateTimer != nil){
+        [self.locationUpdateTimer invalidate];
+    }
+    [self startUpdatingLocation];
 }
 @end

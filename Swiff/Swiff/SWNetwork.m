@@ -55,4 +55,20 @@
     }
     return data;
 }
+
+-(void)asyncgetWithDelegate:(id)delegate{
+    NSURLConnection* conn = [[NSURLConnection alloc]initWithRequest:self.mRequest delegate:delegate];
+}
+
+-(void)asyncPostWithBody:(NSString *)body delegate:(id)delegate{
+    self.mRequest.HTTPMethod = @"POST";
+    self.mRequest.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    NSURLConnection* conn = [[NSURLConnection alloc]initWithRequest:self.mRequest delegate:delegate];
+}
+
+-(void)asyncPutWithBody:(NSString *)body delegate:(id)delegate{
+    self.mRequest.HTTPMethod = @"PUT";
+    self.mRequest.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    NSURLConnection* conn = [[NSURLConnection alloc]initWithRequest:self.mRequest delegate:delegate];
+}
 @end

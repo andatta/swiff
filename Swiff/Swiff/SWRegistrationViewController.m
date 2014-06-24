@@ -8,7 +8,7 @@
 
 #import "SWRegistrationViewController.h"
 #import "SettingsManager.h"
-
+#import "LocationService.h"
 
 @interface SWRegistrationViewController ()
 @property bool isDateSelected;
@@ -213,32 +213,27 @@
     customer.deviceOsName = @"IOS";
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
     if([comm registerCustomer:customer]){
-        [comm registerForPush:customer.customerId withToken:[[SettingsManager instance]deviceToken]];
+        if([comm registerForPush:customer.customerId withToken:[[SettingsManager instance]deviceToken]]){
+            [self removeProgressIndicator];
+            [[SettingsManager instance]setIsRegistered:YES];
+            UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+            [self.appDelegate changeRootController:tabBarController];
+            [[LocationService instance]startUpdatingLocation];
+        }else{
+            [self removeProgressIndicator];
+            [self showErrorRibbon];
+        }
+    }else{
         [self removeProgressIndicator];
-        [[SettingsManager instance]setIsRegistered:YES];
-        UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
-        [self.appDelegate changeRootController:tabBarController];
+        [self showErrorRibbon];
     }
 
 }
 
 -(void)showProgressIndicator{
     if(self.progressIndicator == nil){
-        self.progressIndicator = [[UIView alloc]initWithFrame:CGRectMake(20, 200, 280, 80)];
-        self.progressIndicator.backgroundColor = [UIColor lightGrayColor];
-        UIView* contentView = [[UIView alloc]initWithFrame:CGRectMake(1, 1, 278, 78)];
-        contentView.backgroundColor = [UIColor whiteColor];
-        [self.progressIndicator addSubview:contentView];
-        UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(10, 20, 50, 50)];
-        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-        [indicator startAnimating];
-        [contentView addSubview:indicator];
-        UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(50, 10, 200, 50)];
-        label.text = @"Please wait while you are being registered";
-        label.font = [UIFont systemFontOfSize:13.0f];
-        label.numberOfLines =0;
-        label.lineBreakMode = NSLineBreakByWordWrapping;
-        [contentView addSubview:label];
+        self.progressIndicator = [[SWProgressIndicator alloc]initWithFrame:CGRectMake(20, 180, 280, 80)];
+        self.progressIndicator.label.text = @"Please wait while you are being registered";
     }
     [self.progressIndicator setHidden:NO];
     [self.view addSubview:self.progressIndicator];
@@ -249,6 +244,21 @@
         [self.progressIndicator setHidden:YES];
         [self.progressIndicator removeFromSuperview];
     }
+}
+
+-(void)showErrorRibbon{
+    if(self.errorRibbon == nil){
+        self.errorRibbon = [[SWGeneralStateDialog alloc]initWithFrame:CGRectMake(0, 0, 320, 60)];
+        self.errorRibbon.label.text = @"Error in registration. Please try again";
+    }
+    [self.errorRibbon setHidden:NO];
+    [self.view addSubview:self.errorRibbon];
+    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(removeErrorRibbon) userInfo:nil repeats:NO];
+}
+
+-(void)removeErrorRibbon{
+    [self.errorRibbon setHidden:YES];
+    [self.errorRibbon removeFromSuperview];
 }
 
 
