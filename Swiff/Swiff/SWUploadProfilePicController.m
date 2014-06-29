@@ -1,18 +1,18 @@
 //
-//  SWEnterMerchantController.m
+//  SWUploadProfilePicController.m
 //  Swiff
 //
-//  Created by Anutosh Datta on 25/05/14.
+//  Created by Anutosh Datta on 29/06/14.
 //  Copyright (c) 2014 TechHouse. All rights reserved.
 //
 
-#import "SWEnterMerchantController.h"
+#import "SWUploadProfilePicController.h"
 
-@interface SWEnterMerchantController ()
+@interface SWUploadProfilePicController ()
 
 @end
 
-@implementation SWEnterMerchantController
+@implementation SWUploadProfilePicController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,38 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // load latitude and longitude
-    NSString* latitude;
-    NSString* longitude;
-    [[LocationService instance]getCurrentLatitude:&latitude andLongitude:&longitude];
-    self.latitudeTextField.text = latitude;
-    self.longitudeTextField.text = longitude;
-    
-    self.merchantTextField.delegate = self;
-    self.outletTextField.delegate = self;
+    if(self.image != nil){
+        self.profileImageView.image = self.image;
+    }
+    UIBarButtonItem* uploadBtn = [[UIBarButtonItem alloc]initWithTitle:@"Upload" style:UIBarButtonItemStylePlain target:self action:@selector(uploadImage)];
+    self.navigationItem.rightBarButtonItem = uploadBtn;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)enableSubmitButtonIfNeeded{
-    if(self.merchantTextField.text.length > 0 && self.outletTextField.text.length > 0){
-        self.submitBtn.enabled = YES;
-    }else{
-        self.submitBtn.enabled = NO;
-    }
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    [self enableSubmitButtonIfNeeded];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
 }
 
 /*
@@ -71,21 +50,17 @@
 }
 */
 
-- (IBAction)submitBtnClicked:(id)sender {
+-(void)uploadImage{
     [self showProgressIndicator];
-    [self saveMerchantOutlet];
-    
+    SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
+    comm.delegate = self;
+    [comm uploadProfileImage:self.image customerId:[[[UIDevice currentDevice]identifierForVendor]UUIDString]];
 }
-
-- (IBAction)cancelBtnClicked:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 -(void)showProgressIndicator{
     if(self.progressIndicator == nil){
         self.progressIndicator = [[SWProgressIndicator alloc]initWithFrame:CGRectMake(20, 180, 280, 80)];
-        self.progressIndicator.label.text = @"Please wait while merchant outlet is saved in our servers";
+        self.progressIndicator.label.text = @"Please wait while image is saved in our servers";
     }
     [self.progressIndicator setHidden:NO];
     [self.view addSubview:self.progressIndicator];
@@ -101,7 +76,7 @@
 -(void)showErrorRibbon{
     if(self.errorRibbon == nil){
         self.errorRibbon = [[SWGeneralStateDialog alloc]initWithFrame:CGRectMake(0, 0, 320, 60)];
-        self.errorRibbon.label.text = @"Error in saving merchant outlet. Please try again";
+        self.errorRibbon.label.text = @"Error in saving image. Please try again";
     }
     [self.errorRibbon setHidden:NO];
     [self.view addSubview:self.errorRibbon];
@@ -113,28 +88,16 @@
     [self.errorRibbon removeFromSuperview];
 }
 
--(void)saveMerchantOutlet{
-    SWMerchantOutlet* outlet = [[SWMerchantOutlet alloc]init];
-    outlet.name = self.outletTextField.text;
-    outlet.merchant_name = self.merchantTextField.text;
-    outlet.latitude = [[LocationService instance]latitude];
-    outlet.longitude = [[LocationService instance]longitude];
-    SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
-    comm.delegate = self;
-    [comm saveMercahntOutlet:outlet];
-}
-
 -(void)requestComletedWithData:(NSData*)data{
     NSLog(@"request completed: %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
     [self removeProgressIndicator];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 -(void)requestFailedWithError:(NSError*)error{
     [self removeProgressIndicator];
     [self showErrorRibbon];
 }
-
 
 
 @end

@@ -14,8 +14,9 @@
 #import "SWNetworkException.h"
 #import "SWProgressIndicator.h"
 #import "SWGeneralStateDialog.h"
+#import "SWNetworkDelegate.h"
 
-@interface SWRegistrationViewController : UIViewController<UITextFieldDelegate>
+@interface SWRegistrationViewController : UIViewController<UITextFieldDelegate, SWNetworkDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property UIView* contentView;
 @property UITextField* firstNameTextField;
@@ -28,4 +29,6 @@
 @property SWProgressIndicator* progressIndicator;
 @property SWAppDelegate* appDelegate;
 @property SWGeneralStateDialog* errorRibbon;
+@property int requestCode;
+@property NSString* customerId;
 @end

@@ -19,4 +19,6 @@
 -(void)asyncgetWithDelegate:(id)delegate;
 -(void)asyncPostWithBody:(NSString*)body delegate:(id)delegate;
 -(void)asyncPutWithBody:(NSString*)body delegate:(id)delegate;
+
+-(void)uploadMultiPartData:(NSData*)multipartdata delegate:(id)delegate;
 @end

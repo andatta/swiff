@@ -16,6 +16,9 @@
 
 @implementation SWRegistrationViewController
 
+int REQUEST_REGISTER_USER = 1;
+int REQUEST_REGISTER_PUSH = 2;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -203,7 +206,7 @@
 
 -(void)registerCustomer{
     SWCustomer* customer = [[SWCustomer alloc]init];
-    customer.customerId = @"123456789";//[[[UIDevice currentDevice]identifierForVendor]UUIDString];
+    customer.customerId = [[[UIDevice currentDevice]identifierForVendor]UUIDString];
     customer.first_name = self.firstNameTextField.text;
     customer.last_name = self.lastNameTextField.text;
     customer.dob = @"1990-01-01";//self.datePickerBtn.titleLabel.text;
@@ -211,23 +214,11 @@
     customer.gender = self.radioBtn.selectedSegmentIndex == 0 ? @"Male" : @"Female";
     customer.mobile = @"7200490071"; //To do: need to get mobile number
     customer.deviceOsName = @"IOS";
+    self.customerId = customer.customerId;
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
-    if([comm registerCustomer:customer]){
-        if([comm registerForPush:customer.customerId withToken:[[SettingsManager instance]deviceToken]]){
-            [self removeProgressIndicator];
-            [[SettingsManager instance]setIsRegistered:YES];
-            UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
-            [self.appDelegate changeRootController:tabBarController];
-            [[LocationService instance]startUpdatingLocation];
-        }else{
-            [self removeProgressIndicator];
-            [self showErrorRibbon];
-        }
-    }else{
-        [self removeProgressIndicator];
-        [self showErrorRibbon];
-    }
-
+    self.requestCode = REQUEST_REGISTER_USER;
+    comm.delegate = self;
+    [comm registerCustomer:customer];
 }
 
 -(void)showProgressIndicator{
@@ -259,6 +250,30 @@
 -(void)removeErrorRibbon{
     [self.errorRibbon setHidden:YES];
     [self.errorRibbon removeFromSuperview];
+}
+
+-(void)requestComletedWithData:(NSData*)data{
+    NSLog(@"request completed: %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    if(self.requestCode == REQUEST_REGISTER_USER){
+        [self registerPush];
+    }else if(self.requestCode == REQUEST_REGISTER_PUSH){
+        [self removeProgressIndicator];
+        [[SettingsManager instance]setIsRegistered:YES];
+        UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+        [self.appDelegate changeRootController:tabBarController];
+        [[LocationService instance]startUpdatingLocation];
+    }
+}
+-(void)requestFailedWithError:(NSError*)error{
+    [self removeProgressIndicator];
+    [self showErrorRibbon];
+}
+
+-(void)registerPush{
+    SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
+    comm.delegate = self;
+    self.requestCode = REQUEST_REGISTER_PUSH;
+    [comm registerForPush:self.customerId withToken:[[SettingsManager instance]deviceToken]];
 }
 
 

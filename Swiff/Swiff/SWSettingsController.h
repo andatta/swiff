@@ -11,6 +11,8 @@
 
 #import "SettingsManager.h"
 #import "SWEnterMerchantController.h"
+#import "SWChooseProfilePicController.h"
+
 @interface SWSettingsController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate>
 
 @property UITableView* settingsView;
@@ -18,6 +20,7 @@
 @property UITableView* locationIntervalsView;
 @property NSArray* locationUpdateIntervals;
 @property SWEnterMerchantController* merchantController;
+@property SWChooseProfilePicController* profilePicController;
 
 -(void)dismissMerchantForm;
 @end

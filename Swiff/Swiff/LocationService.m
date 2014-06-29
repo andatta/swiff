@@ -73,7 +73,7 @@ didUpdateLocations:(NSArray *)locations{
 
 -(void)startUpdatingLocation{
     [self updateLocation];
-    int duration = [[SettingsManager instance]locationUpdateInterval]*1000;
+    int duration = [[SettingsManager instance]locationUpdateInterval]*60;
     self.locationUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:duration target:self selector:@selector(updateLocation) userInfo:nil repeats:YES];
 }
 
@@ -81,8 +81,9 @@ didUpdateLocations:(NSArray *)locations{
     SWCustomerLocation* location = [[SWCustomerLocation alloc]init];
     location.latitude = latitudeInFloat;
     location.longitude = longitudeInFloat;
-    location.device_id = @"123456789";// to do: get device identifier
+    location.device_id = [[[UIDevice currentDevice]identifierForVendor]UUIDString];
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
+    comm.delegate = self;
     [comm updateLocation:location];
 }
 
@@ -94,7 +95,7 @@ didUpdateLocations:(NSArray *)locations{
 }
 
 -(void)requestComletedWithData:(NSData*)data{
-    NSLog(@"location updated: %@", data);
+    NSLog(@"location updated: %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
 }
 -(void)requestFailedWithError:(NSError*)error{
     NSLog(@"location update falied with error: %@", error.description);
@@ -106,6 +107,10 @@ didUpdateLocations:(NSArray *)locations{
 
 -(float)longitude{
     return longitudeInFloat;
+}
+
+-(void)stopUpdatingLocation{
+    [self.locationUpdateTimer invalidate];
 }
 
 @end

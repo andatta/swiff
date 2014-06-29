@@ -19,10 +19,11 @@
 @interface SWNetworkCommunicator : NSObject<NSURLConnectionDelegate>
 @property NSDictionary* endpointProperties;
 @property NSMutableData* responseData;
-@property NSURLResponse* response;
+@property NSHTTPURLResponse* response;
 @property id<SWNetworkDelegate>delegate;
--(BOOL)registerCustomer:(SWCustomer*)customer;
--(BOOL)registerForPush:(NSString*)customerId withToken:(NSString*)deviceToken;
+-(void)registerCustomer:(SWCustomer*)customer;
+-(void)registerForPush:(NSString*)customerId withToken:(NSString*)deviceToken;
 -(void)updateLocation:(SWCustomerLocation*)location;
--(BOOL)saveMercahntOutlet:(SWMerchantOutlet*)outlet;
+-(void)saveMercahntOutlet:(SWMerchantOutlet*)outlet;
+-(void)uploadProfileImage:(UIImage*)image customerId:(NSString*)customerId;
 @end

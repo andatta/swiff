@@ -27,7 +27,8 @@
 {
     [super viewDidLoad];
     //init table view
-    self.settingsView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 600) style:UITableViewStyleGrouped];
+    self.title = @"SETTINGS";
+    self.settingsView = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 600) style:UITableViewStyleGrouped];
     self.settingsView.dataSource = self;
     self.settingsView.delegate = self;
     
@@ -74,12 +75,17 @@
     tableTitle.backgroundColor = [UIColor clearColor];
     tableTitle.opaque = YES;
     tableTitle.font = [UIFont boldSystemFontOfSize:18];
-    tableTitle.text = @"   SETTINGS";
+    //tableTitle.text = @"   SETTINGS";
     self.settingsView.tableHeaderView = tableTitle;
 }
 
 -(void)locationUpdateChanged:(id)sender{
     [[SettingsManager instance]setLocationUpdate:((UISwitch*)sender).isOn];
+    if(![[SettingsManager instance] locationUpdate]){
+        [[LocationService instance]stopUpdatingLocation];
+    }else{
+        [[LocationService instance]startUpdatingLocation];
+    }
     [self.settingsView reloadData];
 }
 
@@ -238,6 +244,9 @@
             [self.locationIntervalsView reloadData];
         }else if([@"update_merchant" isEqual:[option valueForKey:@"item"]]){
             [self presentMerchantForm];
+        }else if([@"profile_image" isEqual:[option valueForKey:@"item"]]){
+            self.profilePicController = [self.storyboard instantiateViewControllerWithIdentifier:@"profilePicController"];
+            [self.navigationController pushViewController:self.profilePicController animated:YES];
         }
     }else{
         self.locationIntervalsView.hidden = YES;

@@ -17,6 +17,7 @@
 -(void)stopLocationService;
 
 -(void)startUpdatingLocation;
+-(void)stopUpdatingLocation;
 -(void)locationUpdateIntervalChanged;
 
 -(float)latitude;

@@ -150,6 +150,22 @@
             </objects>
             <point key="canvasLocation" x="-630" y="258"/>
         </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="XTP-pK-yAv">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="kOH-1F-xUq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="8gP-as-fIQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yO2-3G-HmR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hFV-Rn-fRh" kind="relationship" relationship="rootViewController" id="U7R-UG-Z6O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5o-Vq-Kfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1140" y="962"/>
+        </scene>
         <!--Settings Controller - Settings-->
         <scene sceneID="Acl-zr-3Cz">
             <objects>
@@ -164,10 +180,91 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings-25.png" id="BTF-Ym-A0M"/>
+                    <navigationItem key="navigationItem" id="Oa9-BZ-WOM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nD-qp-89M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1150" y="970"/>
+            <point key="canvasLocation" x="-612" y="962"/>
+        </scene>
+        <!--Choose Profile Pic Controller-->
+        <scene sceneID="Gzz-vi-bCk">
+            <objects>
+                <viewController storyboardIdentifier="profilePicController" id="gEd-dc-wNA" customClass="SWChooseProfilePicController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cUy-dw-CrA"/>
+                        <viewControllerLayoutGuide type="bottom" id="d2W-ec-pAC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IdH-7u-1jG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHh-Ij-IMZ" customClass="SWButton">
+                                <rect key="frame" x="20" y="180" width="280" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="UPLOAD EXISTING PHOTO">
+                                    <color key="titleColor" red="0.43036235789999999" green="0.28157430620000001" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadExisting:" destination="gEd-dc-wNA" eventType="touchUpInside" id="t3q-cy-039"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oU8-K8-NtR" customClass="SWButton">
+                                <rect key="frame" x="20" y="291" width="280" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TAKE A NEW PHOTO">
+                                    <color key="titleColor" red="0.43036235789999999" green="0.28157430620000001" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeNewPhoto:" destination="gEd-dc-wNA" eventType="touchUpInside" id="WUo-0G-4s4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcm-wM-E4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="960"/>
+        </scene>
+        <!--Upload Profile Pic Controller-->
+        <scene sceneID="1he-kc-DX6">
+            <objects>
+                <viewController storyboardIdentifier="uploadPicController" id="9Kv-41-Jn7" customClass="SWUploadProfilePicController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zGC-vv-GGx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qz8-Hk-50h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KZX-7f-5fL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9m-UK-cYu">
+                                <rect key="frame" x="0.0" y="40" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="92q-4m-9gd"/>
+                        <barButtonItem title="Item" id="kOM-yH-lkR"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="c9m-UK-cYu" id="W6C-Nq-ss8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5tn-Rq-1qN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="946"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gv9-Rj-Vzs">
@@ -181,7 +278,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Eky-Xb-peJ" kind="relationship" relationship="viewControllers" id="v1X-1A-J2G"/>
-                        <segue destination="hFV-Rn-fRh" kind="relationship" relationship="viewControllers" id="06a-ph-0TL"/>
+                        <segue destination="kOH-1F-xUq" kind="relationship" relationship="viewControllers" id="iep-ia-i5e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLU-E1-EUP" userLabel="First Responder" sceneMemberID="firstResponder"/>

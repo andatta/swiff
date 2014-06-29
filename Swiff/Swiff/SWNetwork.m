@@ -71,4 +71,10 @@
     self.mRequest.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection* conn = [[NSURLConnection alloc]initWithRequest:self.mRequest delegate:delegate];
 }
+
+-(void)uploadMultiPartData:(NSData *)multipartdata delegate:(id)delegate{
+    self.mRequest.HTTPMethod = @"POST";
+    [self.mRequest setHTTPBody:multipartdata];
+    [[NSURLConnection alloc]initWithRequest:self.mRequest delegate:delegate];
+}
 @end

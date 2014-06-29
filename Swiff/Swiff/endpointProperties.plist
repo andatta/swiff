@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>upload_profile_image</key>
+	<string>swiffservice/customer/uploadProfileImage</string>
 	<key>save_merchant_outlet</key>
 	<string>swiffservice/merchant/saveMerchantOutlet</string>
 	<key>update_location</key>
@@ -11,6 +13,6 @@
 	<key>register_customer</key>
 	<string>swiffservice/customer/registerCustomer</string>
 	<key>rootUrl</key>
-	<string>http://psyched-myth-602.appspot.com/</string>
+	<string>http://10.0.0.5:8000/</string>
 </dict>
 </plist>

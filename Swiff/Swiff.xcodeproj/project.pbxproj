@@ -13,6 +13,10 @@
 		7D1A37D9194D7FC6002D40DB /* SWNetworkException.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A37D8194D7FC6002D40DB /* SWNetworkException.m */; };
 		7D1A37DC194D7FF9002D40DB /* SWNetworkCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A37DB194D7FF9002D40DB /* SWNetworkCommunicator.m */; };
 		7D1A37E0194D8084002D40DB /* endpointProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D1A37DF194D8084002D40DB /* endpointProperties.plist */; };
+		7D1B7378195F15EB00D8A03B /* whiteButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1B7377195F15EB00D8A03B /* whiteButtonHighlight.png */; };
+		7D1B737A195F169C00D8A03B /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1B7379195F169C00D8A03B /* whiteButton.png */; };
+		7D1B737D195F17A400D8A03B /* SWChooseProfilePicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B737C195F17A400D8A03B /* SWChooseProfilePicController.m */; };
+		7D1B7380195F1D7C00D8A03B /* SWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B737F195F1D7C00D8A03B /* SWButton.m */; };
 		7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */; };
 		7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */; };
 		7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8531931061E0078EFB2 /* Checkbox_Full.png */; };
@@ -22,6 +26,7 @@
 		7D37B9F11930717A00B2AC73 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D37B9F01930717A00B2AC73 /* QuartzCore.framework */; };
 		7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D37B9F219308F6200B2AC73 /* Settings.plist */; };
 		7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */; };
+		7D3A82CD1960505B00F84343 /* SWUploadProfilePicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A82CC1960505B00F84343 /* SWUploadProfilePicController.m */; };
 		7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D420A37195736C5009AE282 /* SWCustomerLocation.m */; };
 		7D537C77195A010A00EF69EE /* SWMerchantOutlet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D537C76195A010A00EF69EE /* SWMerchantOutlet.m */; };
 		7D862E1C194C1AA6001C7DCE /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D862E1B194C1AA6001C7DCE /* ic_launcher.png */; };
@@ -61,6 +66,12 @@
 		7D1A37DA194D7FF9002D40DB /* SWNetworkCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNetworkCommunicator.h; sourceTree = "<group>"; };
 		7D1A37DB194D7FF9002D40DB /* SWNetworkCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNetworkCommunicator.m; sourceTree = "<group>"; };
 		7D1A37DF194D8084002D40DB /* endpointProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = endpointProperties.plist; sourceTree = "<group>"; };
+		7D1B7377195F15EB00D8A03B /* whiteButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButtonHighlight.png; path = "Swiff images/whiteButtonHighlight.png"; sourceTree = SOURCE_ROOT; };
+		7D1B7379195F169C00D8A03B /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButton.png; path = "Swiff images/whiteButton.png"; sourceTree = SOURCE_ROOT; };
+		7D1B737B195F17A400D8A03B /* SWChooseProfilePicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWChooseProfilePicController.h; sourceTree = "<group>"; };
+		7D1B737C195F17A400D8A03B /* SWChooseProfilePicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWChooseProfilePicController.m; sourceTree = "<group>"; };
+		7D1B737E195F1D7C00D8A03B /* SWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWButton.h; sourceTree = "<group>"; };
+		7D1B737F195F1D7C00D8A03B /* SWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWButton.m; sourceTree = "<group>"; };
 		7D2EE8B21932212C00D5FE79 /* SWEnterMerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWEnterMerchantController.h; sourceTree = "<group>"; };
 		7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWEnterMerchantController.m; sourceTree = "<group>"; };
 		7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkbox_ Empty.png"; path = "Swiff images/Checkbox_ Empty.png"; sourceTree = SOURCE_ROOT; };
@@ -72,6 +83,8 @@
 		7D37B9F219308F6200B2AC73 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7D37B9F41930A2B300B2AC73 /* SWSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSettingsController.h; sourceTree = "<group>"; };
 		7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingsController.m; sourceTree = "<group>"; };
+		7D3A82CB1960505B00F84343 /* SWUploadProfilePicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUploadProfilePicController.h; sourceTree = "<group>"; };
+		7D3A82CC1960505B00F84343 /* SWUploadProfilePicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUploadProfilePicController.m; sourceTree = "<group>"; };
 		7D420A3519572E97009AE282 /* SWNetworkDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWNetworkDelegate.h; sourceTree = "<group>"; };
 		7D420A36195736C5009AE282 /* SWCustomerLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCustomerLocation.h; sourceTree = "<group>"; };
 		7D420A37195736C5009AE282 /* SWCustomerLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCustomerLocation.m; sourceTree = "<group>"; };
@@ -174,6 +187,8 @@
 				7DCDAFA31956AB080064F6A0 /* SWProgressIndicator.m */,
 				7DCDAFA51956B1800064F6A0 /* SWGeneralStateDialog.h */,
 				7DCDAFA61956B1800064F6A0 /* SWGeneralStateDialog.m */,
+				7D1B737E195F1D7C00D8A03B /* SWButton.h */,
+				7D1B737F195F1D7C00D8A03B /* SWButton.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -230,6 +245,10 @@
 				7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */,
 				7D2EE8B21932212C00D5FE79 /* SWEnterMerchantController.h */,
 				7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */,
+				7D1B737B195F17A400D8A03B /* SWChooseProfilePicController.h */,
+				7D1B737C195F17A400D8A03B /* SWChooseProfilePicController.m */,
+				7D3A82CB1960505B00F84343 /* SWUploadProfilePicController.h */,
+				7D3A82CC1960505B00F84343 /* SWUploadProfilePicController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +305,8 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D1B7379195F169C00D8A03B /* whiteButton.png */,
+				7D1B7377195F15EB00D8A03B /* whiteButtonHighlight.png */,
 				7D167222194C3F650005FC96 /* cawver-logo.png */,
 				7D862E1B194C1AA6001C7DCE /* ic_launcher.png */,
 				7D344C951931AEE0008A071B /* radio-button-off-icon.png */,
@@ -361,6 +382,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D1B737A195F169C00D8A03B /* whiteButton.png in Resources */,
+				7D1B7378195F15EB00D8A03B /* whiteButtonHighlight.png in Resources */,
 				CEF97D26190CD3B9006C5881 /* InfoPlist.strings in Resources */,
 				7D344C981931AEE0008A071B /* radio-button-on-icon.png in Resources */,
 				CEF97D2E190CD3B9006C5881 /* Default.png in Resources */,
@@ -399,9 +422,12 @@
 				CE6F320F190D5E3600D66E1C /* RelatedObject.m in Sources */,
 				7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */,
 				CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */,
+				7D3A82CD1960505B00F84343 /* SWUploadProfilePicController.m in Sources */,
 				CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */,
 				7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */,
+				7D1B737D195F17A400D8A03B /* SWChooseProfilePicController.m in Sources */,
 				7D1A37D9194D7FC6002D40DB /* SWNetworkException.m in Sources */,
+				7D1B7380195F1D7C00D8A03B /* SWButton.m in Sources */,
 				CE767EB5191606B300629F65 /* SWStartUpControllerViewController.m in Sources */,
 				7DCDAFA41956AB080064F6A0 /* SWProgressIndicator.m in Sources */,
 				CE767EBB1916177A00629F65 /* SWRegistrationViewController.m in Sources */,

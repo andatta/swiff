@@ -3,6 +3,21 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>options</key>
+		<array>
+			<dict>
+				<key>subtitle</key>
+				<string>Upload a profile picture</string>
+				<key>item</key>
+				<string>profile_image</string>
+				<key>title</key>
+				<string>Profile photo</string>
+			</dict>
+		</array>
+		<key>title</key>
+		<string>my Account</string>
+	</dict>
+	<dict>
 		<key>title</key>
 		<string>location</string>
 		<key>options</key>
