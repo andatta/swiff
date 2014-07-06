@@ -186,6 +186,41 @@
             </objects>
             <point key="canvasLocation" x="-612" y="962"/>
         </scene>
+        <!--Navigation Controller - Friends-->
+        <scene sceneID="SWX-Ab-fic">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="3Ck-n4-HPY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="friend-icon-small.png" id="v3Z-7W-pVF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s6F-zi-FG1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SNp-JM-0St" kind="relationship" relationship="rootViewController" id="5lb-Y7-Any"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OO2-GT-QCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1137" y="1634"/>
+        </scene>
+        <!--Friends List Controller-->
+        <scene sceneID="DGg-MM-xOU">
+            <objects>
+                <viewController id="SNp-JM-0St" customClass="SWFriendsListController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mCz-R9-IBk"/>
+                        <viewControllerLayoutGuide type="bottom" id="aNV-Kk-6Id"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gnY-QK-UaE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="grg-ui-cdH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jae-Ls-Zhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="1626"/>
+        </scene>
         <!--Choose Profile Pic Controller-->
         <scene sceneID="Gzz-vi-bCk">
             <objects>
@@ -279,6 +314,7 @@
                     <connections>
                         <segue destination="Eky-Xb-peJ" kind="relationship" relationship="viewControllers" id="v1X-1A-J2G"/>
                         <segue destination="kOH-1F-xUq" kind="relationship" relationship="viewControllers" id="iep-ia-i5e"/>
+                        <segue destination="3Ck-n4-HPY" kind="relationship" relationship="viewControllers" id="hZ6-wu-HsY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLU-E1-EUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -375,6 +411,7 @@
     </scenes>
     <resources>
         <image name="cawver-logo.png" width="350" height="308"/>
+        <image name="friend-icon-small.png" width="36" height="40"/>
         <image name="home_filled-25.png" width="25" height="25"/>
         <image name="settings-25.png" width="25" height="25"/>
     </resources>

@@ -85,7 +85,7 @@
 -(void)showProgressIndicator{
     if(self.progressIndicator == nil){
         self.progressIndicator = [[SWProgressIndicator alloc]initWithFrame:CGRectMake(20, 180, 280, 80)];
-        self.progressIndicator.label.text = @"Please wait while merchant outlet is saved in our servers";
+        self.progressIndicator.label.text = NSLocalizedString(@"merchant_processing_text", nil);
     }
     [self.progressIndicator setHidden:NO];
     [self.view addSubview:self.progressIndicator];
@@ -101,7 +101,7 @@
 -(void)showErrorRibbon{
     if(self.errorRibbon == nil){
         self.errorRibbon = [[SWGeneralStateDialog alloc]initWithFrame:CGRectMake(0, 0, 320, 60)];
-        self.errorRibbon.label.text = @"Error in saving merchant outlet. Please try again";
+        self.errorRibbon.label.text = NSLocalizedString(@"merchant_error_text", nil);
     }
     [self.errorRibbon setHidden:NO];
     [self.view addSubview:self.errorRibbon];

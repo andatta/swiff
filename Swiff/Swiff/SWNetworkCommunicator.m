@@ -143,4 +143,24 @@
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [network uploadMultiPartData:body delegate:self];
 }
+
+-(void)syncFriends:(NSString *)customerId{
+    SWNetwork* network = [[SWNetwork alloc]init];
+    NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"sync_friends"]];
+    NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
+    [urlString appendString:@"?customerId="];
+    [urlString appendString:@"357541050544529"];
+    NSLog(@"request url: %@", urlString);
+    [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
+    NSArray* msisdns = [NSArray arrayWithObjects:@"7200490071", @"9176618473",nil];
+    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:msisdns, @"msisdns", nil];
+    NSString* requestBody = nil;
+    NSError* error = nil;
+    if([NSJSONSerialization isValidJSONObject:data]){
+        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:data options:NSJSONWritingPrettyPrinted error:&error];
+        requestBody = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    NSLog(@"request body: %@", requestBody);
+    [network asyncPostWithBody:requestBody delegate:self];
+}
 @end

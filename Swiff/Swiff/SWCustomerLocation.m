@@ -19,7 +19,7 @@
     return nil;
 }
 
--(id)createObject{
+-(id<Serializable>)createObject{
     return [[SWCustomerLocation alloc]init];
 }
 

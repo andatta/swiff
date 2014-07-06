@@ -60,7 +60,7 @@
 -(void)showProgressIndicator{
     if(self.progressIndicator == nil){
         self.progressIndicator = [[SWProgressIndicator alloc]initWithFrame:CGRectMake(20, 180, 280, 80)];
-        self.progressIndicator.label.text = @"Please wait while image is saved in our servers";
+        self.progressIndicator.label.text = NSLocalizedString(@"upload_pic_text", nil);
     }
     [self.progressIndicator setHidden:NO];
     [self.view addSubview:self.progressIndicator];
@@ -76,7 +76,7 @@
 -(void)showErrorRibbon{
     if(self.errorRibbon == nil){
         self.errorRibbon = [[SWGeneralStateDialog alloc]initWithFrame:CGRectMake(0, 0, 320, 60)];
-        self.errorRibbon.label.text = @"Error in saving image. Please try again";
+        self.errorRibbon.label.text = NSLocalizedString(@"upload_pic_error", nil);
     }
     [self.errorRibbon setHidden:NO];
     [self.view addSubview:self.errorRibbon];

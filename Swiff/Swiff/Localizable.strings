@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Swiff
+
+  Created by Anutosh Datta on 04/07/14.
+  Copyright (c) 2014 TechHouse. All rights reserved.
+*/
+//registration screen
+"enter_information" = "Enter your information:";
+"mandatory_fields" = "*All fields are mandatory";
+"first_name_text" = "First Name:";
+"first_name_hint" = "Enter first name";
+"last_name_text" = "Last Name:";
+"last_name_hint" = "Enter last name";
+"email_text" = "Email:";
+"email_hint" = "Enter email";
+"dob_text" = "Date of birth:";
+"dob_hint" = "Pick a date";
+"gender_text" = "Gender:";
+"register_submit"="SUBMIT";
+"registration_processing_text"="Please wait while you are being registered";
+"registration_error_text"="Error in registration. Please try again";
+//registration screen
+
+//enter merchant screen
+"merchant_processing_text"="Please wait while merchant outlet is saved in our servers";
+"merchant_error_text"="Error in saving merchant outlet. Please try again";
+//enter merchant screen
+
+//upload profile pic
+"upload_pic_text"="Please wait while image is saved in our servers";
+"upload_pic_error"="Error in saving image. Please try again";
+//upload profile pic
+
+
+

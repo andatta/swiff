@@ -26,4 +26,5 @@
 -(void)updateLocation:(SWCustomerLocation*)location;
 -(void)saveMercahntOutlet:(SWMerchantOutlet*)outlet;
 -(void)uploadProfileImage:(UIImage*)image customerId:(NSString*)customerId;
+-(void)syncFriends:(NSString*)customerId;
 @end

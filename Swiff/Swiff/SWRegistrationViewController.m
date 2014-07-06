@@ -59,7 +59,7 @@ int REQUEST_REGISTER_PUSH = 2;
     
     //header label
     UILabel* headerLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, 200, 30)];
-    [headerLabel setText:@"Enter your information:"];
+    [headerLabel setText:NSLocalizedString(@"enter_information", nil)];
     [headerLabel setTextColor:[UIColor grayColor]];
     headerLabel.font = [UIFont boldSystemFontOfSize:17.0f];
     [self.contentView addSubview:headerLabel];
@@ -67,14 +67,14 @@ int REQUEST_REGISTER_PUSH = 2;
     
     //instruction label
     UILabel* instructionLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 40, 200, 30)];
-    [instructionLabel setText:@"*All fields are mandatory"];
+    [instructionLabel setText:NSLocalizedString(@"mandatory_fields", nil)];
     instructionLabel.font = [UIFont systemFontOfSize:10.0f];
     [self.contentView addSubview:instructionLabel];
     //instruction label
     
     //first name label
     UILabel* firstNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 70, 100, 30)];
-    [firstNameLabel setText:@"First Name:"];
+    [firstNameLabel setText:NSLocalizedString(@"first_name_text", nil)];
     firstNameLabel.font = [UIFont systemFontOfSize:12.0f];
     [self.contentView addSubview:firstNameLabel];
     //first name label
@@ -85,14 +85,14 @@ int REQUEST_REGISTER_PUSH = 2;
     self.firstNameTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.firstNameTextField.font = [UIFont systemFontOfSize:12.0f];
     self.firstNameTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    self.firstNameTextField.placeholder = @"Enter first name";
+    self.firstNameTextField.placeholder = NSLocalizedString(@"first_name_hint", nil);
     self.firstNameTextField.delegate = self;
     [self.contentView addSubview:self.firstNameTextField];
     //first name text field
     
     //last name label
     UILabel* lastNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 120, 100, 30)];
-    [lastNameLabel setText:@"Last Name:"];
+    [lastNameLabel setText:NSLocalizedString(@"last_name_text", nil)];
     lastNameLabel.font = [UIFont systemFontOfSize:12.0f];
     [self.contentView addSubview:lastNameLabel];
     //last name label
@@ -103,7 +103,7 @@ int REQUEST_REGISTER_PUSH = 2;
     self.lastNameTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.lastNameTextField.font = [UIFont systemFontOfSize:12.0f];
     self.lastNameTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    self.lastNameTextField.placeholder = @"Enter last name";
+    self.lastNameTextField.placeholder = NSLocalizedString(@"last_name_hint", nil);
     self.lastNameTextField.delegate = self;
     [self.contentView addSubview:self.lastNameTextField];
     
@@ -111,7 +111,7 @@ int REQUEST_REGISTER_PUSH = 2;
     
     //email label
     UILabel* emailLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 170, 100, 30)];
-    [emailLabel setText:@"Email:"];
+    [emailLabel setText:NSLocalizedString(@"email_text", nil)];
     emailLabel.font = [UIFont systemFontOfSize:12.0f];
     [self.contentView addSubview:emailLabel];
     //email label
@@ -122,14 +122,14 @@ int REQUEST_REGISTER_PUSH = 2;
     self.emailTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.emailTextField.font = [UIFont systemFontOfSize:12.0f];
     self.emailTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    self.emailTextField.placeholder = @"Enter email";
+    self.emailTextField.placeholder = NSLocalizedString(@"email_hint", nil);
     self.emailTextField.delegate = self;
     [self.contentView addSubview:self.emailTextField];
     //email text field
     
     //date of birth label
     UILabel* dobLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 220, 100, 30)];
-    [dobLabel setText:@"Date of birth:"];
+    [dobLabel setText:NSLocalizedString(@"dob_text", nil)];
     dobLabel.font = [UIFont systemFontOfSize:12.0f];
     [self.contentView addSubview:dobLabel];
     //date of birth label
@@ -138,14 +138,14 @@ int REQUEST_REGISTER_PUSH = 2;
     self.datePickerBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     self.datePickerBtn.frame = CGRectMake(100, 220, 180, 30);
     self.datePickerBtn.backgroundColor = [UIColor lightGrayColor];
-    [self.datePickerBtn setTitle:@"Pick a date" forState:UIControlStateNormal];
+    [self.datePickerBtn setTitle:NSLocalizedString(@"dob_hint", nil) forState:UIControlStateNormal];
     [self.datePickerBtn addTarget:self action:@selector(datePickerBtnClicked:) forControlEvents:UIControlEventTouchDown];
     [self.contentView addSubview:self.datePickerBtn];
     //date of birth button
     
     //gender label
     UILabel* genderLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 270, 100, 30)];
-    [genderLabel setText:@"Gender:"];
+    [genderLabel setText:NSLocalizedString(@"gender_text", nil)];
     genderLabel.font = [UIFont systemFontOfSize:12.0f];
     [self.contentView addSubview:genderLabel];
     //gender label
@@ -163,7 +163,7 @@ int REQUEST_REGISTER_PUSH = 2;
     self.submitBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     self.submitBtn.backgroundColor = [UIColor lightGrayColor];
     self.submitBtn.frame = CGRectMake(100, 370, 100, 30);
-    [self.submitBtn setTitle:@"SUBMIT" forState:UIControlStateNormal];
+    [self.submitBtn setTitle:NSLocalizedString(@"register_submit", nil) forState:UIControlStateNormal];
     self.submitBtn.enabled = NO;
     [self.submitBtn addTarget:self action:@selector(submitBtnClicked:) forControlEvents:UIControlEventTouchDown];
     [self.contentView addSubview:self.submitBtn];
@@ -224,7 +224,7 @@ int REQUEST_REGISTER_PUSH = 2;
 -(void)showProgressIndicator{
     if(self.progressIndicator == nil){
         self.progressIndicator = [[SWProgressIndicator alloc]initWithFrame:CGRectMake(20, 180, 280, 80)];
-        self.progressIndicator.label.text = @"Please wait while you are being registered";
+        self.progressIndicator.label.text = NSLocalizedString(@"registration_processing_text", nil);
     }
     [self.progressIndicator setHidden:NO];
     [self.view addSubview:self.progressIndicator];
@@ -240,7 +240,7 @@ int REQUEST_REGISTER_PUSH = 2;
 -(void)showErrorRibbon{
     if(self.errorRibbon == nil){
         self.errorRibbon = [[SWGeneralStateDialog alloc]initWithFrame:CGRectMake(0, 0, 320, 60)];
-        self.errorRibbon.label.text = @"Error in registration. Please try again";
+        self.errorRibbon.label.text = NSLocalizedString(@"registration_error_text", nil);
     }
     [self.errorRibbon setHidden:NO];
     [self.view addSubview:self.errorRibbon];

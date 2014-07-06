@@ -4,6 +4,8 @@
 <dict>
 	<key>upload_profile_image</key>
 	<string>swiffservice/customer/uploadProfileImage</string>
+	<key>sync_friends</key>
+	<string>swiffservice/customer/syncFriends</string>
 	<key>save_merchant_outlet</key>
 	<string>swiffservice/merchant/saveMerchantOutlet</string>
 	<key>update_location</key>
@@ -13,6 +15,6 @@
 	<key>register_customer</key>
 	<string>swiffservice/customer/registerCustomer</string>
 	<key>rootUrl</key>
-	<string>http://10.0.0.5:8000/</string>
+	<string>http://10.0.0.16:8000/</string>
 </dict>
 </plist>

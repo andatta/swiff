@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-//#import ""
+#import "Serializable.h"
 @protocol SerializableFactory <NSObject>
 @required
--(id)createObject;
+-(id<Serializable>)createObject;
 @end

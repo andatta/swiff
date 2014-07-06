@@ -54,6 +54,22 @@
 }
 
 +(NSArray*)jsonarrayToObjects:(NSData *)jsonArray oobjectFatcory:(id<SerializableFactory>)factory{
+    id<Serializable>retObject;
+    id<Serializable> factoryObject;
     NSMutableArray* arrayOfObjects = [[NSMutableArray alloc]init];
+    NSError* error = nil;
+    NSArray* _array = [NSJSONSerialization JSONObjectWithData:jsonArray options:NSJSONReadingMutableContainers error:&error];
+    for (id data in _array) {
+        if(data != nil){
+            if([NSJSONSerialization isValidJSONObject:data]){
+                factoryObject = [factory createObject];
+                if([factoryObject respondsToSelector:@selector(toObjectFromDictionary:)]){
+                    retObject = [factoryObject toObjectFromDictionary:data];
+                }
+            }
+        }
+        [arrayOfObjects addObject:retObject];
+    }
+    return arrayOfObjects;
 }
 @end

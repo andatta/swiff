@@ -8,7 +8,7 @@
 
 #import "SWStartUpControllerViewController.h"
 #import "SettingsManager.h"
-
+#import "AddFriendsService.h"
 @interface SWStartUpControllerViewController ()
 
 @end
