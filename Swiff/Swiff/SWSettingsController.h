@@ -21,6 +21,7 @@
 @property NSArray* locationUpdateIntervals;
 @property SWEnterMerchantController* merchantController;
 @property SWChooseProfilePicController* profilePicController;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 
 -(void)dismissMerchantForm;
 @end

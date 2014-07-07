@@ -8,6 +8,7 @@
 
 #import "SWSettingsController.h"
 #import "LocationService.h"
+#import "SWRevealViewController.h"
 @interface SWSettingsController ()
 
 @end
@@ -26,8 +27,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"settings_tab", nil);
+    // Change button color
+    //_sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sideBarButton.target = self.revealViewController;
+    _sideBarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
     //init table view
-    self.title = @"SETTINGS";
     self.settingsView = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 600) style:UITableViewStyleGrouped];
     self.settingsView.dataSource = self;
     self.settingsView.delegate = self;

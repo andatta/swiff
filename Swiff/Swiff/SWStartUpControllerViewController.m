@@ -9,6 +9,7 @@
 #import "SWStartUpControllerViewController.h"
 #import "SettingsManager.h"
 #import "AddFriendsService.h"
+
 @interface SWStartUpControllerViewController ()
 
 @end
@@ -49,7 +50,7 @@
 }
 
 -(void)showUserTabs{
-    UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+    UIViewController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"revealViewController"];
     [self.appdelegate changeRootController:tabBarController];
     if([[SettingsManager instance] locationUpdate]){
         [[LocationService instance]startUpdatingLocation];

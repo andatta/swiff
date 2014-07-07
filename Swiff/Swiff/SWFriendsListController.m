@@ -7,6 +7,7 @@
 //
 
 #import "SWFriendsListController.h"
+#import "SWRevealViewController.h"
 
 @interface SWFriendsListController ()
 
@@ -29,7 +30,17 @@
     self.friendService = [[AddFriendsService alloc]init];
     [self.friendService syncFriends];
     
-    self.title = @"FRIENDS";
+    self.title = NSLocalizedString(@"settings_tab", nil);
+    // Change button color
+    //_sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sideBarButton.target = self.revealViewController;
+    _sideBarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
     self.friendsList = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 600) style:UITableViewStylePlain];
     self.friendsList.dataSource = self;
     self.friendsList.delegate = self;

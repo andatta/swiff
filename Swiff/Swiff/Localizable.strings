@@ -32,5 +32,11 @@
 "upload_pic_error"="Error in saving image. Please try again";
 //upload profile pic
 
+//tabs
+"home_tab"="Home";
+"settings_tab"="Settings";
+"friends_tab"="Friends";
+//tabs
+
 
 

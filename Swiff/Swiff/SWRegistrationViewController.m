@@ -259,7 +259,7 @@ int REQUEST_REGISTER_PUSH = 2;
     }else if(self.requestCode == REQUEST_REGISTER_PUSH){
         [self removeProgressIndicator];
         [[SettingsManager instance]setIsRegistered:YES];
-        UITabBarController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+        UIViewController* tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"revealViewController"];
         [self.appDelegate changeRootController:tabBarController];
         [[LocationService instance]startUpdatingLocation];
     }
