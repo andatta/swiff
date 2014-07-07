@@ -35,11 +35,11 @@
 		7D55FFAD196918ED0050A993 /* AddFriendsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D55FFAC196918ED0050A993 /* AddFriendsService.m */; };
 		7D55FFB1196928260050A993 /* SWFriendsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D55FFB0196928260050A993 /* SWFriendsStorage.m */; };
 		7D64A3A3196700E200648339 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D64A3A2196700E200648339 /* Localizable.strings */; };
-		7D6DAB20196B0CD20097F850 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB1F196B0CD20097F850 /* SWRevealViewController.m */; };
-		7D6DAB23196B0F1D0097F850 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB22196B0F1D0097F850 /* SidebarViewController.m */; };
 		7D6DAB26196B0FBE0097F850 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6DAB24196B0FBE0097F850 /* menu.png */; };
 		7D6DAB27196B0FBE0097F850 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6DAB25196B0FBE0097F850 /* menu@2x.png */; };
 		7D6DAB2A196B117F0097F850 /* SWHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB29196B117F0097F850 /* SWHomeController.m */; };
+		7D6DAB31196B27050097F850 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB30196B27050097F850 /* SWRevealViewController.m */; };
+		7D6DAB34196B271C0097F850 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB33196B271C0097F850 /* SidebarViewController.m */; };
 		7D736B5B196989A000CED1A6 /* SWFriendsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D736B5A196989A000CED1A6 /* SWFriendsListController.m */; };
 		7D736B5D196989E500CED1A6 /* friend-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D736B5C196989E500CED1A6 /* friend-icon.png */; };
 		7D736B5F19698BC100CED1A6 /* friend-icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D736B5E19698BC100CED1A6 /* friend-icon-small.png */; };
@@ -116,14 +116,14 @@
 		7D55FFAF196928260050A993 /* SWFriendsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFriendsStorage.h; sourceTree = "<group>"; };
 		7D55FFB0196928260050A993 /* SWFriendsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFriendsStorage.m; sourceTree = "<group>"; };
 		7D64A3A2196700E200648339 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		7D6DAB1E196B0CD20097F850 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
-		7D6DAB1F196B0CD20097F850 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
-		7D6DAB21196B0F1D0097F850 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarViewController.h; path = ../../../../Downloads/SidebarDemoEmpty/SidebarDemo/SidebarViewController.h; sourceTree = "<group>"; };
-		7D6DAB22196B0F1D0097F850 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarViewController.m; path = ../../../../Downloads/SidebarDemoEmpty/SidebarDemo/SidebarViewController.m; sourceTree = "<group>"; };
 		7D6DAB24196B0FBE0097F850 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../../../Downloads/SidebarDemoEmpty/SidebarDemo/menu.png; sourceTree = "<group>"; };
 		7D6DAB25196B0FBE0097F850 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "../../../../Downloads/SidebarDemoEmpty/SidebarDemo/menu@2x.png"; sourceTree = "<group>"; };
 		7D6DAB28196B117F0097F850 /* SWHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHomeController.h; sourceTree = "<group>"; };
 		7D6DAB29196B117F0097F850 /* SWHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHomeController.m; sourceTree = "<group>"; };
+		7D6DAB2F196B27050097F850 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		7D6DAB30196B27050097F850 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7D6DAB32196B271C0097F850 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		7D6DAB33196B271C0097F850 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		7D736B59196989A000CED1A6 /* SWFriendsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFriendsListController.h; sourceTree = "<group>"; };
 		7D736B5A196989A000CED1A6 /* SWFriendsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFriendsListController.m; sourceTree = "<group>"; };
 		7D736B5C196989E500CED1A6 /* friend-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friend-icon.png"; path = "Swiff images/friend-icon.png"; sourceTree = SOURCE_ROOT; };
@@ -239,11 +239,11 @@
 			name = Storage;
 			sourceTree = "<group>";
 		};
-		7D6DAB1D196B0CBB0097F850 /* SlidingMenu */ = {
+		7D6DAB2E196B26F30097F850 /* SlidingMenu */ = {
 			isa = PBXGroup;
 			children = (
-				7D6DAB1E196B0CD20097F850 /* SWRevealViewController.h */,
-				7D6DAB1F196B0CD20097F850 /* SWRevealViewController.m */,
+				7D6DAB2F196B27050097F850 /* SWRevealViewController.h */,
+				7D6DAB30196B27050097F850 /* SWRevealViewController.m */,
 			);
 			name = SlidingMenu;
 			sourceTree = "<group>";
@@ -309,8 +309,8 @@
 		CE767EB21916067800629F65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7D6DAB21196B0F1D0097F850 /* SidebarViewController.h */,
-				7D6DAB22196B0F1D0097F850 /* SidebarViewController.m */,
+				7D6DAB32196B271C0097F850 /* SidebarViewController.h */,
+				7D6DAB33196B271C0097F850 /* SidebarViewController.m */,
 				CE767EB3191606B300629F65 /* SWStartUpControllerViewController.h */,
 				CE767EB4191606B300629F65 /* SWStartUpControllerViewController.m */,
 				CE767EB91916177A00629F65 /* SWRegistrationViewController.h */,
@@ -364,7 +364,7 @@
 		CEF97D21190CD3B9006C5881 /* Swiff */ = {
 			isa = PBXGroup;
 			children = (
-				7D6DAB1D196B0CBB0097F850 /* SlidingMenu */,
+				7D6DAB2E196B26F30097F850 /* SlidingMenu */,
 				7D55FFAE196928120050A993 /* Storage */,
 				7D55FFAA196918C80050A993 /* Service */,
 				7DCDAFA11956AAE50064F6A0 /* CustomViews */,
@@ -510,16 +510,15 @@
 				7D1A37D1194D6434002D40DB /* SWCustomer.m in Sources */,
 				CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */,
 				CE6F320C190D51D900D66E1C /* TestObject.m in Sources */,
-				7D6DAB20196B0CD20097F850 /* SWRevealViewController.m in Sources */,
 				7D6DAB2A196B117F0097F850 /* SWHomeController.m in Sources */,
 				7D55FFA9196913BE0050A993 /* SWFriend.m in Sources */,
 				7DCDAFA71956B1800064F6A0 /* SWGeneralStateDialog.m in Sources */,
 				CE6F320F190D5E3600D66E1C /* RelatedObject.m in Sources */,
-				7D6DAB23196B0F1D0097F850 /* SidebarViewController.m in Sources */,
 				7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */,
 				7D55FFB1196928260050A993 /* SWFriendsStorage.m in Sources */,
 				7D4AE7731967CC8800698B22 /* SqliteStorage.m in Sources */,
 				CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */,
+				7D6DAB34196B271C0097F850 /* SidebarViewController.m in Sources */,
 				7D55FFAD196918ED0050A993 /* AddFriendsService.m in Sources */,
 				7D3A82CD1960505B00F84343 /* SWUploadProfilePicController.m in Sources */,
 				CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */,
@@ -528,6 +527,7 @@
 				7D1A37D9194D7FC6002D40DB /* SWNetworkException.m in Sources */,
 				7D1B7380195F1D7C00D8A03B /* SWButton.m in Sources */,
 				CE767EB5191606B300629F65 /* SWStartUpControllerViewController.m in Sources */,
+				7D6DAB31196B27050097F850 /* SWRevealViewController.m in Sources */,
 				7DCDAFA41956AB080064F6A0 /* SWProgressIndicator.m in Sources */,
 				CE767EBB1916177A00629F65 /* SWRegistrationViewController.m in Sources */,
 				7D1A37D5194D745D002D40DB /* SWNetwork.m in Sources */,
