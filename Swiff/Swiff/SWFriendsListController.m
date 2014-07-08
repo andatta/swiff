@@ -28,20 +28,17 @@
 {
     [super viewDidLoad];
     self.friendService = [[AddFriendsService alloc]init];
-    [self.friendService syncFriends];
+    //[self.friendService syncFriends];
     
-    self.title = NSLocalizedString(@"settings_tab", nil);
-    // Change button color
-    //_sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    self.title = NSLocalizedString(@"friends_tab", nil);
     
-    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sideBarButton.target = self.revealViewController;
-    _sideBarButton.action = @selector(revealToggle:);
+    UIBarButtonItem* sideBarButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
+    self.navigationItem.leftBarButtonItem = sideBarButton;
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    self.friendsList = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 600) style:UITableViewStylePlain];
+    self.friendsList = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600) style:UITableViewStylePlain];
     self.friendsList.dataSource = self;
     self.friendsList.delegate = self;
     [self addHeader];
@@ -52,7 +49,7 @@
 }
 
 -(void)addHeader{
-    CGRect titleRect = CGRectMake(60, 60, 300, 40);
+    CGRect titleRect = CGRectMake(60, 60, 300, 20);
     UILabel *tableTitle = [[UILabel alloc] initWithFrame:titleRect];
     tableTitle.textColor = [UIColor blueColor];
     tableTitle.backgroundColor = [UIColor clearColor];
@@ -93,8 +90,8 @@
     NSString* imageUrl = [NSString stringWithFormat:@"http://10.0.0.16:8000/media/%@", friend.profileImage];
     cell.textLabel.text = fullName;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:13.f];
-    NSData* imagedata = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-    cell.imageView.image = [UIImage imageWithData:imagedata];
+    //NSData* imagedata = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+    //cell.imageView.image = [UIImage imageWithData:imagedata];
     return cell;
 }
 

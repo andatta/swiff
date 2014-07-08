@@ -304,7 +304,7 @@
             </objects>
             <point key="canvasLocation" x="-1412" y="1282"/>
         </scene>
-        <!--Settings Controller - Settings-->
+        <!--Settings Controller-->
         <scene sceneID="Acl-zr-3Cz">
             <objects>
                 <viewController id="hFV-Rn-fRh" customClass="SWSettingsController" sceneMemberID="viewController">
@@ -315,24 +315,10 @@
                     <view key="view" contentMode="scaleToFill" id="qyA-Ts-0Bv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="008-OT-K1g">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="ulv-yG-Db4">
-                                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="M7x-3b-fSl"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-25.png" id="BTF-Ym-A0M"/>
-                    <navigationItem key="navigationItem" id="Oa9-BZ-WOM"/>
-                    <connections>
-                        <outlet property="sideBarButton" destination="M7x-3b-fSl" id="Iax-5V-K8o"/>
-                    </connections>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nD-qp-89M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,23 +335,8 @@
                     <view key="view" contentMode="scaleToFill" id="gnY-QK-UaE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RH2-x9-V2j">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="hu2-Ed-gRo">
-                                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="QRd-xw-bqP"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="grg-ui-cdH"/>
-                    <connections>
-                        <outlet property="sideBarButton" destination="QRd-xw-bqP" id="hjj-hn-C2Z"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jae-Ls-Zhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -552,6 +523,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ddB-QW-Wsx"/>
+        <segue reference="DO4-cH-gWh"/>
     </inferredMetricsTieBreakers>
 </document>

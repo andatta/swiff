@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B9A8117196BC3EB00E3F1BA /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A8115196BC3EB00E3F1BA /* menu.png */; };
+		4B9A8118196BC3EB00E3F1BA /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A8116196BC3EB00E3F1BA /* menu@2x.png */; };
 		7D167223194C3F650005FC96 /* cawver-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D167222194C3F650005FC96 /* cawver-logo.png */; };
 		7D1A37D1194D6434002D40DB /* SWCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A37D0194D6434002D40DB /* SWCustomer.m */; };
 		7D1A37D5194D745D002D40DB /* SWNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A37D4194D745D002D40DB /* SWNetwork.m */; };
@@ -35,8 +37,6 @@
 		7D55FFAD196918ED0050A993 /* AddFriendsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D55FFAC196918ED0050A993 /* AddFriendsService.m */; };
 		7D55FFB1196928260050A993 /* SWFriendsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D55FFB0196928260050A993 /* SWFriendsStorage.m */; };
 		7D64A3A3196700E200648339 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D64A3A2196700E200648339 /* Localizable.strings */; };
-		7D6DAB26196B0FBE0097F850 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6DAB24196B0FBE0097F850 /* menu.png */; };
-		7D6DAB27196B0FBE0097F850 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6DAB25196B0FBE0097F850 /* menu@2x.png */; };
 		7D6DAB2A196B117F0097F850 /* SWHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB29196B117F0097F850 /* SWHomeController.m */; };
 		7D6DAB31196B27050097F850 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB30196B27050097F850 /* SWRevealViewController.m */; };
 		7D6DAB34196B271C0097F850 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB33196B271C0097F850 /* SidebarViewController.m */; };
@@ -70,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B9A8115196BC3EB00E3F1BA /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = "Swiff images/menu.png"; sourceTree = SOURCE_ROOT; };
+		4B9A8116196BC3EB00E3F1BA /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "Swiff images/menu@2x.png"; sourceTree = SOURCE_ROOT; };
 		7D167222194C3F650005FC96 /* cawver-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cawver-logo.png"; path = "Swiff images/cawver-logo.png"; sourceTree = SOURCE_ROOT; };
 		7D1A37CF194D6434002D40DB /* SWCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCustomer.h; sourceTree = "<group>"; };
 		7D1A37D0194D6434002D40DB /* SWCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCustomer.m; sourceTree = "<group>"; };
@@ -116,8 +118,6 @@
 		7D55FFAF196928260050A993 /* SWFriendsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFriendsStorage.h; sourceTree = "<group>"; };
 		7D55FFB0196928260050A993 /* SWFriendsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFriendsStorage.m; sourceTree = "<group>"; };
 		7D64A3A2196700E200648339 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		7D6DAB24196B0FBE0097F850 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../../../Downloads/SidebarDemoEmpty/SidebarDemo/menu.png; sourceTree = "<group>"; };
-		7D6DAB25196B0FBE0097F850 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "../../../../Downloads/SidebarDemoEmpty/SidebarDemo/menu@2x.png"; sourceTree = "<group>"; };
 		7D6DAB28196B117F0097F850 /* SWHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHomeController.h; sourceTree = "<group>"; };
 		7D6DAB29196B117F0097F850 /* SWHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHomeController.m; sourceTree = "<group>"; };
 		7D6DAB2F196B27050097F850 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -387,8 +387,8 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7D6DAB24196B0FBE0097F850 /* menu.png */,
-				7D6DAB25196B0FBE0097F850 /* menu@2x.png */,
+				4B9A8115196BC3EB00E3F1BA /* menu.png */,
+				4B9A8116196BC3EB00E3F1BA /* menu@2x.png */,
 				7D736B5E19698BC100CED1A6 /* friend-icon-small.png */,
 				7D736B5C196989E500CED1A6 /* friend-icon.png */,
 				7D1B7379195F169C00D8A03B /* whiteButton.png */,
@@ -471,7 +471,7 @@
 			files = (
 				7D1B737A195F169C00D8A03B /* whiteButton.png in Resources */,
 				7D1B7378195F15EB00D8A03B /* whiteButtonHighlight.png in Resources */,
-				7D6DAB26196B0FBE0097F850 /* menu.png in Resources */,
+				4B9A8117196BC3EB00E3F1BA /* menu.png in Resources */,
 				CEF97D26190CD3B9006C5881 /* InfoPlist.strings in Resources */,
 				7D344C981931AEE0008A071B /* radio-button-on-icon.png in Resources */,
 				CEF97D2E190CD3B9006C5881 /* Default.png in Resources */,
@@ -482,7 +482,7 @@
 				CEF97D30190CD3B9006C5881 /* Default@2x.png in Resources */,
 				7D736B5F19698BC100CED1A6 /* friend-icon-small.png in Resources */,
 				7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */,
-				7D6DAB27196B0FBE0097F850 /* menu@2x.png in Resources */,
+				4B9A8118196BC3EB00E3F1BA /* menu@2x.png in Resources */,
 				CEF97D32190CD3B9006C5881 /* Default-568h@2x.png in Resources */,
 				7D167223194C3F650005FC96 /* cawver-logo.png in Resources */,
 				7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */,

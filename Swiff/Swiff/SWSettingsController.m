@@ -29,18 +29,14 @@
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"settings_tab", nil);
-    // Change button color
-    //_sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     
-    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sideBarButton.target = self.revealViewController;
-    _sideBarButton.action = @selector(revealToggle:);
+    UIBarButtonItem* sideBarButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
+    self.navigationItem.leftBarButtonItem = sideBarButton;
     
-    // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     //init table view
-    self.settingsView = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 600) style:UITableViewStyleGrouped];
+    self.settingsView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600) style:UITableViewStyleGrouped];
     self.settingsView.dataSource = self;
     self.settingsView.delegate = self;
     
@@ -81,7 +77,7 @@
 }
 
 -(void)addSettingsHeader{
-    CGRect titleRect = CGRectMake(60, 60, 300, 40);
+    CGRect titleRect = CGRectMake(60, 60, 300, 20);
     UILabel *tableTitle = [[UILabel alloc] initWithFrame:titleRect];
     tableTitle.textColor = [UIColor blueColor];
     tableTitle.backgroundColor = [UIColor clearColor];

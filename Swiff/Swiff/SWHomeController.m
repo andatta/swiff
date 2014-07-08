@@ -27,13 +27,12 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"home_tab", nil);
-    // Change button color
-    //_sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sideBarButton.target = self.revealViewController;
     _sideBarButton.action = @selector(revealToggle:);
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:44/255.f green:196/255.f blue:192/255.f alpha:1.0];
+    self.navigationController.navigationBar.translucent = NO;
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
