@@ -31,7 +31,8 @@
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sideBarButton.target = self.revealViewController;
     _sideBarButton.action = @selector(revealToggle:);
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:44/255.f green:196/255.f blue:192/255.f alpha:1.0];
+    _sideBarButton.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:11/255.f green:159/255.f blue:225/255.f alpha:1.0];
     self.navigationController.navigationBar.translucent = NO;
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];

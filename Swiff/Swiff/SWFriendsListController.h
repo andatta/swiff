@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "AddFriendsService.h"
-
-@interface SWFriendsListController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+#import "ImageLoaderListener.h"
+#import "ImageLoader.h"
+@interface SWFriendsListController : UIViewController<UITableViewDataSource, UITableViewDelegate, ImageLoaderListener>
 @property UITableView* friendsList;
 @property NSArray* friends;
 @property AddFriendsService* friendService;

@@ -31,6 +31,7 @@
     self.title = NSLocalizedString(@"settings_tab", nil);
     
     UIBarButtonItem* sideBarButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
+    sideBarButton.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = sideBarButton;
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];

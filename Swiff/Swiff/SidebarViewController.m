@@ -28,8 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    self.view.backgroundColor = [UIColor colorWithRed:105/255.f green:102/255.f blue:96/255.f alpha:1.0];//[UIColor colorWithWhite:0.2f alpha:1.0f];
+    self.tableView.backgroundColor = [UIColor colorWithRed:105/255.f green:102/255.f blue:96/255.f alpha:1.0];//[UIColor colorWithWhite:0.2f alpha:1.0f];
     self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
     _menuItems = @[@"title", @"home", @"friends", @"settings"];
@@ -60,7 +60,7 @@
 {
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    cell.backgroundColor = [UIColor colorWithRed:105/255.f green:102/255.f blue:96/255.f alpha:1.0];//[UIColor colorWithWhite:0.2f alpha:1.0f];
     return cell;
 }
 

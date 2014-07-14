@@ -19,6 +19,7 @@
 		7D1B737A195F169C00D8A03B /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1B7379195F169C00D8A03B /* whiteButton.png */; };
 		7D1B737D195F17A400D8A03B /* SWChooseProfilePicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B737C195F17A400D8A03B /* SWChooseProfilePicController.m */; };
 		7D1B7380195F1D7C00D8A03B /* SWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B737F195F1D7C00D8A03B /* SWButton.m */; };
+		7D1B8C0519725F0100E42C85 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B8C0419725F0100E42C85 /* ImageLoader.m */; };
 		7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */; };
 		7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */; };
 		7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8531931061E0078EFB2 /* Checkbox_Full.png */; };
@@ -29,6 +30,8 @@
 		7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D37B9F219308F6200B2AC73 /* Settings.plist */; };
 		7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */; };
 		7D3A82CD1960505B00F84343 /* SWUploadProfilePicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A82CC1960505B00F84343 /* SWUploadProfilePicController.m */; };
+		7D3EBFF419702D340087C349 /* ic_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3EBFF319702D340087C349 /* ic_home.png */; };
+		7D3EBFF6197030DF0087C349 /* ic_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3EBFF5197030DF0087C349 /* ic_settings.png */; };
 		7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D420A37195736C5009AE282 /* SWCustomerLocation.m */; };
 		7D4AE7731967CC8800698B22 /* SqliteStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4AE7721967CC8800698B22 /* SqliteStorage.m */; };
 		7D4AE7751967CF0900698B22 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4AE7741967CF0900698B22 /* libsqlite3.dylib */; };
@@ -73,6 +76,7 @@
 		4B9A8115196BC3EB00E3F1BA /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = "Swiff images/menu.png"; sourceTree = SOURCE_ROOT; };
 		4B9A8116196BC3EB00E3F1BA /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "Swiff images/menu@2x.png"; sourceTree = SOURCE_ROOT; };
 		7D167222194C3F650005FC96 /* cawver-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cawver-logo.png"; path = "Swiff images/cawver-logo.png"; sourceTree = SOURCE_ROOT; };
+		7D184FBE1972DAE90028FE6B /* ImageLoaderListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageLoaderListener.h; sourceTree = "<group>"; };
 		7D1A37CF194D6434002D40DB /* SWCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCustomer.h; sourceTree = "<group>"; };
 		7D1A37D0194D6434002D40DB /* SWCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCustomer.m; sourceTree = "<group>"; };
 		7D1A37D3194D745D002D40DB /* SWNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNetwork.h; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		7D1B737C195F17A400D8A03B /* SWChooseProfilePicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWChooseProfilePicController.m; sourceTree = "<group>"; };
 		7D1B737E195F1D7C00D8A03B /* SWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWButton.h; sourceTree = "<group>"; };
 		7D1B737F195F1D7C00D8A03B /* SWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWButton.m; sourceTree = "<group>"; };
+		7D1B8C0319725F0100E42C85 /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		7D1B8C0419725F0100E42C85 /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
 		7D2EE8B21932212C00D5FE79 /* SWEnterMerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWEnterMerchantController.h; sourceTree = "<group>"; };
 		7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWEnterMerchantController.m; sourceTree = "<group>"; };
 		7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkbox_ Empty.png"; path = "Swiff images/Checkbox_ Empty.png"; sourceTree = SOURCE_ROOT; };
@@ -101,6 +107,8 @@
 		7D37B9F51930A2B300B2AC73 /* SWSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingsController.m; sourceTree = "<group>"; };
 		7D3A82CB1960505B00F84343 /* SWUploadProfilePicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUploadProfilePicController.h; sourceTree = "<group>"; };
 		7D3A82CC1960505B00F84343 /* SWUploadProfilePicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUploadProfilePicController.m; sourceTree = "<group>"; };
+		7D3EBFF319702D340087C349 /* ic_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_home.png; path = "Swiff images/ic_home.png"; sourceTree = SOURCE_ROOT; };
+		7D3EBFF5197030DF0087C349 /* ic_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_settings.png; path = "Swiff images/ic_settings.png"; sourceTree = SOURCE_ROOT; };
 		7D420A3519572E97009AE282 /* SWNetworkDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWNetworkDelegate.h; sourceTree = "<group>"; };
 		7D420A36195736C5009AE282 /* SWCustomerLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCustomerLocation.h; sourceTree = "<group>"; };
 		7D420A37195736C5009AE282 /* SWCustomerLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCustomerLocation.m; sourceTree = "<group>"; };
@@ -279,6 +287,8 @@
 				CE6D8B5A19151FD500AF6E03 /* SettingsManager.m */,
 				7D4AE7711967CC8800698B22 /* SqliteStorage.h */,
 				7D4AE7721967CC8800698B22 /* SqliteStorage.m */,
+				7D1B8C0319725F0100E42C85 /* ImageLoader.h */,
+				7D1B8C0419725F0100E42C85 /* ImageLoader.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -291,6 +301,7 @@
 				7D420A3519572E97009AE282 /* SWNetworkDelegate.h */,
 				7D4AE76F1967CBB300698B22 /* SqliteStorable.h */,
 				7D4AE7701967CC3A00698B22 /* SqliteStorableFactory.h */,
+				7D184FBE1972DAE90028FE6B /* ImageLoaderListener.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -387,6 +398,8 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D3EBFF5197030DF0087C349 /* ic_settings.png */,
+				7D3EBFF319702D340087C349 /* ic_home.png */,
 				4B9A8115196BC3EB00E3F1BA /* menu.png */,
 				4B9A8116196BC3EB00E3F1BA /* menu@2x.png */,
 				7D736B5E19698BC100CED1A6 /* friend-icon-small.png */,
@@ -479,6 +492,7 @@
 				7D344C941931AD91008A071B /* empty_checkbox.png in Resources */,
 				7D862E1C194C1AA6001C7DCE /* ic_launcher.png in Resources */,
 				7D736B5D196989E500CED1A6 /* friend-icon.png in Resources */,
+				7D3EBFF6197030DF0087C349 /* ic_settings.png in Resources */,
 				CEF97D30190CD3B9006C5881 /* Default@2x.png in Resources */,
 				7D736B5F19698BC100CED1A6 /* friend-icon-small.png in Resources */,
 				7D37B9F319308F6200B2AC73 /* Settings.plist in Resources */,
@@ -493,6 +507,7 @@
 				7D944EEA192D071100A560CC /* home_filled-25.png in Resources */,
 				7D944EEB192D071100A560CC /* settings-25.png in Resources */,
 				7D1A37E0194D8084002D40DB /* endpointProperties.plist in Resources */,
+				7D3EBFF419702D340087C349 /* ic_home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +543,7 @@
 				7D1B7380195F1D7C00D8A03B /* SWButton.m in Sources */,
 				CE767EB5191606B300629F65 /* SWStartUpControllerViewController.m in Sources */,
 				7D6DAB31196B27050097F850 /* SWRevealViewController.m in Sources */,
+				7D1B8C0519725F0100E42C85 /* ImageLoader.m in Sources */,
 				7DCDAFA41956AB080064F6A0 /* SWProgressIndicator.m in Sources */,
 				CE767EBB1916177A00629F65 /* SWRegistrationViewController.m in Sources */,
 				7D1A37D5194D745D002D40DB /* SWNetwork.m in Sources */,

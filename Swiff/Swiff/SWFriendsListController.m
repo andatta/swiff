@@ -28,11 +28,12 @@
 {
     [super viewDidLoad];
     self.friendService = [[AddFriendsService alloc]init];
-    //[self.friendService syncFriends];
+    [self.friendService syncFriends];
     
     self.title = NSLocalizedString(@"friends_tab", nil);
     
     UIBarButtonItem* sideBarButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
+    sideBarButton.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = sideBarButton;
     
     // Set the gesture
@@ -87,11 +88,9 @@
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     SWFriend* friend = (SWFriend*)[self.friends objectAtIndex:indexPath.row];
     NSString* fullName = [NSString stringWithFormat:@"%@ %@", friend.first_name, friend.last_name];
-    NSString* imageUrl = [NSString stringWithFormat:@"http://10.0.0.16:8000/media/%@", friend.profileImage];
     cell.textLabel.text = fullName;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:13.f];
-    //NSData* imagedata = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-    //cell.imageView.image = [UIImage imageWithData:imagedata];
+    cell.imageView.image = [[ImageLoader instance]getImageForPath:[NSString stringWithFormat:@"%@||%@", friend.profileImage, friend.customerId]];
     return cell;
 }
 
@@ -110,5 +109,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)imageDownloaded:(UIImage*)image{
+    [self.friendsList reloadData];
+}
 
 @end
