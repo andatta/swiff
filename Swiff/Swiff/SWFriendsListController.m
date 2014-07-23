@@ -8,7 +8,6 @@
 
 #import "SWFriendsListController.h"
 #import "SWRevealViewController.h"
-#import "SWTableViewCell.h"
 
 @interface SWFriendsListController ()
 
