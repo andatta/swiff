@@ -38,5 +38,8 @@
 "friends_tab"="Friends";
 //tabs
 
+"no_friend_text"="None of your contacts are registered with Cawver. Send them invite to join.";
+"invite_friend_title"="Invite Friends";
+
 
 

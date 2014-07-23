@@ -33,6 +33,7 @@
         [self.friends addObject:retreivedFriend];
     }
     [self addFriendsToStorage];
+    [self.delegate friendsSynced];
 }
 -(void)requestFailedWithError:(NSError*)error{
      NSLog(@"sync friend falied with error: %@", error.description);

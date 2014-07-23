@@ -14,7 +14,7 @@ static ImageLoader* instance = nil;
 
 +(id)instance{
     if(instance == nil){
-        return [[ImageLoader alloc]init];
+        instance = [[ImageLoader alloc]init];
     }
     return instance;
 }
@@ -50,20 +50,17 @@ static ImageLoader* instance = nil;
 }
 
 -(UIImage*)getImageForPath:(NSString *)path{
-    NSString* imageKey = [self getImageKey:path];
     UIImage* cacheImage;
-    if([self.cache valueForKey:imageKey] != nil){
-        cacheImage = [self.cache valueForKey:imageKey];
+    if([self.cache valueForKey:path] != nil){
+        cacheImage = [self.cache valueForKey:path];
         return cacheImage;
     }
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
-    NSString* imagePath = [rootPath stringByAppendingPathComponent:[self getFileName:imageKey]];
+    NSString* imagePath = [rootPath stringByAppendingPathComponent:[self getFileName:path]];
     if ([[NSFileManager defaultManager] fileExistsAtPath:imagePath]) {
        NSData *imageData = [[NSFileManager defaultManager] contentsAtPath:imagePath];
         UIImage* image = [UIImage imageWithData:imageData];
-        [self.cache setObject:image forKey:imageKey];
-        [self.fileNameCache removeObjectForKey:[self getFileNameKey:path]];
-        [self.fileNameCache setObject:[self getFileName:imageKey] forKey:[self getFileNameKey:path]];
+        [self.cache setObject:image forKey:path];
         cacheImage = image;
         return cacheImage;
     }
@@ -72,17 +69,16 @@ static ImageLoader* instance = nil;
 }
 
 -(void)scheduleImageDownload:(NSString*)path{
-    NSString* imageKey = [self getImageKey:path];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
-                       NSURL *imageURL = [NSURL URLWithString:[self getUrl:imageKey]];
+                       NSURL *imageURL = [NSURL URLWithString:[self getUrl:path]];
                        __block NSData *imageData;
                        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                                      ^{
                                          imageData = [NSData dataWithContentsOfURL:imageURL];
                                          UIImage* image = [UIImage imageWithData:imageData];
-                                         [self.cache removeObjectForKey:imageKey];
-                                         [self.cache setObject:image forKey:imageKey];
+                                         [self.cache removeObjectForKey:path];
+                                         [self.cache setObject:image forKey:path];
                                          [self writeImage:imageData ForPath:path];
                                          dispatch_sync(dispatch_get_main_queue(), ^{
                                              //notify listeners
@@ -95,17 +91,10 @@ static ImageLoader* instance = nil;
 }
 
 -(void)writeImage:(NSData*)imageData ForPath:(NSString*)path{
-    NSString* imageKey = [self getImageKey:path];
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
-    NSString* imagePath = [rootPath stringByAppendingPathComponent:[self getFileName:imageKey]];
+    NSString* imagePath = [rootPath stringByAppendingPathComponent:[self getFileName:path]];
     if ([[NSFileManager defaultManager] fileExistsAtPath:imagePath]) {
         [[NSFileManager defaultManager]removeItemAtPath:imagePath error:NULL];
-    }
-    //remove old image
-    NSString* oldFileName = [self.fileNameCache objectForKey:[self getFileNameKey:path]];
-    NSString* oldimagePath = [rootPath stringByAppendingPathComponent:oldFileName];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:oldimagePath]) {
-        //[[NSFileManager defaultManager]removeItemAtPath:oldimagePath error:NULL];
     }
     [imageData writeToFile:imagePath atomically:YES];
 }
@@ -120,21 +109,17 @@ static ImageLoader* instance = nil;
 
 -(void)addListener:(id<ImageLoaderListener>)listener{
     [self.listeners addObject:listener];
+    NSLog(@"no of listeners: %d", [self.listeners count]);
 }
 
--(NSString*)getFileNameKey:(NSString*)path{
-    NSArray* pathParts = [path componentsSeparatedByString:@"||"];
-    if(pathParts.count > 1){
-        return pathParts[1];
+-(BOOL)removeListener:(id<ImageLoaderListener>)listener{
+    for (id object in self.listeners) {
+        if([object isEqual:listener]){
+            [self.listeners removeObject:listener];
+            return YES;
+        }
     }
-    return nil;
+    return NO;
 }
 
--(NSString*)getImageKey:(NSString*)path{
-    NSArray* pathParts = [path componentsSeparatedByString:@"||"];
-    if(pathParts.count > 1){
-        return pathParts[0];
-    }
-    return nil;
-}
 @end

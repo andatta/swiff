@@ -32,6 +32,9 @@
 		7D3A82CD1960505B00F84343 /* SWUploadProfilePicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A82CC1960505B00F84343 /* SWUploadProfilePicController.m */; };
 		7D3EBFF419702D340087C349 /* ic_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3EBFF319702D340087C349 /* ic_home.png */; };
 		7D3EBFF6197030DF0087C349 /* ic_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3EBFF5197030DF0087C349 /* ic_settings.png */; };
+		7D3F8464197AABD5008ACAF7 /* add_friend.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F8462197AABD5008ACAF7 /* add_friend.png */; };
+		7D3F8465197AABD5008ACAF7 /* addafriendlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F8463197AABD5008ACAF7 /* addafriendlogo.png */; };
+		7D3F8468197ABEB9008ACAF7 /* SWInviteFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F8467197ABEB9008ACAF7 /* SWInviteFriendController.m */; };
 		7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D420A37195736C5009AE282 /* SWCustomerLocation.m */; };
 		7D4AE7731967CC8800698B22 /* SqliteStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4AE7721967CC8800698B22 /* SqliteStorage.m */; };
 		7D4AE7751967CF0900698B22 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4AE7741967CF0900698B22 /* libsqlite3.dylib */; };
@@ -109,6 +112,10 @@
 		7D3A82CC1960505B00F84343 /* SWUploadProfilePicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUploadProfilePicController.m; sourceTree = "<group>"; };
 		7D3EBFF319702D340087C349 /* ic_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_home.png; path = "Swiff images/ic_home.png"; sourceTree = SOURCE_ROOT; };
 		7D3EBFF5197030DF0087C349 /* ic_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_settings.png; path = "Swiff images/ic_settings.png"; sourceTree = SOURCE_ROOT; };
+		7D3F8462197AABD5008ACAF7 /* add_friend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_friend.png; path = "Swiff images/add_friend.png"; sourceTree = SOURCE_ROOT; };
+		7D3F8463197AABD5008ACAF7 /* addafriendlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addafriendlogo.png; path = "Swiff images/addafriendlogo.png"; sourceTree = SOURCE_ROOT; };
+		7D3F8466197ABEB9008ACAF7 /* SWInviteFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWInviteFriendController.h; sourceTree = "<group>"; };
+		7D3F8467197ABEB9008ACAF7 /* SWInviteFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWInviteFriendController.m; sourceTree = "<group>"; };
 		7D420A3519572E97009AE282 /* SWNetworkDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWNetworkDelegate.h; sourceTree = "<group>"; };
 		7D420A36195736C5009AE282 /* SWCustomerLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCustomerLocation.h; sourceTree = "<group>"; };
 		7D420A37195736C5009AE282 /* SWCustomerLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCustomerLocation.m; sourceTree = "<group>"; };
@@ -117,6 +124,7 @@
 		7D4AE7711967CC8800698B22 /* SqliteStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteStorage.h; sourceTree = "<group>"; };
 		7D4AE7721967CC8800698B22 /* SqliteStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteStorage.m; sourceTree = "<group>"; };
 		7D4AE7741967CF0900698B22 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7D4BAD77197A38540032F5F6 /* FriendsUpdateListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsUpdateListener.h; sourceTree = "<group>"; };
 		7D537C75195A010A00EF69EE /* SWMerchantOutlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMerchantOutlet.h; sourceTree = "<group>"; };
 		7D537C76195A010A00EF69EE /* SWMerchantOutlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMerchantOutlet.m; sourceTree = "<group>"; };
 		7D55FFA7196913BE0050A993 /* SWFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFriend.h; sourceTree = "<group>"; };
@@ -302,6 +310,7 @@
 				7D4AE76F1967CBB300698B22 /* SqliteStorable.h */,
 				7D4AE7701967CC3A00698B22 /* SqliteStorableFactory.h */,
 				7D184FBE1972DAE90028FE6B /* ImageLoaderListener.h */,
+				7D4BAD77197A38540032F5F6 /* FriendsUpdateListener.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -338,6 +347,8 @@
 				7D736B5A196989A000CED1A6 /* SWFriendsListController.m */,
 				7D6DAB28196B117F0097F850 /* SWHomeController.h */,
 				7D6DAB29196B117F0097F850 /* SWHomeController.m */,
+				7D3F8466197ABEB9008ACAF7 /* SWInviteFriendController.h */,
+				7D3F8467197ABEB9008ACAF7 /* SWInviteFriendController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -398,6 +409,8 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D3F8462197AABD5008ACAF7 /* add_friend.png */,
+				7D3F8463197AABD5008ACAF7 /* addafriendlogo.png */,
 				7D3EBFF5197030DF0087C349 /* ic_settings.png */,
 				7D3EBFF319702D340087C349 /* ic_home.png */,
 				4B9A8115196BC3EB00E3F1BA /* menu.png */,
@@ -483,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1B737A195F169C00D8A03B /* whiteButton.png in Resources */,
+				7D3F8465197AABD5008ACAF7 /* addafriendlogo.png in Resources */,
 				7D1B7378195F15EB00D8A03B /* whiteButtonHighlight.png in Resources */,
 				4B9A8117196BC3EB00E3F1BA /* menu.png in Resources */,
 				CEF97D26190CD3B9006C5881 /* InfoPlist.strings in Resources */,
@@ -502,6 +516,7 @@
 				7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */,
 				7D944EEC192D071100A560CC /* swiff_logo.gif in Resources */,
 				7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */,
+				7D3F8464197AABD5008ACAF7 /* add_friend.png in Resources */,
 				7D344C971931AEE0008A071B /* radio-button-off-icon.png in Resources */,
 				CE767EAF1916015A00629F65 /* MainStoryboard.storyboard in Resources */,
 				7D944EEA192D071100A560CC /* home_filled-25.png in Resources */,
@@ -521,6 +536,7 @@
 				CEF97D28190CD3B9006C5881 /* main.m in Sources */,
 				7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */,
 				7D537C77195A010A00EF69EE /* SWMerchantOutlet.m in Sources */,
+				7D3F8468197ABEB9008ACAF7 /* SWInviteFriendController.m in Sources */,
 				CEF97D2C190CD3B9006C5881 /* SWAppDelegate.m in Sources */,
 				7D1A37D1194D6434002D40DB /* SWCustomer.m in Sources */,
 				CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */,

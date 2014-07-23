@@ -11,8 +11,15 @@
 #import "AddFriendsService.h"
 #import "ImageLoaderListener.h"
 #import "ImageLoader.h"
-@interface SWFriendsListController : UIViewController<UITableViewDataSource, UITableViewDelegate, ImageLoaderListener>
+#import "FriendsUpdateListener.h"
+#import "SWInviteFriendController.h"
+
+@interface SWFriendsListController : UIViewController<UITableViewDataSource, UITableViewDelegate, ImageLoaderListener, FriendsUpdateListener>
 @property UITableView* friendsList;
 @property NSArray* friends;
 @property AddFriendsService* friendService;
+@property UIButton* addFriendImageButton;
+@property UILabel* noFriendLabel;
+@property UIBarButtonItem* addfriendBarButton;
+@property SWInviteFriendController* inviteController;
 @end

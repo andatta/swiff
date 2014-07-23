@@ -8,6 +8,7 @@
 
 #import "SWFriendsListController.h"
 #import "SWRevealViewController.h"
+#import "SWTableViewCell.h"
 
 @interface SWFriendsListController ()
 
@@ -28,7 +29,12 @@
 {
     [super viewDidLoad];
     self.friendService = [[AddFriendsService alloc]init];
+    self.friendService.delegate = self;
     [self.friendService syncFriends];
+    
+    //register for image load updates
+    [[ImageLoader instance]removeListener:self];
+    [[ImageLoader instance]addListener:self];
     
     self.title = NSLocalizedString(@"friends_tab", nil);
     
@@ -36,18 +42,75 @@
     sideBarButton.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = sideBarButton;
     
+    self.addfriendBarButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"add_friend.png"] style:UIBarButtonItemStylePlain target:self action:@selector(inviteFriend)];
+    self.addfriendBarButton.tintColor = [UIColor whiteColor];
+    
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    self.friendsList = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600) style:UITableViewStylePlain];
-    self.friendsList.dataSource = self;
-    self.friendsList.delegate = self;
-    [self addHeader];
-    
     self.friends = [self.friendService getFriends];
+    if(self.friends.count > 0){
+        [self addFriendsTableView];
+        self.navigationItem.rightBarButtonItem = self.addfriendBarButton;
+    }else{
+        [self addImageButton];
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+    
+}
+
+-(void)addFriendsTableView{
+    if(self.friendsList == nil){
+        self.friendsList = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600) style:UITableViewStylePlain];
+        self.friendsList.dataSource = self;
+        self.friendsList.delegate = self;
+        self.friendsList.separatorColor = [UIColor whiteColor];
+        [self addHeader];
+        [self addFooter];
+    }
+    self.friendsList.hidden = NO;
     [self.friendsList reloadData];
     [self.view addSubview:self.friendsList];
+    
 }
+
+-(void)removeFriendsTableView{
+    self.friendsList.hidden = YES;
+    [self.friendsList removeFromSuperview];
+}
+
+-(void)addImageButton{
+    if(self.addFriendImageButton == nil){
+        UIImage *buttonImage = [UIImage imageNamed:@"addafriendlogo.png"];
+        
+        self.addFriendImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.addFriendImageButton.frame = CGRectMake(70, 50, 200, 200);
+        [self.addFriendImageButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.addFriendImageButton addTarget:self action:@selector(inviteFriend) forControlEvents:UIControlEventTouchUpInside];
+    }
+    if(self.noFriendLabel == nil){
+        self.noFriendLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 200, 320, 200)];
+        self.noFriendLabel.numberOfLines = 0;
+        self.noFriendLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.noFriendLabel.font = [UIFont systemFontOfSize:13.0f];
+        self.noFriendLabel.textColor = [UIColor grayColor];
+        self.noFriendLabel.text = NSLocalizedString(@"no_friend_text", nil);
+    }
+    self.addFriendImageButton.hidden = NO;
+    [self.view addSubview:self.addFriendImageButton];
+    
+    self.noFriendLabel.hidden = NO;
+    [self.view addSubview:self.noFriendLabel];
+}
+
+-(void)removeFriendImageButton{
+    self.addFriendImageButton.hidden = YES;
+    [self.addFriendImageButton removeFromSuperview];
+    
+    self.noFriendLabel.hidden = YES;
+    [self.noFriendLabel removeFromSuperview];
+}
+
 
 -(void)addHeader{
     CGRect titleRect = CGRectMake(60, 60, 300, 20);
@@ -57,6 +120,17 @@
     tableTitle.opaque = YES;
     tableTitle.font = [UIFont boldSystemFontOfSize:18];
     self.friendsList.tableHeaderView = tableTitle;
+}
+
+-(void)addFooter{
+    CGRect footer = CGRectMake(0, 0, self.view.frame.size.width, 1);
+    UIView* footerView = [[UIView alloc]initWithFrame:footer];
+    self.friendsList.tableFooterView = footerView;
+}
+
+-(void)inviteFriend{
+    self.inviteController = [self.storyboard instantiateViewControllerWithIdentifier:@"inviteFriendController"];
+    [self.navigationController pushViewController:self.inviteController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,23 +154,41 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* reuseIdentifier = @"friendCell";
-    UITableViewCell *cell = [self.friendsList dequeueReusableCellWithIdentifier:reuseIdentifier];
-    if(cell == nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     SWFriend* friend = (SWFriend*)[self.friends objectAtIndex:indexPath.row];
     NSString* fullName = [NSString stringWithFormat:@"%@ %@", friend.first_name, friend.last_name];
-    cell.textLabel.text = fullName;
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:13.f];
-    cell.imageView.image = [[ImageLoader instance]getImageForPath:[NSString stringWithFormat:@"%@||%@", friend.profileImage, friend.customerId]];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell"];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableCell"];
+    }
+    UIImageView* profileImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 7, 60, 60)];
+    profileImage.image = [[ImageLoader instance]getImageForPath: friend.profileImage];
+    profileImage.transform = CGAffineTransformMakeRotation(M_PI/2);
+    [cell.contentView addSubview:profileImage];
+    
+    UILabel* friendNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(80, 0, 200, 50)];
+    friendNameLabel.numberOfLines = 0;
+    friendNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    friendNameLabel.font = [UIFont systemFontOfSize:14.0f];
+    friendNameLabel.text = fullName;
+    [cell.contentView addSubview:friendNameLabel];
+    
+    UILabel* statusLabel = [[UILabel alloc]initWithFrame:CGRectMake(80, 20, 200, 50)];
+    //statusLabel.numberOfLines = 0;
+    //statusLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    statusLabel.font = [UIFont systemFontOfSize:12.0f];
+    statusLabel.textColor = [UIColor darkGrayColor];
+    statusLabel.text = @"Joined Cawver";
+    [cell.contentView addSubview:statusLabel];
+    
+    UIView* separatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 78, self.view.frame.size.width, 0.5)];
+    separatorView.backgroundColor = [UIColor lightGrayColor];
+    [cell.contentView addSubview:separatorView];
     return cell;
 }
 
 #pragma mark - Table view delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 80;
 }
 
 /*
@@ -112,6 +204,20 @@
 
 -(void)imageDownloaded:(UIImage*)image{
     [self.friendsList reloadData];
+}
+
+-(void)friendsSynced{
+    self.friends = [self.friendService getFriends];
+    [self removeFriendsTableView];
+    [self removeFriendImageButton];
+    self.navigationItem.rightBarButtonItem = nil;
+    if(self.friends.count > 0){
+        [self addFriendsTableView];
+        self.navigationItem.rightBarButtonItem = self.addfriendBarButton;
+    }else{
+        [self addImageButton];
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
 
 @end

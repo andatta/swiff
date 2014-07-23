@@ -13,6 +13,7 @@
 +(id)instance;
 -(UIImage*)getImageForPath:(NSString*)path;
 -(void)addListener:(id<ImageLoaderListener>)listener;
+-(BOOL)removeListener:(id<ImageLoaderListener>)listener;
 
 @property NSMutableDictionary* cache;
 @property NSMutableDictionary* fileNameCache;

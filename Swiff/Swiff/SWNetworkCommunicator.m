@@ -152,7 +152,7 @@
     [urlString appendString:@"357541050544529"];
     NSLog(@"request url: %@", urlString);
     [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
-    NSArray* msisdns = [NSArray arrayWithObjects:@"7200490071", @"9176618473",nil];
+    NSArray* msisdns = [[NSArray alloc]init];
     NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:msisdns, @"msisdns", nil];
     NSString* requestBody = nil;
     NSError* error = nil;

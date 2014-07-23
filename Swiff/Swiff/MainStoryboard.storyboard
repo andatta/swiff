@@ -342,6 +342,24 @@
             </objects>
             <point key="canvasLocation" x="-564" y="1730"/>
         </scene>
+        <!--Invite Friend Controller-->
+        <scene sceneID="3BP-NK-OxI">
+            <objects>
+                <viewController storyboardIdentifier="inviteFriendController" id="fe4-OJ-glt" customClass="SWInviteFriendController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VcE-85-fwf"/>
+                        <viewControllerLayoutGuide type="bottom" id="YXc-mV-BWO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5FQ-MG-sA1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAf-Tu-fND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="1726"/>
+        </scene>
         <!--Choose Profile Pic Controller-->
         <scene sceneID="Gzz-vi-bCk">
             <objects>

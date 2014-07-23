@@ -13,10 +13,12 @@
 #import "SWNetworkDelegate.h"
 #import "JsonSerializer.h"
 #import "SWFriendsStorage.h"
+#import "FriendsUpdateListener.h"
 @interface AddFriendsService : NSObject<SWNetworkDelegate>
 -(void)syncFriends;
 -(NSArray*)getFriends;
 
 @property NSMutableArray* friends;
 @property SWFriendsStorage* friendsStorage;
+@property id<FriendsUpdateListener>delegate;
 @end
