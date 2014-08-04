@@ -46,6 +46,8 @@
 		7D6DAB2A196B117F0097F850 /* SWHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB29196B117F0097F850 /* SWHomeController.m */; };
 		7D6DAB31196B27050097F850 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB30196B27050097F850 /* SWRevealViewController.m */; };
 		7D6DAB34196B271C0097F850 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB33196B271C0097F850 /* SidebarViewController.m */; };
+		7D70C8D0198EAAE10071CF48 /* sms.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D70C8CF198EAAE10071CF48 /* sms.png */; };
+		7D70C8D2198EACA20071CF48 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D70C8D1198EACA20071CF48 /* email.png */; };
 		7D736B5B196989A000CED1A6 /* SWFriendsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D736B5A196989A000CED1A6 /* SWFriendsListController.m */; };
 		7D736B5D196989E500CED1A6 /* friend-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D736B5C196989E500CED1A6 /* friend-icon.png */; };
 		7D736B5F19698BC100CED1A6 /* friend-icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D736B5E19698BC100CED1A6 /* friend-icon-small.png */; };
@@ -140,6 +142,8 @@
 		7D6DAB30196B27050097F850 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		7D6DAB32196B271C0097F850 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		7D6DAB33196B271C0097F850 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		7D70C8CF198EAAE10071CF48 /* sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sms.png; path = "Swiff images/sms.png"; sourceTree = SOURCE_ROOT; };
+		7D70C8D1198EACA20071CF48 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email.png; path = "Swiff images/email.png"; sourceTree = SOURCE_ROOT; };
 		7D736B59196989A000CED1A6 /* SWFriendsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFriendsListController.h; sourceTree = "<group>"; };
 		7D736B5A196989A000CED1A6 /* SWFriendsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFriendsListController.m; sourceTree = "<group>"; };
 		7D736B5C196989E500CED1A6 /* friend-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friend-icon.png"; path = "Swiff images/friend-icon.png"; sourceTree = SOURCE_ROOT; };
@@ -409,6 +413,8 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D70C8D1198EACA20071CF48 /* email.png */,
+				7D70C8CF198EAAE10071CF48 /* sms.png */,
 				7D3F8462197AABD5008ACAF7 /* add_friend.png */,
 				7D3F8463197AABD5008ACAF7 /* addafriendlogo.png */,
 				7D3EBFF5197030DF0087C349 /* ic_settings.png */,
@@ -502,6 +508,8 @@
 				CEF97D26190CD3B9006C5881 /* InfoPlist.strings in Resources */,
 				7D344C981931AEE0008A071B /* radio-button-on-icon.png in Resources */,
 				CEF97D2E190CD3B9006C5881 /* Default.png in Resources */,
+				7D70C8D0198EAAE10071CF48 /* sms.png in Resources */,
+				7D70C8D2198EACA20071CF48 /* email.png in Resources */,
 				7D64A3A3196700E200648339 /* Localizable.strings in Resources */,
 				7D344C941931AD91008A071B /* empty_checkbox.png in Resources */,
 				7D862E1C194C1AA6001C7DCE /* ic_launcher.png in Resources */,

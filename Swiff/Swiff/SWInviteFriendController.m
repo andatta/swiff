@@ -85,6 +85,19 @@
     UIView* separatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 0.5)];
     separatorView.backgroundColor = [UIColor lightGrayColor];
     [cell.contentView addSubview:separatorView];
+    UILabel* accessoryLabel;
+    if(indexPath.row == 0){
+        accessoryLabel = [[UILabel alloc]initWithFrame:CGRectMake(180, 0, 200, 60)];
+        accessoryLabel.text = @"Invite friends via sms";
+        cell.imageView.image = [UIImage imageNamed:@"sms.png"];
+    }else if (indexPath.row == 1){
+        accessoryLabel = [[UILabel alloc]initWithFrame:CGRectMake(220, 0, 200, 60)];
+        accessoryLabel.text = @"Invite via email";
+        cell.imageView.image = [UIImage imageNamed:@"email.png"];
+    }
+    accessoryLabel.font = [UIFont systemFontOfSize:13.0f];
+    accessoryLabel.textColor = [UIColor lightGrayColor];
+    [cell.contentView addSubview:accessoryLabel];
     return cell;
 }
 
