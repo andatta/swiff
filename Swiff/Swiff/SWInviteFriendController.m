@@ -127,7 +127,7 @@
 */
 
 -(void)openSMSApp{
-    NSString *message = @"";
+    NSString *message = NSLocalizedString(@"invite_frnd_msg", nil);
     MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
     messageController.messageComposeDelegate = self;
     [messageController setBody:message];
@@ -137,11 +137,12 @@
 }
 
 -(void)openEmailApp{
-    NSString *message = @"";
+    NSString *message = NSLocalizedString(@"invite_frnd_msg", nil);
+    NSString* subject = NSLocalizedString(@"invite_frnd_subject", nil);
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     mailController.mailComposeDelegate = self;
     [mailController setMessageBody:message isHTML:YES];
-    
+    [mailController setSubject:subject];
     // Present email view controller on screen
     [self presentViewController:mailController animated:YES completion:nil];
 }

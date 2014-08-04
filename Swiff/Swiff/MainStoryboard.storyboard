@@ -32,21 +32,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr3-sm-pN8">
-                                <rect key="frame" x="139" y="354" width="77" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="NRa-Tl-TJM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sad-smiley.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oB9-JF-He7">
+                                <rect key="frame" x="110" y="148" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We couldn't find any outlets or users near you. Please start exploring to discover awsome deals!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="269" translatesAutoresizingMaskIntoConstraints="NO" id="8v5-hn-26s">
+                                <rect key="frame" x="36" y="264" width="269" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Dr3-sm-pN8" secondAttribute="bottom" constant="193" id="9HQ-AZ-8SU"/>
-                            <constraint firstItem="Dr3-sm-pN8" firstAttribute="leading" secondItem="sZK-8z-6zL" secondAttribute="leading" constant="139" id="Ysf-wo-xFG"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home_filled-25.png" id="UVT-qu-KLQ"/>
                     <navigationItem key="navigationItem" id="g5D-9B-BEg">
@@ -535,6 +533,7 @@
         <image name="ic_launcher.png" width="120" height="120"/>
         <image name="ic_settings.png" width="81" height="81"/>
         <image name="menu.png" width="28" height="20"/>
+        <image name="sad-smiley.jpg" width="168" height="168"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

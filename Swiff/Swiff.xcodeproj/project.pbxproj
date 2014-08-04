@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B958CF6198F93CA00C2A893 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B958CF5198F93CA00C2A893 /* MessageUI.framework */; };
+		4B958CF8198FB25C00C2A893 /* sad-smiley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B958CF7198FB25C00C2A893 /* sad-smiley.jpg */; };
 		4B9A8117196BC3EB00E3F1BA /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A8115196BC3EB00E3F1BA /* menu.png */; };
 		4B9A8118196BC3EB00E3F1BA /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A8116196BC3EB00E3F1BA /* menu@2x.png */; };
 		7D167223194C3F650005FC96 /* cawver-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D167222194C3F650005FC96 /* cawver-logo.png */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		4B958CF5198F93CA00C2A893 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4B958CF7198FB25C00C2A893 /* sad-smiley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "sad-smiley.jpg"; path = "Swiff images/sad-smiley.jpg"; sourceTree = SOURCE_ROOT; };
 		4B9A8115196BC3EB00E3F1BA /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = "Swiff images/menu.png"; sourceTree = SOURCE_ROOT; };
 		4B9A8116196BC3EB00E3F1BA /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "Swiff images/menu@2x.png"; sourceTree = SOURCE_ROOT; };
 		7D167222194C3F650005FC96 /* cawver-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cawver-logo.png"; path = "Swiff images/cawver-logo.png"; sourceTree = SOURCE_ROOT; };
@@ -417,6 +419,7 @@
 		CEF97D22190CD3B9006C5881 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B958CF7198FB25C00C2A893 /* sad-smiley.jpg */,
 				7D70C8D1198EACA20071CF48 /* email.png */,
 				7D70C8CF198EAAE10071CF48 /* sms.png */,
 				7D3F8462197AABD5008ACAF7 /* add_friend.png */,
@@ -531,6 +534,7 @@
 				7D3F8464197AABD5008ACAF7 /* add_friend.png in Resources */,
 				7D344C971931AEE0008A071B /* radio-button-off-icon.png in Resources */,
 				CE767EAF1916015A00629F65 /* MainStoryboard.storyboard in Resources */,
+				4B958CF8198FB25C00C2A893 /* sad-smiley.jpg in Resources */,
 				7D944EEA192D071100A560CC /* home_filled-25.png in Resources */,
 				7D944EEB192D071100A560CC /* settings-25.png in Resources */,
 				7D1A37E0194D8084002D40DB /* endpointProperties.plist in Resources */,

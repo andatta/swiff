@@ -40,6 +40,8 @@
 
 "no_friend_text"="None of your contacts are registered with Cawver. Send them invite to join.";
 "invite_friend_title"="Invite Friends";
+"invite_frnd_msg"="Hey, I am using Cawver. It is an awsome app which shows me nearby outlets and users as I travel. Join it, will be fun! Please visit the link below to download Cawver: http://cawver.com/";
+"invite_frnd_subject"="Join Cawver";
 
 
 
