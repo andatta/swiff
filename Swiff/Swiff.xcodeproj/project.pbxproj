@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B958CF6198F93CA00C2A893 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B958CF5198F93CA00C2A893 /* MessageUI.framework */; };
 		4B9A8117196BC3EB00E3F1BA /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A8115196BC3EB00E3F1BA /* menu.png */; };
 		4B9A8118196BC3EB00E3F1BA /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A8116196BC3EB00E3F1BA /* menu@2x.png */; };
 		7D167223194C3F650005FC96 /* cawver-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D167222194C3F650005FC96 /* cawver-logo.png */; };
@@ -78,6 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B958CF5198F93CA00C2A893 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4B9A8115196BC3EB00E3F1BA /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = "Swiff images/menu.png"; sourceTree = SOURCE_ROOT; };
 		4B9A8116196BC3EB00E3F1BA /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "Swiff images/menu@2x.png"; sourceTree = SOURCE_ROOT; };
 		7D167222194C3F650005FC96 /* cawver-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cawver-logo.png"; path = "Swiff images/cawver-logo.png"; sourceTree = SOURCE_ROOT; };
@@ -194,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B958CF6198F93CA00C2A893 /* MessageUI.framework in Frameworks */,
 				7D4AE7751967CF0900698B22 /* libsqlite3.dylib in Frameworks */,
 				7D37B9F11930717A00B2AC73 /* QuartzCore.framework in Frameworks */,
 				CEF97D39190CD3EF006C5881 /* CoreLocation.framework in Frameworks */,
@@ -377,6 +380,7 @@
 		CEF97D1A190CD3B9006C5881 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B958CF5198F93CA00C2A893 /* MessageUI.framework */,
 				7D4AE7741967CF0900698B22 /* libsqlite3.dylib */,
 				7D37B9F01930717A00B2AC73 /* QuartzCore.framework */,
 				CEF97D38190CD3EF006C5881 /* CoreLocation.framework */,

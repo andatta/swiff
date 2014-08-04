@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface SWInviteFriendController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface SWInviteFriendController : UIViewController<UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
 @property UITableView* optionsList;
 @property NSArray* options;
 @end

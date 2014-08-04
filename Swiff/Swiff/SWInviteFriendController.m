@@ -106,6 +106,14 @@
     return 60;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 0){
+        [self openSMSApp];
+    }else if(indexPath.row == 1){
+        [self openEmailApp];
+    }
+}
+
 
 /*
 #pragma mark - Navigation
@@ -117,5 +125,35 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)openSMSApp{
+    NSString *message = @"";
+    MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
+    messageController.messageComposeDelegate = self;
+    [messageController setBody:message];
+    
+    // Present message view controller on screen
+    [self presentViewController:messageController animated:YES completion:nil];
+}
+
+-(void)openEmailApp{
+    NSString *message = @"";
+    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+    mailController.mailComposeDelegate = self;
+    [mailController setMessageBody:message isHTML:YES];
+    
+    // Present email view controller on screen
+    [self presentViewController:mailController animated:YES completion:nil];
+}
+
+//mail composer delegate
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//message composer delegate
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
