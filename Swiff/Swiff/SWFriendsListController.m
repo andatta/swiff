@@ -8,6 +8,7 @@
 
 #import "SWFriendsListController.h"
 #import "SWRevealViewController.h"
+#import "QRGenerator.h"
 
 @interface SWFriendsListController ()
 
@@ -160,7 +161,12 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableCell"];
     }
     UIImageView* profileImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 7, 60, 60)];
-    profileImage.image = [[ImageLoader instance]getImageForPath: friend.profileImage];
+    UIImage* _profileImage;
+    _profileImage = [[ImageLoader instance]getImageForPath: friend.profileImage];
+    if(_profileImage == nil){
+        _profileImage = [QRGenerator generateQRCodeForString:friend.customerId];
+    }
+    profileImage.image = _profileImage;
     profileImage.transform = CGAffineTransformMakeRotation(M_PI/2);
     [cell.contentView addSubview:profileImage];
     
@@ -176,7 +182,7 @@
     //statusLabel.lineBreakMode = NSLineBreakByWordWrapping;
     statusLabel.font = [UIFont systemFontOfSize:12.0f];
     statusLabel.textColor = [UIColor darkGrayColor];
-    statusLabel.text = @"Joined Cawver";
+    statusLabel.text = ([friend.status isEqualToString:@""]) ? @"Joined Cawver" : friend.status;
     [cell.contentView addSubview:statusLabel];
     
     UIView* separatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 78, self.view.frame.size.width, 0.5)];

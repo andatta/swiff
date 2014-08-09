@@ -13,7 +13,7 @@
 
 //Serializable methods
 -(NSDictionary*)toDictionary{
-    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:self.customerId, @"customerId", self.first_name, @"first_name", self.last_name, @"last_name", self.dob, @"dob", self.email, @"email", self.mobile, @"mobile", self.profileImage, @"profileImage", nil];
+    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:self.customerId, @"customerId", self.first_name, @"first_name", self.last_name, @"last_name", self.dob, @"dob", self.email, @"email", self.mobile, @"mobile", self.profileImage, @"profileImage", self.status, @"status", nil];
     return data;
 }
 
@@ -26,6 +26,7 @@
     friend.email = [dictionary valueForKey:@"email"];
     friend.mobile = [dictionary valueForKey:@"mobile"];
     friend.profileImage = [dictionary valueForKey:@"profileImage"];
+    friend.status = [dictionary valueForKey:@"status"];
     
     return friend;
 }

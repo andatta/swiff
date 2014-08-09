@@ -22,4 +22,5 @@
 @property NSString* email;
 @property NSString* mobile;
 @property NSString* profileImage;
+@property NSString* status;
 @end

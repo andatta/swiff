@@ -48,6 +48,9 @@
 		7D6DAB2A196B117F0097F850 /* SWHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB29196B117F0097F850 /* SWHomeController.m */; };
 		7D6DAB31196B27050097F850 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB30196B27050097F850 /* SWRevealViewController.m */; };
 		7D6DAB34196B271C0097F850 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DAB33196B271C0097F850 /* SidebarViewController.m */; };
+		7D6DE92F1995DE4C00A01A27 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6DE92E1995DE4C00A01A27 /* AddressBook.framework */; };
+		7D6DE9321995EFC900A01A27 /* QRGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DE9311995EFC900A01A27 /* QRGenerator.m */; };
+		7D6DE9341995F16200A01A27 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6DE9331995F16200A01A27 /* CoreImage.framework */; };
 		7D70C8D0198EAAE10071CF48 /* sms.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D70C8CF198EAAE10071CF48 /* sms.png */; };
 		7D70C8D2198EACA20071CF48 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D70C8D1198EACA20071CF48 /* email.png */; };
 		7D736B5B196989A000CED1A6 /* SWFriendsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D736B5A196989A000CED1A6 /* SWFriendsListController.m */; };
@@ -146,6 +149,10 @@
 		7D6DAB30196B27050097F850 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		7D6DAB32196B271C0097F850 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		7D6DAB33196B271C0097F850 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		7D6DE92E1995DE4C00A01A27 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		7D6DE9301995EFC900A01A27 /* QRGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRGenerator.h; sourceTree = "<group>"; };
+		7D6DE9311995EFC900A01A27 /* QRGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRGenerator.m; sourceTree = "<group>"; };
+		7D6DE9331995F16200A01A27 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		7D70C8CF198EAAE10071CF48 /* sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sms.png; path = "Swiff images/sms.png"; sourceTree = SOURCE_ROOT; };
 		7D70C8D1198EACA20071CF48 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email.png; path = "Swiff images/email.png"; sourceTree = SOURCE_ROOT; };
 		7D736B59196989A000CED1A6 /* SWFriendsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFriendsListController.h; sourceTree = "<group>"; };
@@ -198,6 +205,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6DE9341995F16200A01A27 /* CoreImage.framework in Frameworks */,
+				7D6DE92F1995DE4C00A01A27 /* AddressBook.framework in Frameworks */,
 				4B958CF6198F93CA00C2A893 /* MessageUI.framework in Frameworks */,
 				7D4AE7751967CF0900698B22 /* libsqlite3.dylib in Frameworks */,
 				7D37B9F11930717A00B2AC73 /* QuartzCore.framework in Frameworks */,
@@ -306,6 +315,8 @@
 				7D4AE7721967CC8800698B22 /* SqliteStorage.m */,
 				7D1B8C0319725F0100E42C85 /* ImageLoader.h */,
 				7D1B8C0419725F0100E42C85 /* ImageLoader.m */,
+				7D6DE9301995EFC900A01A27 /* QRGenerator.h */,
+				7D6DE9311995EFC900A01A27 /* QRGenerator.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -382,6 +393,8 @@
 		CEF97D1A190CD3B9006C5881 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D6DE9331995F16200A01A27 /* CoreImage.framework */,
+				7D6DE92E1995DE4C00A01A27 /* AddressBook.framework */,
 				4B958CF5198F93CA00C2A893 /* MessageUI.framework */,
 				7D4AE7741967CF0900698B22 /* libsqlite3.dylib */,
 				7D37B9F01930717A00B2AC73 /* QuartzCore.framework */,
@@ -556,6 +569,7 @@
 				CEF97D2C190CD3B9006C5881 /* SWAppDelegate.m in Sources */,
 				7D1A37D1194D6434002D40DB /* SWCustomer.m in Sources */,
 				CE6F3206190D363B00D66E1C /* JsonSerializer.m in Sources */,
+				7D6DE9321995EFC900A01A27 /* QRGenerator.m in Sources */,
 				CE6F320C190D51D900D66E1C /* TestObject.m in Sources */,
 				7D6DAB2A196B117F0097F850 /* SWHomeController.m in Sources */,
 				7D55FFA9196913BE0050A993 /* SWFriend.m in Sources */,

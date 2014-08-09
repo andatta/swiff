@@ -144,16 +144,16 @@
     [network uploadMultiPartData:body delegate:self];
 }
 
--(void)syncFriends:(NSString *)customerId{
+-(void)syncFriends:(NSString *)customerId forContacts:(NSArray *)phoneNumbers{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"sync_friends"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
     [urlString appendString:@"?customerId="];
-    [urlString appendString:@"357541050544529"];
+    [urlString appendString:customerId];
     NSLog(@"request url: %@", urlString);
     [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
-    NSArray* msisdns = [[NSArray alloc]init];
-    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:msisdns, @"msisdns", nil];
+    //NSArray* msisdns = [[NSArray alloc]init];
+    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:phoneNumbers, @"msisdns", nil];
     NSString* requestBody = nil;
     NSError* error = nil;
     if([NSJSONSerialization isValidJSONObject:data]){

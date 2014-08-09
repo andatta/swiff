@@ -7,12 +7,13 @@
 //
 
 #import "AddFriendsService.h"
+#import <AddressBook/AddressBook.h>
 
 @implementation AddFriendsService
 -(void)syncFriends{
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
     comm.delegate = self;
-    [comm syncFriends:[[[UIDevice currentDevice]identifierForVendor]UUIDString]];
+    [comm syncFriends:[[[UIDevice currentDevice]identifierForVendor]UUIDString] forContacts:[self getPhoneContacts]];
 }
 
 -(id)init{
@@ -49,5 +50,47 @@
 
 -(NSArray*)getFriends{
     return [self.friendsStorage GetAllFriends];
+}
+
+-(NSArray*)getPhoneContacts{
+    if(ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied ||
+       ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusRestricted){
+        NSLog(@"access to phone contacts denied");
+    }else if(ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized){
+        return [self syncPhoneContacts];
+    }else{
+        //not determined
+        //ask for permission
+        ABAddressBookRequestAccessWithCompletion(ABAddressBookCreateWithOptions(NULL, nil), ^(bool granted, CFErrorRef error) {
+            if (!granted){
+                NSLog(@"Just denied");
+                return;
+            }
+            NSLog(@"Just authorized");
+        });
+    }
+    return [self syncPhoneContacts];
+}
+
+-(NSArray*)syncPhoneContacts{
+    NSMutableArray *phoneNumbers = [[NSMutableArray alloc] init];
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, nil);
+    ABRecordRef source = ABAddressBookCopyDefaultSource(addressBook);
+    CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeopleInSourceWithSortOrdering(addressBook, source, kABPersonSortByFirstName);
+    CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
+    
+    for(int index=0; index < nPeople; index++){
+        ABRecordRef person = CFArrayGetValueAtIndex(allPeople, index);
+        ABMultiValueRef multiPhones = ABRecordCopyValue(person, kABPersonPhoneProperty);
+        for(CFIndex i=0;i<ABMultiValueGetCount(multiPhones);i++) {
+            
+            CFStringRef phoneNumberRef = ABMultiValueCopyValueAtIndex(multiPhones, i);
+            NSString *rawphoneNumber = (__bridge NSString *) phoneNumberRef;
+            NSString* phoneNumber = [rawphoneNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+            [phoneNumbers addObject:phoneNumber];
+            
+        }
+    }
+    return phoneNumbers;
 }
 @end
