@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>get_user_review</key>
+	<string>swiffservice/customer/getUserReviews</string>
+	<key>get_user_check_in</key>
+	<string>swiffservice/customer/getUserCheckIns</string>
 	<key>upload_profile_image</key>
 	<string>swiffservice/customer/uploadProfileImage</string>
 	<key>sync_friends</key>

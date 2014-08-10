@@ -22,7 +22,10 @@
 		7D1B737D195F17A400D8A03B /* SWChooseProfilePicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B737C195F17A400D8A03B /* SWChooseProfilePicController.m */; };
 		7D1B7380195F1D7C00D8A03B /* SWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B737F195F1D7C00D8A03B /* SWButton.m */; };
 		7D1B8C0519725F0100E42C85 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B8C0419725F0100E42C85 /* ImageLoader.m */; };
+		7D2780511997CDF0001AC300 /* SWReviewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2780501997CDF0001AC300 /* SWReviewDetailController.m */; };
 		7D2EE8B41932212C00D5FE79 /* SWEnterMerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */; };
+		7D3248B81996771C009A7E10 /* SWUserCheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3248B71996771C009A7E10 /* SWUserCheckIn.m */; };
+		7D3248BB19967845009A7E10 /* SWUserReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3248BA19967845009A7E10 /* SWUserReview.m */; };
 		7D32C8541931061E0078EFB2 /* Checkbox_ Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */; };
 		7D32C8551931061E0078EFB2 /* Checkbox_Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D32C8531931061E0078EFB2 /* Checkbox_Full.png */; };
 		7D344C941931AD91008A071B /* empty_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D344C931931AD91008A071B /* empty_checkbox.png */; };
@@ -40,6 +43,7 @@
 		7D420A38195736C5009AE282 /* SWCustomerLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D420A37195736C5009AE282 /* SWCustomerLocation.m */; };
 		7D4AE7731967CC8800698B22 /* SqliteStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4AE7721967CC8800698B22 /* SqliteStorage.m */; };
 		7D4AE7751967CF0900698B22 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4AE7741967CF0900698B22 /* libsqlite3.dylib */; };
+		7D525F8719960B6D0032A9FF /* SWUserDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D525F8619960B6D0032A9FF /* SWUserDetailController.m */; };
 		7D537C77195A010A00EF69EE /* SWMerchantOutlet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D537C76195A010A00EF69EE /* SWMerchantOutlet.m */; };
 		7D55FFA9196913BE0050A993 /* SWFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D55FFA8196913BE0050A993 /* SWFriend.m */; };
 		7D55FFAD196918ED0050A993 /* AddFriendsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D55FFAC196918ED0050A993 /* AddFriendsService.m */; };
@@ -106,8 +110,14 @@
 		7D1B737F195F1D7C00D8A03B /* SWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWButton.m; sourceTree = "<group>"; };
 		7D1B8C0319725F0100E42C85 /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
 		7D1B8C0419725F0100E42C85 /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
+		7D27804F1997CDF0001AC300 /* SWReviewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWReviewDetailController.h; sourceTree = "<group>"; };
+		7D2780501997CDF0001AC300 /* SWReviewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWReviewDetailController.m; sourceTree = "<group>"; };
 		7D2EE8B21932212C00D5FE79 /* SWEnterMerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWEnterMerchantController.h; sourceTree = "<group>"; };
 		7D2EE8B31932212C00D5FE79 /* SWEnterMerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWEnterMerchantController.m; sourceTree = "<group>"; };
+		7D3248B61996771C009A7E10 /* SWUserCheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUserCheckIn.h; sourceTree = "<group>"; };
+		7D3248B71996771C009A7E10 /* SWUserCheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUserCheckIn.m; sourceTree = "<group>"; };
+		7D3248B919967845009A7E10 /* SWUserReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUserReview.h; sourceTree = "<group>"; };
+		7D3248BA19967845009A7E10 /* SWUserReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUserReview.m; sourceTree = "<group>"; };
 		7D32C8521931061E0078EFB2 /* Checkbox_ Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkbox_ Empty.png"; path = "Swiff images/Checkbox_ Empty.png"; sourceTree = SOURCE_ROOT; };
 		7D32C8531931061E0078EFB2 /* Checkbox_Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Checkbox_Full.png; path = "Swiff images/Checkbox_Full.png"; sourceTree = SOURCE_ROOT; };
 		7D344C931931AD91008A071B /* empty_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty_checkbox.png; path = "Swiff images/empty_checkbox.png"; sourceTree = SOURCE_ROOT; };
@@ -134,6 +144,8 @@
 		7D4AE7721967CC8800698B22 /* SqliteStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteStorage.m; sourceTree = "<group>"; };
 		7D4AE7741967CF0900698B22 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7D4BAD77197A38540032F5F6 /* FriendsUpdateListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsUpdateListener.h; sourceTree = "<group>"; };
+		7D525F8519960B6D0032A9FF /* SWUserDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUserDetailController.h; sourceTree = "<group>"; };
+		7D525F8619960B6D0032A9FF /* SWUserDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUserDetailController.m; sourceTree = "<group>"; };
 		7D537C75195A010A00EF69EE /* SWMerchantOutlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMerchantOutlet.h; sourceTree = "<group>"; };
 		7D537C76195A010A00EF69EE /* SWMerchantOutlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMerchantOutlet.m; sourceTree = "<group>"; };
 		7D55FFA7196913BE0050A993 /* SWFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFriend.h; sourceTree = "<group>"; };
@@ -231,6 +243,10 @@
 				7D537C76195A010A00EF69EE /* SWMerchantOutlet.m */,
 				7D55FFA7196913BE0050A993 /* SWFriend.h */,
 				7D55FFA8196913BE0050A993 /* SWFriend.m */,
+				7D3248B61996771C009A7E10 /* SWUserCheckIn.h */,
+				7D3248B71996771C009A7E10 /* SWUserCheckIn.m */,
+				7D3248B919967845009A7E10 /* SWUserReview.h */,
+				7D3248BA19967845009A7E10 /* SWUserReview.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -369,6 +385,10 @@
 				7D6DAB29196B117F0097F850 /* SWHomeController.m */,
 				7D3F8466197ABEB9008ACAF7 /* SWInviteFriendController.h */,
 				7D3F8467197ABEB9008ACAF7 /* SWInviteFriendController.m */,
+				7D525F8519960B6D0032A9FF /* SWUserDetailController.h */,
+				7D525F8619960B6D0032A9FF /* SWUserDetailController.m */,
+				7D27804F1997CDF0001AC300 /* SWReviewDetailController.h */,
+				7D2780501997CDF0001AC300 /* SWReviewDetailController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -581,6 +601,7 @@
 				CE6D8B5B19151FD500AF6E03 /* SettingsManager.m in Sources */,
 				7D6DAB34196B271C0097F850 /* SidebarViewController.m in Sources */,
 				7D55FFAD196918ED0050A993 /* AddFriendsService.m in Sources */,
+				7D525F8719960B6D0032A9FF /* SWUserDetailController.m in Sources */,
 				7D3A82CD1960505B00F84343 /* SWUploadProfilePicController.m in Sources */,
 				CE6D8B5F1915542E00AF6E03 /* LocationService.m in Sources */,
 				7D37B9F61930A2B300B2AC73 /* SWSettingsController.m in Sources */,
@@ -588,11 +609,14 @@
 				7D1A37D9194D7FC6002D40DB /* SWNetworkException.m in Sources */,
 				7D1B7380195F1D7C00D8A03B /* SWButton.m in Sources */,
 				CE767EB5191606B300629F65 /* SWStartUpControllerViewController.m in Sources */,
+				7D2780511997CDF0001AC300 /* SWReviewDetailController.m in Sources */,
 				7D6DAB31196B27050097F850 /* SWRevealViewController.m in Sources */,
+				7D3248BB19967845009A7E10 /* SWUserReview.m in Sources */,
 				7D1B8C0519725F0100E42C85 /* ImageLoader.m in Sources */,
 				7DCDAFA41956AB080064F6A0 /* SWProgressIndicator.m in Sources */,
 				CE767EBB1916177A00629F65 /* SWRegistrationViewController.m in Sources */,
 				7D1A37D5194D745D002D40DB /* SWNetwork.m in Sources */,
+				7D3248B81996771C009A7E10 /* SWUserCheckIn.m in Sources */,
 				7D1A37DC194D7FF9002D40DB /* SWNetworkCommunicator.m in Sources */,
 				7D736B5B196989A000CED1A6 /* SWFriendsListController.m in Sources */,
 			);

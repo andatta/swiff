@@ -196,6 +196,12 @@
     return 80;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.userDetailController = [self.storyboard instantiateViewControllerWithIdentifier:@"userDetailController"];
+    self.userDetailController.friendObject = (SWFriend*)[self.friends objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:self.userDetailController animated:YES];
+}
+
 /*
 #pragma mark - Navigation
 

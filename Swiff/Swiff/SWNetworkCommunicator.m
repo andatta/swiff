@@ -163,4 +163,26 @@
     NSLog(@"request body: %@", requestBody);
     [network asyncPostWithBody:requestBody delegate:self];
 }
+
+-(void)getUserCheckIns:(NSString *)customerId{
+    SWNetwork* network = [[SWNetwork alloc]init];
+    NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"get_user_check_in"]];
+    NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
+    [urlString appendString:@"?customerId="];
+    [urlString appendString:customerId];
+    NSLog(@"request url: %@", urlString);
+    [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
+    [network asyncgetWithDelegate:self];
+}
+
+-(void)getUserReviews:(NSString *)customerId{
+    SWNetwork* network = [[SWNetwork alloc]init];
+    NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"get_user_review"]];
+    NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
+    [urlString appendString:@"?customerId="];
+    [urlString appendString:customerId];
+    NSLog(@"request url: %@", urlString);
+    [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
+    [network asyncgetWithDelegate:self];
+}
 @end

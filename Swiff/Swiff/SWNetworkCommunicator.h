@@ -27,4 +27,6 @@
 -(void)saveMercahntOutlet:(SWMerchantOutlet*)outlet;
 -(void)uploadProfileImage:(UIImage*)image customerId:(NSString*)customerId;
 -(void)syncFriends:(NSString*)customerId forContacts:(NSArray*)phoneNumbers;
+-(void)getUserCheckIns:(NSString*)customerId;
+-(void)getUserReviews:(NSString*)customerId;
 @end

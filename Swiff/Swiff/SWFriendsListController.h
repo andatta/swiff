@@ -13,6 +13,7 @@
 #import "ImageLoader.h"
 #import "FriendsUpdateListener.h"
 #import "SWInviteFriendController.h"
+#import "SWUserDetailController.h"
 
 @interface SWFriendsListController : UIViewController<UITableViewDataSource, UITableViewDelegate, ImageLoaderListener, FriendsUpdateListener>
 @property UITableView* friendsList;
@@ -22,4 +23,5 @@
 @property UILabel* noFriendLabel;
 @property UIBarButtonItem* addfriendBarButton;
 @property SWInviteFriendController* inviteController;
+@property SWUserDetailController* userDetailController;
 @end
