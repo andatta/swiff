@@ -11,7 +11,7 @@
 @implementation SWUserCheckIn
 //Serializable methods
 -(NSDictionary*)toDictionary{
-    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:self.outletName, @"outletName", self.checkInDate, @"checkInDate", nil];
+    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:self.outletName, @"outletName", self.checkInDate, @"checkInDate", self.outletLogo, @"outletLogo", nil];
     return data;
 }
 
@@ -19,6 +19,7 @@
     SWUserCheckIn* userCheckIn = [[SWUserCheckIn alloc]init];
     userCheckIn.outletName = [dictionary valueForKey:@"outletName"];
     userCheckIn.checkInDate = [dictionary valueForKey:@"checkInDate"];
+    userCheckIn.outletLogo = [dictionary valueForKey:@"outletLogo"];
     return userCheckIn;
 }
 

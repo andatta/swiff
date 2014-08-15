@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *outletLogoImage;
 @property (weak, nonatomic) IBOutlet UILabel *outletName;
 @property (weak, nonatomic) IBOutlet UILabel *reviewDate;
-@property (weak, nonatomic) IBOutlet UILabel *outletReview;
+@property (weak, nonatomic) IBOutlet UITextView *outletReview;
 
 @property SWUserReview* userReview;
 @end

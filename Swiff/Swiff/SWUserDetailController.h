@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userStatus;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segments;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *noRecordsLabel;
 
 @property SWFriend* friendObject;
 @property BOOL zoomedIn;

@@ -56,6 +56,8 @@ int REQUEST_SYNC_REVIEW = 2;
     [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(syncUserCheckInsAndReviews) userInfo:nil repeats:NO];
     [self createCheckInTable];
     [self createReviewTable];
+    self.noRecordsLabel.numberOfLines = 0;
+    self.noRecordsLabel.lineBreakMode = NSLineBreakByWordWrapping;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +73,7 @@ int REQUEST_SYNC_REVIEW = 2;
         self.userStatus.hidden = YES;
         [self.checkInView setFrame:CGRectZero];
         [self.reviewTableView setFrame:CGRectZero];
+        self.noRecordsLabel.hidden = YES;
         [UIView animateWithDuration:1.0 animations:^(void){
             [self.userProfileImage setFrame:CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height - 80)];
         }];
@@ -84,6 +87,12 @@ int REQUEST_SYNC_REVIEW = 2;
             self.view.backgroundColor = [UIColor whiteColor];
             [self.checkInView setFrame:CGRectMake(0, 180, self.view.frame.size.width, self.view.frame.size.height)];
             [self.reviewTableView setFrame:CGRectMake(0, 180, self.view.frame.size.width, self.view.frame.size.height)];
+            if(!self.checkInSyncInProgress && self.checkIns.count == 0){
+                self.noRecordsLabel.hidden = NO;
+            }
+            if(!self.reviewSyncInProgress && self.reviews.count == 0){
+                self.noRecordsLabel.hidden = NO;
+            }
         }];
         self.zoomedIn = NO;
     }
@@ -140,6 +149,7 @@ int REQUEST_SYNC_REVIEW = 2;
     }else if (self.currentRequest == REQUEST_SYNC_REVIEW){
         self.reviewSyncInProgress = NO;
     }
+    [self changeTabs];
 
 }
 
@@ -173,14 +183,37 @@ int REQUEST_SYNC_REVIEW = 2;
     if(tableView == self.checkInView){
         SWUserCheckIn* userCheckIn = (SWUserCheckIn*)[self.checkIns objectAtIndex:indexPath.row];
         UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"checkInCell"];
+        UILabel* titleLabel = nil;
+        UIImageView* outletLogoImage = nil;
+        UILabel* dateLabel = nil;
         if(cell == nil){
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"checkInCell"];
+            outletLogoImage = [[UIImageView alloc]initWithFrame:CGRectMake(CELL_CONTENT_MARGIN, 5, 50, 50)];
+            [outletLogoImage setTag:3];
+            [cell.contentView addSubview:outletLogoImage];
+            
+            titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(CELL_CONTENT_MARGIN + 60, 5, CELL_CONTENT_WIDTH - 100, 50)];
+            [titleLabel setTag:2];
+            [cell.contentView addSubview:titleLabel];
+            
+            dateLabel = [[UILabel alloc]initWithFrame:CGRectMake(CELL_CONTENT_MARGIN + 60, 20, CELL_CONTENT_WIDTH - 100, 50)];
+            [dateLabel setTag:4];
+            dateLabel.textColor = [UIColor lightGrayColor];
+            dateLabel.font = [UIFont systemFontOfSize:14.0f];
+            [cell.contentView addSubview:dateLabel];
         }
-        cell.textLabel.text = userCheckIn.outletName;
-        UILabel* checkInDateLabel = [[UILabel alloc]initWithFrame:CGRectMake(250, 0, 70, 50)];
-        checkInDateLabel.text = userCheckIn.checkInDate;
-        checkInDateLabel.textColor = [UIColor grayColor];
-        [cell.contentView addSubview:checkInDateLabel];
+        if(!outletLogoImage){
+            outletLogoImage = (UIImageView*)[cell viewWithTag:3];
+        }
+        outletLogoImage.image = [[ImageLoader instance]getImageForPath:userCheckIn.outletLogo];
+        if(!titleLabel){
+            titleLabel = (UILabel*)[cell viewWithTag:2];
+        }
+        titleLabel.text = userCheckIn.outletName;
+        if(!dateLabel){
+            dateLabel = (UILabel*)[cell viewWithTag:4];
+        }
+        dateLabel.text = [self formatDate:userCheckIn.checkInDate];
         return cell;
     }else if(tableView == self.reviewTableView){
         SWUserReview* userReview = (SWUserReview*)[self.reviews objectAtIndex:indexPath.row];
@@ -320,14 +353,31 @@ int REQUEST_SYNC_REVIEW = 2;
         [self hideReviewTable];
         if(!self.checkInSyncInProgress && self.checkIns.count > 0){
             self.activityIndicator.hidden = YES;
+            [self.noRecordsLabel setHidden:YES];
+            [self.segments setTitle:[NSString stringWithFormat:@"%d Check-Ins", self.checkIns.count] forSegmentAtIndex:0];
             [self showCheckInTable];
+        }
+        if(!self.checkInSyncInProgress && self.checkIns.count == 0){
+            self.activityIndicator.hidden = YES;
+            [self.noRecordsLabel setHidden:NO];
+            [self.segments setTitle:[NSString stringWithFormat:@"No Check-Ins"] forSegmentAtIndex:0];
+            self.noRecordsLabel.text = @"There are no check-ins by this user";
+            [self.noRecordsLabel sizeToFit];
         }
     }else if(self.segments.selectedSegmentIndex == 1){
         [self hideCheckInTable];
         if(!self.reviewSyncInProgress && self.reviews.count > 0){
             self.activityIndicator.hidden = YES;
+            [self.noRecordsLabel setHidden:YES];
             [self.segments setTitle:[NSString stringWithFormat:@"%d Reviews", self.reviews.count] forSegmentAtIndex:1];
             [self showReviewTable];
+        }
+        if(!self.reviewSyncInProgress && self.reviews.count == 0){
+            self.activityIndicator.hidden = YES;
+            [self.noRecordsLabel setHidden:NO];
+            [self.segments setTitle:[NSString stringWithFormat:@"No Reviews"] forSegmentAtIndex:1];
+            self.noRecordsLabel.text = @"There are no reviews by this user";
+            [self.noRecordsLabel sizeToFit];
         }
     }
 }
@@ -337,6 +387,9 @@ int REQUEST_SYNC_REVIEW = 2;
     self.checkInView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.checkInView.dataSource = self;
     self.checkInView.delegate = self;
+    CGRect footer = CGRectMake(0, 0, self.view.frame.size.width, 300);
+    UIView* footerView = [[UIView alloc]initWithFrame:footer];
+    self.checkInView.tableFooterView = footerView;
 }
 
 -(void)createReviewTable{

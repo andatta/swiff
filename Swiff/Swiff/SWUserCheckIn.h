@@ -14,4 +14,5 @@
 @interface SWUserCheckIn : NSObject<Serializable, SerializableFactory>
 @property NSString* outletName;
 @property NSString* checkInDate;
+@property NSString* outletLogo;
 @end
