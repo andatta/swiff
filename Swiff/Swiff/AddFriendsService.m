@@ -13,7 +13,13 @@
 -(void)syncFriends{
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
     comm.delegate = self;
-    [comm syncFriends:[[[UIDevice currentDevice]identifierForVendor]UUIDString] forContacts:[self getPhoneContacts]];
+    [comm syncFriends:[[[UIDevice currentDevice]identifierForVendor]UUIDString] forContacts:[self getPhoneContacts] completionHandler:^(NSData *data, NSError *error) {
+        if (error == NULL) {
+            [self requestComletedWithData:data];
+        } else {
+            [self requestFailedWithError:error];
+        }
+    }];
 }
 
 -(id)init{

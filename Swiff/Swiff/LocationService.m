@@ -83,8 +83,13 @@ didUpdateLocations:(NSArray *)locations{
     location.longitude = longitudeInFloat;
     location.device_id = [[[UIDevice currentDevice]identifierForVendor]UUIDString];
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
-    comm.delegate = self;
-    [comm updateLocation:location];
+    [comm updateLocation:location completionHandler:^(NSData *data, NSError *error) {
+        if (error == NULL) {
+            NSLog(@"location updated: %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+        } else {
+            NSLog(@"location update falied with error: %@", error.description);
+        }
+    }];
 }
 
 -(void)locationUpdateIntervalChanged{

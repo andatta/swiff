@@ -100,7 +100,9 @@ int REQUEST_SYNC_REVIEW = 2;
 
 -(UIImage*)getProfileImage{
     UIImage* _profileImage;
-    _profileImage = [[ImageLoader instance]getImageForPath:self.friendObject.profileImage];
+    _profileImage = [[ImageLoader instance]getImageForPath:self.friendObject.profileImage completionHandler:^(UIImage * image) {
+        
+    }];
     if(_profileImage == nil){
         _profileImage = [QRGenerator generateQRCodeForString:self.friendObject.customerId];
     }
@@ -113,8 +115,23 @@ int REQUEST_SYNC_REVIEW = 2;
     
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
     comm.delegate = self;
-    [comm getUserCheckIns:self.friendObject.customerId];
-    self.currentRequest = REQUEST_SYNC_CHECKIN;
+    [comm getUserCheckIns:self.friendObject.customerId completionHandler:^(NSData *data, NSError *error) {
+        if(error == NULL){
+            NSLog(@"sync completed: %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+            SWUserCheckIn* userCheckIn = [[SWUserCheckIn alloc]init];
+            NSArray* objectArray = [JsonSerializer jsonarrayToObjects:data oobjectFatcory:userCheckIn];
+            for (id object in objectArray) {
+                SWUserCheckIn* retreivedCheckIn = (SWUserCheckIn*)object;
+                [self.checkIns addObject:retreivedCheckIn];
+            }
+            self.checkInSyncInProgress = NO;
+            [self changeTabs];
+        }else {
+            NSLog(@"sync checkin falied with error: %@", error.description);
+            self.checkInSyncInProgress = NO;
+        }
+    }];
+    [self syncReviews];
 }
 
 -(void)requestComletedWithData:(NSData*)data{
@@ -156,8 +173,22 @@ int REQUEST_SYNC_REVIEW = 2;
 -(void)syncReviews{
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
     comm.delegate = self;
-    [comm getUserReviews:self.friendObject.customerId];
-    self.currentRequest = REQUEST_SYNC_REVIEW;
+    [comm getUserReviews:self.friendObject.customerId completionHandler:^(NSData * data, NSError * error) {
+        if (error == NULL) {
+            NSLog(@"sync completed: %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+            SWUserReview* userReview = [[SWUserReview alloc]init];
+            NSArray* objectArray = [JsonSerializer jsonarrayToObjects:data oobjectFatcory:userReview];
+            for (id object in objectArray) {
+                SWUserReview* retreivedReview = (SWUserReview*)object;
+                [self.reviews addObject:retreivedReview];
+            }
+            self.reviewSyncInProgress = NO;
+            [self changeTabs];
+        } else {
+            NSLog(@"sync reviews falied with error: %@", error.description);
+            self.reviewSyncInProgress = NO;
+        }
+    }];
 }
 
 #pragma mark - Table view data source
@@ -205,7 +236,9 @@ int REQUEST_SYNC_REVIEW = 2;
         if(!outletLogoImage){
             outletLogoImage = (UIImageView*)[cell viewWithTag:3];
         }
-        outletLogoImage.image = [[ImageLoader instance]getImageForPath:userCheckIn.outletLogo];
+        outletLogoImage.image = [[ImageLoader instance]getImageForPath:userCheckIn.outletLogo completionHandler:^(UIImage * image) {
+            outletLogoImage.image = image;
+        }];
         if(!titleLabel){
             titleLabel = (UILabel*)[cell viewWithTag:2];
         }
@@ -256,7 +289,9 @@ int REQUEST_SYNC_REVIEW = 2;
         if(!outletLogoImage){
             outletLogoImage = (UIImageView*)[cell viewWithTag:3];
         }
-        outletLogoImage.image = [[ImageLoader instance]getImageForPath:userReview.outletLogo];
+        outletLogoImage.image = [[ImageLoader instance]getImageForPath:userReview.outletLogo completionHandler:^(UIImage * image) {
+            outletLogoImage.image = image;
+        }];
         if(!titleLabel){
             titleLabel = (UILabel*)[cell viewWithTag:2];
         }

@@ -121,7 +121,13 @@
     outlet.longitude = [[LocationService instance]longitude];
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
     comm.delegate = self;
-    [comm saveMercahntOutlet:outlet];
+    [comm saveMercahntOutlet:outlet completionHandler:^(NSData *data, NSError *error) {
+        if(error == NULL){
+            [self requestComletedWithData:data];
+        }else{
+            [self requestFailedWithError:error];
+        }
+    }];
 }
 
 -(void)requestComletedWithData:(NSData*)data{

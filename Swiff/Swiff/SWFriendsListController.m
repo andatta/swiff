@@ -162,7 +162,9 @@
     }
     UIImageView* profileImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 7, 60, 60)];
     UIImage* _profileImage;
-    _profileImage = [[ImageLoader instance]getImageForPath: friend.profileImage];
+    _profileImage = [[ImageLoader instance]getImageForPath: friend.profileImage completionHandler:^(UIImage * image) {
+        profileImage.image = image;
+    }];
     if(_profileImage == nil){
         _profileImage = [QRGenerator generateQRCodeForString:friend.customerId];
     }

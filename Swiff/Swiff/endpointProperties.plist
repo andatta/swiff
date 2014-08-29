@@ -19,6 +19,6 @@
 	<key>register_customer</key>
 	<string>swiffservice/customer/registerCustomer</string>
 	<key>rootUrl</key>
-	<string>http://10.0.0.5:8000/</string>
+	<string>http://10.0.0.7:8000/</string>
 </dict>
 </plist>

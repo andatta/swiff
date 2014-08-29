@@ -65,7 +65,7 @@
     }
 }
 
--(void)registerCustomer:(SWCustomer *)customer{
+-(void)registerCustomer:(SWCustomer *)customer completionHandler:(void (^)(NSData *, NSError *))handler{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"register_customer"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
@@ -75,10 +75,12 @@
     [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
     NSString* requestBody = nil;
     [JsonSerializer objectToJson:customer String:&requestBody];
-    [network asyncPostWithBody:requestBody delegate:self];
+    [network post:requestBody WithHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
+        handler(data, error);
+    }];
 }
 
--(void)registerForPush:(NSString *)customerId withToken:(NSString *)deviceToken{
+-(void)registerForPush:(NSString *)customerId withToken:(NSString *)deviceToken completionHandler:(void (^)(NSData *, NSError *))handler{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"register_push"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
@@ -95,10 +97,12 @@
         requestBody = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
     NSLog(@"request body: %@", requestBody);
-    [network asyncPostWithBody:requestBody delegate:self];
+    [network post:requestBody WithHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
+        handler(data, error);
+    }];
 }
 
--(void)updateLocation:(SWCustomerLocation *)location{
+-(void)updateLocation:(SWCustomerLocation *)location completionHandler:(void (^)(NSData *, NSError *))handler{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"update_location"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
@@ -108,11 +112,13 @@
     [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
     NSString* requestBody = nil;
     [JsonSerializer objectToJson:location String:&requestBody];
-    [network asyncPostWithBody:requestBody delegate:self];
+    [network post:requestBody WithHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
+        handler(data, error);
+    }];
 
 }
 
--(void)saveMercahntOutlet:(SWMerchantOutlet *)outlet{
+-(void)saveMercahntOutlet:(SWMerchantOutlet *)outlet completionHandler:(void (^)(NSData *, NSError *))handler{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"save_merchant_outlet"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
@@ -120,10 +126,12 @@
     [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
     NSString* requestBody = nil;
     [JsonSerializer objectToJson:outlet String:&requestBody];
-    [network asyncPostWithBody:requestBody delegate:self];
+    [network post:requestBody WithHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
+        handler(data, error);
+    }];
 }
 
--(void)uploadProfileImage:(UIImage *)image customerId:(NSString *)customerId{
+-(void)uploadProfileImage:(UIImage *)image customerId:(NSString *)customerId completionHandler:(void (^)(NSData *, NSError *))handler{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString *boundary = @"---------------------------14737809831466499882746641449";
     NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
@@ -141,10 +149,12 @@
     [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[NSData dataWithData:imageData]];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [network uploadMultiPartData:body delegate:self];
+    [network multipartdata:body WithHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
+        handler(data, error);
+    }];
 }
 
--(void)syncFriends:(NSString *)customerId forContacts:(NSArray *)phoneNumbers{
+-(void)syncFriends:(NSString *)customerId forContacts:(NSArray *)phoneNumbers completionHandler:(void (^)(NSData *, NSError *))handler{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"sync_friends"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
@@ -161,10 +171,12 @@
         requestBody = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
     NSLog(@"request body: %@", requestBody);
-    [network asyncPostWithBody:requestBody delegate:self];
+    [network post:requestBody WithHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
+        handler(data, error);
+    }];
 }
 
--(void)getUserCheckIns:(NSString *)customerId{
+-(void)getUserCheckIns:(NSString *)customerId completionHandler:(void (^)(NSData *, NSError *))handler{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"get_user_check_in"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
@@ -172,10 +184,13 @@
     [urlString appendString:customerId];
     NSLog(@"request url: %@", urlString);
     [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
-    [network asyncgetWithDelegate:self];
+    //[network asyncgetWithDelegate:self];
+    [network getWithHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        handler(data, error);
+    }];
 }
 
--(void)getUserReviews:(NSString *)customerId{
+-(void)getUserReviews:(NSString *)customerId completionHandler:(void (^)(NSData *, NSError *))handler{
     SWNetwork* network = [[SWNetwork alloc]init];
     NSString* url = [self getUrl:[self.endpointProperties valueForKey:@"get_user_review"]];
     NSMutableString* urlString = [[NSMutableString alloc]initWithString:url];
@@ -183,6 +198,8 @@
     [urlString appendString:customerId];
     NSLog(@"request url: %@", urlString);
     [network initiateRequestWithUrl:[NSURL URLWithString:urlString] andContentType:@"application/json"];
-    [network asyncgetWithDelegate:self];
+    [network getWithHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        handler(data, error);
+    }];
 }
 @end

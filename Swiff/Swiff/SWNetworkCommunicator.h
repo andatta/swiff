@@ -21,12 +21,12 @@
 @property NSMutableData* responseData;
 @property NSHTTPURLResponse* response;
 @property id<SWNetworkDelegate>delegate;
--(void)registerCustomer:(SWCustomer*)customer;
--(void)registerForPush:(NSString*)customerId withToken:(NSString*)deviceToken;
--(void)updateLocation:(SWCustomerLocation*)location;
--(void)saveMercahntOutlet:(SWMerchantOutlet*)outlet;
--(void)uploadProfileImage:(UIImage*)image customerId:(NSString*)customerId;
--(void)syncFriends:(NSString*)customerId forContacts:(NSArray*)phoneNumbers;
--(void)getUserCheckIns:(NSString*)customerId;
--(void)getUserReviews:(NSString*)customerId;
+-(void)registerCustomer:(SWCustomer*)customer completionHandler:(void (^)(NSData*, NSError*))handler;
+-(void)registerForPush:(NSString*)customerId withToken:(NSString*)deviceToken completionHandler:(void (^)(NSData*, NSError*))handler;
+-(void)updateLocation:(SWCustomerLocation*)location completionHandler:(void (^)(NSData*, NSError*))handler;
+-(void)saveMercahntOutlet:(SWMerchantOutlet*)outlet completionHandler:(void (^)(NSData*, NSError*))handler;
+-(void)uploadProfileImage:(UIImage*)image customerId:(NSString*)customerId completionHandler:(void (^)(NSData*, NSError*))handler;
+-(void)syncFriends:(NSString*)customerId forContacts:(NSArray*)phoneNumbers completionHandler:(void (^)(NSData*, NSError*))handler;
+-(void)getUserCheckIns:(NSString*)customerId completionHandler:(void (^)(NSData*, NSError*))handler;
+-(void)getUserReviews:(NSString*)customerId completionHandler:(void (^)(NSData*, NSError*))handler;
 @end

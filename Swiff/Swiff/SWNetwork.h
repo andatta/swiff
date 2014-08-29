@@ -21,4 +21,9 @@
 -(void)asyncPutWithBody:(NSString*)body delegate:(id)delegate;
 
 -(void)uploadMultiPartData:(NSData*)multipartdata delegate:(id)delegate;
+
+-(void)getWithHandler:(void (^)(NSURLResponse*, NSData*, NSError*))handler;
+-(void)post:(NSString*)body WithHandler:(void (^)(NSURLResponse*, NSData*, NSError*))handler;
+-(void)put:(NSString*)body WithHandler:(void (^)(NSURLResponse*, NSData*, NSError*))handler;
+-(void)multipartdata:(NSData*)multipartdata WithHandler:(void (^)(NSURLResponse*, NSData*, NSError*))handler;
 @end

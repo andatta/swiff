@@ -27,7 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.outletLogoImage.image = [[ImageLoader instance]getImageForPath:self.userReview.outletLogo];
+    self.outletLogoImage.image = [[ImageLoader instance]getImageForPath:self.userReview.outletLogo completionHandler:^(UIImage * image) {
+        
+    }];
     self.outletName.text = self.userReview.outletName;
     self.reviewDate.text = [self formatDate:self.userReview.reviewDate];
     self.outletReview.text = self.userReview.review;

@@ -49,7 +49,7 @@ static ImageLoader* instance = nil;
     return url;
 }
 
--(UIImage*)getImageForPath:(NSString *)path{
+-(UIImage*)getImageForPath:(NSString *)path completionHandler:(void (^)(UIImage *))handler{
     UIImage* cacheImage;
     if([self.cache valueForKey:path] != nil){
         cacheImage = [self.cache valueForKey:path];
@@ -64,11 +64,11 @@ static ImageLoader* instance = nil;
         cacheImage = image;
         return cacheImage;
     }
-    [self scheduleImageDownload:path];
+    [self scheduleImageDownload:path completionHandler:handler];
     return cacheImage;
 }
 
--(void)scheduleImageDownload:(NSString*)path{
+-(void)scheduleImageDownload:(NSString*)path completionHandler:(void (^)(UIImage *))handler{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
                        NSURL *imageURL = [NSURL URLWithString:[self getUrl:path]];
@@ -82,10 +82,7 @@ static ImageLoader* instance = nil;
                                          [self writeImage:imageData ForPath:path];
                                          dispatch_sync(dispatch_get_main_queue(), ^{
                                              //notify listeners
-                                             for (id<ImageLoaderListener>listener in self.listeners) {
-                                                 [listener imageDownloaded:image];
-                                             }
-                                         });
+                                             handler(image);                                       });
                                      });
                    });
 }

@@ -77,4 +77,26 @@
     [self.mRequest setHTTPBody:multipartdata];
     [[NSURLConnection alloc]initWithRequest:self.mRequest delegate:delegate];
 }
+
+-(void)getWithHandler:(void (^)(NSURLResponse*, NSData*, NSError*))handler{
+    [NSURLConnection sendAsynchronousRequest:self.mRequest queue:[NSOperationQueue mainQueue] completionHandler:handler];
+}
+
+-(void)post:(NSString *)body WithHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler{
+    self.mRequest.HTTPMethod = @"POST";
+    self.mRequest.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    [NSURLConnection sendAsynchronousRequest:self.mRequest queue:[NSOperationQueue mainQueue] completionHandler:handler];
+}
+
+-(void)put:(NSString *)body WithHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler{
+    self.mRequest.HTTPMethod = @"PUT";
+    self.mRequest.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    [NSURLConnection sendAsynchronousRequest:self.mRequest queue:[NSOperationQueue mainQueue] completionHandler:handler];
+}
+
+-(void)multipartdata:(NSData *)multipartdata WithHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler{
+    self.mRequest.HTTPMethod = @"POST";
+    [self.mRequest setHTTPBody:multipartdata];
+    [NSURLConnection sendAsynchronousRequest:self.mRequest queue:[NSOperationQueue mainQueue] completionHandler:handler];
+}
 @end

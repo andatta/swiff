@@ -53,8 +53,13 @@
 -(void)uploadImage{
     [self showProgressIndicator];
     SWNetworkCommunicator* comm = [[SWNetworkCommunicator alloc]init];
-    comm.delegate = self;
-    [comm uploadProfileImage:self.image customerId:[[[UIDevice currentDevice]identifierForVendor]UUIDString]];
+    [comm uploadProfileImage:self.image customerId:[[[UIDevice currentDevice]identifierForVendor]UUIDString] completionHandler:^(NSData *data, NSError *error) {
+        if (error == NULL) {
+            [self requestComletedWithData:data];
+        }else{
+            [self requestFailedWithError:error];
+        }
+    }];
 }
 
 -(void)showProgressIndicator{

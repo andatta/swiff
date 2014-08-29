@@ -11,7 +11,7 @@
 @interface ImageLoader : NSObject
 
 +(id)instance;
--(UIImage*)getImageForPath:(NSString*)path;
+-(UIImage*)getImageForPath:(NSString*)path completionHandler:(void (^)(UIImage*))handler;
 -(void)addListener:(id<ImageLoaderListener>)listener;
 -(BOOL)removeListener:(id<ImageLoaderListener>)listener;
 
